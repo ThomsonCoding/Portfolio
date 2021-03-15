@@ -1,0 +1,223 @@
+html {
+	min-height: 884px;
+	max-height: 884px;
+}
+
+body{
+    font-size: 12px;
+    background-color: #272727;
+	scrollbar-color: light;
+}
+
+
+h6 {
+  color: #ababab;
+  padding: 5px;
+}
+
+li {
+ list-style-type: none;
+  color: #ababab;
+	padding:0.5vw;
+}
+
+a {
+ color: #ababab;
+ text-decoration: none;
+}
+
+a:hover {
+	color: white;
+}
+
+.buttonContainer button {
+	border: none;
+	border-radius: 50%;
+	background-color: grey;
+	padding: 3px;
+    width: 10px;
+	height: 10px;
+}
+
+.leftContainer {
+	position:fixed;
+	padding:0.5vw;
+	left:0vw;
+	width:18vw;
+	height: 81vh;
+	background-color: #121212;
+}
+
+.bottomContainer {
+	position:fixed;
+	padding:0.5vw;
+	bottom:0vw;
+	width:100vw;
+	height: 10vh;
+	background-color: #282828;
+}
+
+.rightContainer {
+	position:fixed;
+	padding:0.5vw;
+	right:0vw;
+	width:12vw;
+	height: 90vh;
+	background-color: #121212;
+}
+
+.topContainer {
+	position:fixed;
+	padding:0.5vw;
+	top:0vw;
+	left:18vw;
+	width:70vw;
+	height: 7vh;
+	background-color: #1a1c1a;
+}
+
+.material-icons {
+	color:#ababab;
+}
+
+.leftRightButton {
+	border:none;
+	background: none;
+	padding: 4px;
+	height: 10px;
+}
+
+#rightArrow {
+	margin-right:12px;
+}
+
+.topContainer input {
+	position:fixed;
+	top:0.75vw;
+	border-radius: 10px 10px;
+	border: none;
+}
+.middleContainer {
+	position:fixed;
+	padding:0.5vw;
+	top:3vw;
+	left:12vw;
+	width:76vw;
+	height: 85vh;
+	background-color: white;
+	overflow:scroll;
+	z-index: -1;
+}
+
+.buttonContainer button {
+	margin: 0.1vw;
+}
+
+
+
+.libraryPlaylists {
+	overflow:scroll;
+	height: 54vh;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+.icons li{
+	margin-bottom: 4px;
+	padding-right: 5px;
+}
+
+.libraryPlaylists h6 {
+	margin-bottom: 1px;
+	font-size:12px;
+}
+
+.libraryPlaylists li {
+  font-weight: bold;
+}
+
+.icons {
+	padding: 1.5vw;
+	font-size:15px;
+}
+
+.playlistIcon {
+	position: fixed;
+    padding: 0.5vw;
+	width:18vw;
+    bottom: 10%;
+    height: 9vh;
+	background-color: #121212;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: rgba(171, 171, 171, .3);
+}
+
+.fa-plus-circle {
+	padding:5px;
+}
+
+#centerPlaylistButton {
+	display: flex;
+	align-items: center;
+}
+
+.icons li {
+	padding: 5px;
+}
+
+.icons fas {
+    size: 10px;
+	padding: 5px;
+
+}
+
+.buttonContainer {
+  margin-left:10px;
+  margin-bottom: 25px;
+}
+
+.buttonContainer .buttons{
+	height: 12px !important;
+	width: 12px !important;
+	padding: 3px;
+	margin-right: 4px;
+}
+
+
+#searchInput {
+	width: 170px;
+	margin-top: 4px;
+}
+
+#searchInput::placeholder {
+	color: black;
+}
+
+
+#redIcon {
+	background-color: #ff5a52;
+}
+
+#yellowIcon {
+	background-color: #e6c029;
+}
+
+#greenIcon {
+	background-color: #7fc03f;
+}

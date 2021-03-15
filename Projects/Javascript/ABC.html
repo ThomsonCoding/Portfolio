@@ -1,0 +1,70 @@
+<head>
+<link rel="stylesheet" href="CSS/javascriptbook.css">
+</head>
+<body>
+
+<h1 id="backgroundheader">Javascript & jQuery</H1>
+
+<div class="gallery">
+  <a href="ABC.html">
+    <img src="Pictures/abc.png" alt="ABC of programming" width="600" height="400">
+  </a>
+  <div class="desc">The ABC of Programming</div>
+</div>
+
+<div class="gallery">
+  <div class="desc">
+    <a href="javascriptbook.html">BACK</a>
+  </div>
+</div>
+
+<div class="gallery">
+    <button onclick="myFunction()">THEORY</button>
+</div>
+
+<div class="gallery">
+    <button onclick="myFunction2()">CODE</button>
+</div>
+
+<div class="info" id="myDIV">
+	<div class="tab">
+  		<button class="tablinks" onclick="openCity(event, 'Chapter1')">Chapter1</button>
+ 	    <button class="tablinks" onclick="openCity(event, 'Chapter2')">Chapter2</button>
+  		<button class="tablinks" onclick="openCity(event, 'Chapter3')">Chapter3</button>
+	</div>
+
+<div id="Chapter1" class="tabcontent">
+  <h3>WHAT IS A SCRIPT AND HOW DO I CREATE ONE?</h3>
+  <li>A Script is a series of instructions that the computer can follow in order to achieve a goal.</li>
+  <li>Each time the script runs, it might only use a subset of all the instructions.</li>
+  <li>Computers approach tasks in a different way than humans, so your instructions must let the computer solve the task programmatically</li>
+  <li>To approach writing a script, break down your goal into a series of tasks and then work out each step needed to complete that task (a flowchart can help).</li>
+</div>
+
+<div id="Chapter2" class="tabcontent">
+  <h3>HOW DO COMPUTERS FIT IN WITH THE WORLD AROUND THEM?</h3>
+  <li>Computers create models of the world using data.</li>
+  <li>The models use objects to represent physical things. Objects can have: properties that tell us about the object; methods that perform tasks using the properties of that object; events which are triggered when a user interacts with the computer.</li>
+  <li>Programmers can write code to say "When this event occurs, run that code."</li>
+  <li>Web browsers use HTML markup to create a model of the web page. Each element creates its own node (which is kind of like an object)</li>
+  <li>To make web pages interactive, you write code that uses the browser's model of the web page.</li>
+</div>
+
+<div id="Chapter3" class="tabcontent">
+  <h3>HOW DO I WRITE A SCRIPT FOR A WEBPAGE?</h3>
+  <li>It is best to keep JavaScript code in its own JavaScript file, JavaScript files are text files (like HTML pages and CSS style sheets), but they have the .js extension</li>
+  <li>The HTML "script" element is used in HTML pages to tell the browser to load the JavaScript file (rather like the "link" element can be used to load a CSS file).</li>
+  <li>If you view the source code of the page in the browser, the JavaScript will not have changed the HTML, because the script works with the model of the web age that the browser has created.</li>
+</div>
+</div>
+
+<div class="info" id="myDIV2">
+
+       <h4>JS:</h4>
+      <embed src="JS/abc.js"> 
+      <h4>Output:</h4>
+      <embed src="ABCexample.html">
+</div>
+<script src="JS/javascriptbook.js"></script>
+</body>
+</head>

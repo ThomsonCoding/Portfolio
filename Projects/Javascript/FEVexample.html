@@ -1,0 +1,47 @@
+<head>
+  <link rel="stylesheet" href="CSS/javascriptbook.css" />
+</head>
+<body>
+  <form id="login" action="/login" method="post">
+    <div class="two-thirds column" id="main">
+      <fieldset>
+        <legend>Login</legend>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd" />
+        <input type="checkbox" id="showPwd" />
+        <label for="showPwd">show password</label>
+        <input type="submit" value="Login" />
+      </fieldset>
+    </div>
+  </form>
+
+  <form id="interests">
+    <label><input type="checkbox" value="all" id="all" />All</label>
+    <label
+      ><input type="checkbox" name="genre" value="animation" />Animation</label
+    >
+    <label
+      ><input type="checkbox" name="genre" value="Docs" />Documentary</label
+    >
+    <label><input type="checkbox" name="genre" value="Shorts" />Shorts</label>
+  </form>
+
+  <h1>How did you hear about this site?</h1>
+  <form id="how-heard" action="/heard" method="post">
+    <input type="radio" name="heard" value="search" id="search" />
+    <label for="search">Search engine</label><br />
+
+    <input type="radio" name="heard" value="print" id="print" />
+    <label for="print">News paper or magazine</label><br />
+
+    <input type="radio" name="heard" value="other" id="other" />
+    <label for="other">Other</label><br />
+    <input type="text" name="other-input" id="other-text" />
+
+    <input id="submit" type="submit" value="submit" />
+  </form>
+
+  <script src="JS/FEV.js"></script>
+</body>

@@ -1,0 +1,208 @@
+/* Given an array of ones and zeros, convert the equivalent binary value to an interger.
+Examples:
+
+Testing: [0, 0, 0, 1] ==> 1
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 0, 1] ==> 5
+Testing: [1, 0, 0, 1] ==> 9
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 1, 0] ==> 6
+Testing: [1, 1, 1, 1] ==> 15
+Testing: [1, 0, 1, 1] ==> 11
+
+Solution: In this method we iterate over the binary array and construct a decimal based on the corresponding binary numbers. 
+We will use the left shift operator (<<) to shift the accumulated value to left by one bit every time and return the bitwise OR (|) of the shifted accumulated value and current value.
+*/
+
+const binaryArrayToNumber = (arr) => {
+  return arr.reduce((acc, val) => {
+    return (acc << 1) | val;
+  });
+};
+
+//////////////////////////
+
+/* Create a function (or write a script in Shell) that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+Solution: Using the remainder operator to see if the inputed number is divisible by 2, if it has a remainder it is an odd number, if not it is an even number. 
+*/
+
+function even_or_odd(number) {
+  if (number % 2 == 0) return "Even";
+  else return "Odd";
+}
+
+//////////////////////////
+
+/* You get an array of numbers, return the sum of all of the positives ones.
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+Note: if there is nothing to sum, the sum is default to 0.
+
+Solution: Sum using reduce which starts at 0, if the current number is bigger than 0 add it to the previous one, if it is not then return the previous number (As it will mean the number is negative).
+*/
+
+function positiveSum(arr) {
+  return arr.reduce((prev, current) => {
+    if (current > 0) {
+      return prev + current;
+    }
+
+    return prev;
+  }, 0);
+}
+
+//////////////////////////
+
+/*
+Very simple, given a number, find its opposite.
+
+Examples:
+1: -1
+14: -14
+-34: 34
+
+Soloution: If the number is above 0, minus that number form itself twice to get the negitive value.
+If the number is lower than 0, add the number together twice to get the positive value.
+Although the issue with this solution 
+*/
+
+function opposite(number) {
+  if (number > 0) return number - number - number;
+  else return number + number + number;
+}
+
+/* After googling some alternatives I discovered 
+Math.abs(), which converts a negative number to a positive one in JavaScript
+*/
+
+function opposite(number) {
+  if (number > 0) return number - number - number;
+  else return Math.abs(number);
+}
+
+// Alternative solutions to this problem.
+
+function opposite(number) {
+  return -number;
+}
+
+//OR
+
+const opposite = (number) => -number;
+
+makeNegative = (n) => -Math.abs(n);
+/* In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+
+makeNegative(1); // return -1
+makeNegative(-5); // return -5
+makeNegative(0); // return 0
+makeNegative(0.12); // return -0.12
+
+Soloution: To return the negative alternative but only if the number is greater than 0. To prevent converting positive numbers
+*/
+
+function makeNegative(num) {
+  if (num > 0) return -num;
+  else return num;
+}
+
+// Alternative solutions to this problem.
+
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+
+//OR
+
+makeNegative = (n) => -Math.abs(n);
+makeNegative = (n) => -Math.abs(n);
+
+/*It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. 
+You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+'eloquent' would become 'loquen'.
+*/
+
+function removeChar(str) {
+  str = str.substring(1); // Used to subtract the first letter of the string.
+  str = str.slice(0, -1); // Used slice to remove the final chatacter of the string.
+  return str;
+}
+
+// Alternative solutions to this problem.
+function removeChar(str) {
+  return str.slice(1, -1);
+}
+
+//Slice can be used to take off the first and the last charachter as shown in the example above. Meaning you can remove the substring line.
+
+/* Write a function called repeat_str which repeats the given string src exactly count times.
+repeatStr(6, "I") // "IIIIII"
+repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+
+solution was to use the .repeat function, to get the string to repeat the alloted number set the variable n. 
+*/
+
+function repeatStr(n, s) {
+  //Input number and string
+  if (n > 0)
+    // If number is greater than 0
+    return s.repeat(n);
+  //Repeat s (string) n (number) amount of times.
+  //else
+  else return ""; //return empty string
+}
+
+//Alternative methods
+//Option 1. Similar to mine, although running without checking if above 0.
+function repeatStr(n, s) {
+  return s.repeat(n);
+}
+// Option 2. Shorthanded version of the one above.
+repeatStr = (n, s) => s.repeat(n);
+
+/* Make a program that filters a list of strings and returns a list with only your friends name in it.
+
+If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+
+Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+
+i.e. friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
+
+*/
+
+function friend(friends) {
+  // Get friends string
+  return friends.filter((el) => el.length === 4); // Use the filter method to filter through the eliments of the string for anything equal to 4 charachters long.
+}
+
+//Examples
+
+function friend(friends) {
+  return friends.filter((value) => value.length === 4);
+}
+
+/* Complete the solution so that it reverses the string passed into it.
+'world'  =>  'dlrow'
+*/
+function solution(str) {
+  var splitStr = str.split(""); //Split the string into seperate charachters
+  var reverseSplitStr = splitStr.reverse(); //Reverse these characthers
+  var reverseJoinStr = reverseSplitStr.join(""); // Join the reversed charachters to rebuild the string
+  return reverseJoinStr; //return the reverse string.
+}
+
+//Alternative methods
+function solution(str) {
+  return str.split("").reverse().join("");
+}
+
+//This method is carried out similar to mine but created on one line, using a joining method instead makes it easier to interperate and requires less variables.
+
+/* Simple, remove the spaces from the string, then return the resultant string.
+"Abc def" would equal "Abcdef" 
+*/
+
+function noSpace(x) {
+  return x.split(" ").join(""); //Splits the string up, than joins it together without the spaces.
+}

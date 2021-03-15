@@ -1,0 +1,50 @@
+<head>
+<link rel="stylesheet" href="CSS/javascriptbook.css">
+</head>
+<body>
+
+<h1 id="backgroundheader">Javascript & jQuery</H1>
+
+<div class="gallery">
+  <a href="DOM.html">
+    <img src="Pictures/DOM.png" alt="DOM" width="600" height="400">
+  </a>
+  <div class="desc">Document Object Model</div>
+</div>
+
+<div class="gallery">
+  <div class="desc">
+    <a href="javascriptbook.html">BACK</a>
+  </div>
+</div>
+
+<div class="gallery">
+    <button onclick="myFunction()">THEORY</button>
+</div>
+
+<div class="gallery">
+    <button onclick="myFunction2()">CODE</button>
+</div>
+
+<div class="info" id="myDIV">   
+  <h3>Document Object Model</h3>
+  <li>The browser represents the page using a DOM tree.</li>
+  <li>DOM trees have four types of nodes: document nodes, element nodes, attribute nodes and text nodes.</li>
+  <li>You can select element nodes by their id or class attribute, by tag name, or using CSS selector syntax.</li>
+  <li>Whenever a DOM query can return more than node, it will always return a NodeList.</li>
+  <li>From an element node, you can access and update its content using properties such as textContent and innerHTML or using DOM manipulation techniques.</li>
+  <li>An element node can contain multiple text nodes and child elements that are siblings of each other.</li> 
+  <li>In older browsers, implementation of the DOM is inconsistent (and is a popular reason for using jQuery).</li>
+  <li>Browsers offer tools for viewing the DOM tree.</li>
+</div>
+
+<div class="info" id="myDIV2"> 
+     <h4>JS:</h4>
+      <embed src="JS/DOM.js"> 
+      <h4>Output:</h4>
+      <embed src="DOMExample.html">
+ </div>
+ 
+ <script src="JS/javascriptbook.js"></script>
+</body>
+</head>

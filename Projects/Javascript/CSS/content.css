@@ -1,0 +1,125 @@
+.accordion-panel {
+  display: none;
+  width: 1000px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button.accordion-control {
+  background: #fbd52d;
+  width: 80%;
+  border-radius: 5px;
+  border-color: white;
+}
+
+.tab-panel {
+  display: none;
+  padding: 0px 20px;
+  border-color: black;
+}
+
+.tab-panel.active {
+  display: block;
+  width: 80%;
+}
+
+.tab-list {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: black;
+  width: 80%;
+}
+
+.tabs h3 {
+  color: white;
+}
+.tabs li {
+  text-decoration: none;
+  float: left;
+  padding: 20px;
+}
+
+.tabs a:link {
+  text-decoration: none;
+}
+
+.tabs a:visited {
+  text-decoration: none;
+}
+
+.tabs h3:hover {
+  color: #fbd52d;
+}
+
+.tabs a:active {
+  text-decoration: underline;
+}
+
+.modal {
+  position: absolute;
+  z-index: 1000;
+}
+
+#share-options {
+  background: #fbd52d;
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: black;
+  color: #ffffff;
+  text-align: center;
+}
+
+modal-close {
+  background: #fbd52d;
+}
+
+.slider {
+  max-width: 940px;
+  margin: 0px auto 30px auto;
+}
+
+.slide-viewer {
+  position: relative; /* needed for IE7 */
+  overflow: hidden;
+  height: 430px;
+}
+
+.slide-group {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: block;
+  position: absolute;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+.slide-buttons {
+  text-align: center;
+}
+
+.slide-btn {
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 200%;
+  line-height: 0.5em;
+}
+
+.slide-btn.active,
+.slide-btn:hover {
+  color: #ed8e6c;
+  cursor: pointer;
+}
