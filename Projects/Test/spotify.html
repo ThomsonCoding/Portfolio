@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="CSS/spotify.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Spotify</title>
+</head>
+<body>
+
+<div id="LContainer" class="leftContainer">
+	<div class="buttonContainer">
+		<button onclick="self.close()" class="buttons" id="redIcon"></button>
+		<button class="buttons" id="yellowIcon"></button>
+		<button class="buttons" id="greenIcon"></button>
+	</div>
+
+	<div class="icons">
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="HOME" src="spotifyHome.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+ 			<path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+			</svg>
+		</i>&nbsp;  Home</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Browse" src="spotifyBrowse.html"><i class="fas fa-home"></i>&nbsp;  Browse</a></i></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Radio" src="spotifyRadio.html"><i class="bi bi-broadcast">
+		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-broadcast" viewBox="0 0 16 16">
+  		<path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 0 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+		</svg></i>
+		</i>&nbsp;  Radio</a></li>
+	</div>
+
+	<div class="libraryPlaylists">
+		<h6>YOUR LIBRARY</h6>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="MFY" src="madeForYou.html">Made For You</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="RP" src="RecentlyPlayed.html">Recently Played</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="LS" src="LikedSongs.html">Liked Songs</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Albums" src="spotify.html">Albums</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Artists" src="spotify.html">Artists</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Podcasts" src="spotify.html">Podcasts</a></li>
+
+		&nbsp;
+		<h6>PLAYLISTS</h6>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="AcousticHits" src="spotify.html">Acoustic Hits</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="HangingOut" src="spotify.html">Hanging Out and Relaxing</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="DanceHits" src="spotify.html">Dance Hits</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="travelling" src="spotify.html">travelling</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="MassivePopRemixes" src="spotify.html">Massive Pop Remixes</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="DiscoverWeekly" src="spotify.html">Discover Weekly</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="LikeFromRadio" src="spotify.html">Like from Radio</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Starred2" src="spotify.html">Starred 2</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Starred" src="spotify.html">Starred</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Creamfields" src="spotify.html">Creamfields</a></li>
+		<li class="nonGreen"><a onclick="iframeContentChange(this.id, iframeSpotify)" id="Starred3" src="spotify.html">Starred 3</a></li>
+	</div>
+</div>
+
+<div class="playlistIcon" id="centerPlaylistButton">
+	<li class="playlistIconHover" onclick="showDiv('CreatePlaylistBox')"> 
+	<svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+  		<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  		<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+	</svg> 
+	&nbsp; New Playlist</li>
+</div>
+
+<div class="PopUpBox" id="CreatePlaylistBox" >
+
+	<h5> Create Playlist </h5>
+		<button id="closeButton" onclick="hideDiv('CreatePlaylistBox')"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+  		<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+	</svg></button>
+
+
+	<form id="PlayListForm" action="/action_page.php">
+	<div id="leftsidePlaylistForm">
+  		<button id="imageUpload" type="submit" style="border: 0; background: transparent">
+    <img src="Pictures/ChooseImage.PNG" alt="submit" />
+</button>
+  	</div>
+  	<div id="rightsidePlaylistForm">
+  		<label for="fname">Name</label><br>
+  		<input type="text" id="playlistName" name="playlistName" placeholder="My playlist" autocomplete="off"><br>
+  		<label for="fname">Description</label><br>
+  		<input type="text" id="playListDescription" name="playListDescription" size="400" placeholder="Give your playlist a catchy description."  autocomplete="off"><br><br>
+  	</div>
+  		<input id="create" type="submit" value="CREATE">
+	</form>
+</div>
+ 
+<div id="TContainer" class="topContainer">
+	<button onclick="backButton(originalContent, iframeSpotify)" class="leftRightButton"><i class="material-icons">keyboard_arrow_left</i></button>
+	<button class="leftRightButton" id="rightArrow"><i class="material-icons">keyboard_arrow_right</i></button>
+	<input id="searchInput" placeholder="&nbsp; &nbsp; Search"  autocomplete="off"></input>
+</div>
+
+<div id="RContainer" class="rightContainer">
+	<div id="friendHeader">
+		<h6>Friend Activity</h6>
+	</div>
+	
+	<div id="friendInfo">
+	</div>
+	
+	<button id="findFriends" onclick="showDiv('AddFriendsBox')">FIND FRIENDS</button>
+</div>
+
+<div  class="PopUpBox" id="AddFriendsBox" >
+	<h2>Follow</h2>
+		<button id="closeButton" onclick="hideDiv('AddFriendsBox')"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+  		<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+	</svg></button>
+	<div class="container" id="followTable">
+    <table class="table table-striped">  
+    <tbody>
+    <tr>
+        <td><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>10 FRIENDS ON SPOTIFY</td>
+        <td><button class="followAllButton">FOLLOW ALL</button></td>
+    </tr>
+    </table>
+    <table id="myTable" class="table table-striped"> 
+    <tr>
+      <input type="text" placeholder="Filter by name" id="filter-search" onkeyup="myFunction()"/>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/JohnDoe.jpeg" alt="Avatar"> John Doe</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/MaryMoe.jpeg" alt="Avatar"> Mary Moe</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/JulyDooley.jpeg" alt="Avatar"> July Dooley</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/BarryPaul.jpeg" alt="Avatar"> Barry Paul</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/MoeSimpson.jpeg" alt="Avatar"> Moe Simpson</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+     <td><img class="friendImage" src="Pictures/DooleyDrooley.jpeg" alt="Avatar"> Dooley Drooley</td>
+     <td><button class="followButton">FOLLOW</button></td> 
+    </tr>
+    <tr>
+     <td><img class="friendImage" src="Pictures/DoneyJoes.jpeg" alt="Avatar"> Doney Joes</td>
+     <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/MoeMikey.jpeg" alt="Avatar"> Moe Mikey</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/DonyShay.jpeg" alt="Avatar"> Dony Shay</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    <tr>
+      <td><img class="friendImage" src="Pictures/DevonStyle.jpeg" alt="Avatar"> Devon Style</td>
+      <td><button class="followButton">FOLLOW</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="bottomContainer">
+	<div class="spotify">
+		<div class="spotify__controls">
+			<i class="fas fa-random spotify_controls--shuffle"></i>
+		    <i class="fas fa-step-backward spotify__controls--back"></i>
+			<i class="fas fa-play spotify__controls--play"></i>
+			<i class="fas fa-step-forward"></i>
+			<i class="fas fa-step-forward"></i>
+		</div>	
+		
+		<div class="spotify__timebar">
+			<span class="spotify__timer">0:00</span>
+			<div class="spotify__track-wrap">		
+				<div class="spotify__track-bar"></div>
+			</div>
+			<span class="spotify__timer">4:20</span>
+		</div>
+	</div>
+</div>
+
+
+<div id="MContainer" class="middleContainer">
+      <iframe id="iframeSpotify" src="spotifyHome.html"></iframe>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="JS/spotify.js"></script>
+</body>
+</html>
