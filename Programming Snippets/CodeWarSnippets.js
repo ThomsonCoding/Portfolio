@@ -206,3 +206,90 @@ function solution(str) {
 function noSpace(x) {
   return x.split(" ").join(""); //Splits the string up, than joins it together without the spaces.
 }
+/* Summation
+Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+For example:
+
+summation(2) -> 3
+1 + 2
+
+summation(8) -> 36
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+
+*/
+var summation = function (num) {
+  return (num * (num + 1)) / 2;
+};
+
+/* Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false. */
+
+//Solution
+function boolToWord(bool) {
+  if (bool == true) return "Yes";
+  else return "No";
+}
+
+//Altenative solutions
+
+function boolToWord(bool) {
+  return bool ? "Yes" : "No";
+}
+
+function boolToWord(bool) {
+  if (bool) {
+    return "Yes";
+  } else {
+    return "No";
+  }
+}
+
+let boolToWord = (bool) => (bool ? "Yes" : "No");
+
+/* Given an array of integers your solution should find the smallest integer.
+
+For example:
+
+Given [34, 15, 88, 2] your solution will return 2
+Given [34, -345, -1, 100] your solution will return -345
+You can assume, for the purpose of this kata, that the supplied array will not be empty.
+
+Solution
+*/
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args);
+  }
+}
+
+// Altenative solutions.
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    //findSmallestInt is a good alternative to what I have done.
+    return Math.min(...args);
+  }
+}
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return args.sort((a, b) => a - b)[0]; //This method to sort through the array and select the 0 option (which would be the smallest)
+  }
+}
+
+/* We need a function that can transform a number into a string.
+
+What ways of achieving this do you know?
+
+Examples:
+numberToString(123); // returns '123';`   
+numberToString(999); // returns '999';`
+
+
+
+*/
+
+function numberToString(num) {
+  return num.toString();
+}
