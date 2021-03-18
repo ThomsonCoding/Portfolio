@@ -374,3 +374,8 @@ tbody tr:hover {
 thead th {
   border-bottom: 0px !important;
 }
+
+.albums {
+  margin: 30px 2.5% !important;
+  width: 95% !important;
+}
