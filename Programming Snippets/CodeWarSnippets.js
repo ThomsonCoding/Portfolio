@@ -431,3 +431,95 @@ function descendingOrder(n) {
 function descendingOrder(n) {
   return parseInt(n.toString().split("").sort().reverse().join(""), 10);
 }
+
+/* Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
+*/
+
+function getCount(str) {
+  var vowelsCount = 0;
+
+  var tester = str.split("").filter((str) => {
+    return (
+      str === "a" || str === "e" || str === "i" || str === "o" || str === "u"
+    );
+  });
+  console.log(tester);
+  var vowelsCount = tester.length;
+  return vowelsCount;
+}
+
+// Alternative solution
+
+function getCount(str) {
+  return str.replace(/[^aeiou]/gi, "").length;
+}
+
+// Alternative solution 2
+
+function getCount(str) {
+  return str.split("").filter((c) => "aeiouAEIOU".includes(c)).length;
+}
+
+// Alternative solution 3
+
+function getCount(str) {
+  var vowelsCount = 0;
+  var vowels = ["a", "e", "i", "o", "u"];
+  for (var i = 0; i < str.length; i++) {
+    for (var j = 0; j < vowels.length; j++) {
+      if (str[i] === vowels[j]) {
+        vowelsCount++;
+      }
+    }
+  }
+
+  return vowelsCount;
+}
+
+/*Square every digit 
+
+Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+
+Note: The function accepts an integer and returns an integer
+
+Solution: 
+*/
+
+function squareDigits(num) {
+  var tester = num.toString().split("").map(Number);
+  var sum = [];
+
+  for (var i = 0; i < tester.length; i++) {
+    sum.push(tester[i] * tester[i]);
+  }
+  return parseInt(sum.join(""), 10);
+}
+
+// Alternative solution
+
+function squareDigits(num) {
+  return Number(
+    ("" + num)
+      .split("")
+      .map(function (val) {
+        return val * val;
+      })
+      .join("")
+  );
+}
+
+// Alternative solution
+
+function squareDigits(num) {
+  return +num
+    .toString()
+    .split("")
+    .map((i) => i * i)
+    .join("");
+}
