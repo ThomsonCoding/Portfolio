@@ -69,6 +69,7 @@ header h1 {
   padding: 0px;
   margin: 7px;
   display: flex;
+  font-size: 98%;
 }
 
 .leftRightButton {
@@ -110,7 +111,6 @@ header h1 {
   padding: 0px 12px;
   margin-right: 8px;
   max-width: 270px;
-  overflow: inherit;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
