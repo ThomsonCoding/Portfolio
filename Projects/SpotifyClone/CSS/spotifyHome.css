@@ -212,3 +212,42 @@ header h1 {
   padding-left: 5px;
   font-size: 12px;
 }
+
+.albums {
+  margin: 30px 2.5% !important;
+  width: 95% !important;
+}
+
+.filter {
+  float: left;
+  margin: 0% 3%;
+  border: none;
+  width: 70%;
+  height: 30px;
+  background-color: transparent;
+  outline: none;
+  font-size: 18px;
+  caret-color: white;
+  padding-inline-start: 20px;
+}
+
+.filterToggle p {
+  float: left;
+  margin-right: 15px;
+  text-align: center;
+  padding-top: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.filter:hover::placeholder {
+  color: white;
+  opacity: 0.9;
+}
+
+.filter:active {
+  background-color: rgba(171, 171, 171, 0.3);
+}
+
+.filter:focus {
+  background-color: rgba(171, 171, 171, 0.3);
+}
