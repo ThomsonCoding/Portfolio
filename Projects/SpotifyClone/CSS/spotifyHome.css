@@ -50,7 +50,7 @@ header h1 {
 }
 
 .sticky + #content {
-  padding-top: 160px;
+  padding-top: 18%;
 }
 
 .shotcutHeader h2 {
