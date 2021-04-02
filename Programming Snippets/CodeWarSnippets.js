@@ -523,3 +523,37 @@ function squareDigits(num) {
     .map((i) => i * i)
     .join("");
 }
+
+/* Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types.
+
+Solutiom
+*/
+
+function findShort(s) {
+  var shortestWord = s.split(" ").sort((a, b) => a.length - b.length); //Breaks the string into seprate words and then organises them into length.
+  return shortestWord[0].length; //Returns the .length of the shortest word.
+}
+
+// Alternative solution
+
+function findShort(s) {
+  return Math.min.apply(
+    null,
+    s.split(" ").map((w) => w.length)
+  );
+}
+
+// Alternative solution
+
+function findShort(s) {
+  var arr = s.split(" ");
+  var smallest = arr[0];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].length < smallest.length) {
+      smallest = arr[i];
+    }
+  }
+  return smallest.length;
+}
