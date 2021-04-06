@@ -557,3 +557,30 @@ function findShort(s) {
   }
   return smallest.length;
 }
+
+/* Sum of two lowest positive integers within an Array
+
+My solution
+*/
+
+function sumTwoSmallestNumbers(numbers) {
+  numbers = numbers.sort(function (a, b) {
+    return a - b;
+  });
+  return numbers[0] + numbers[1];
+}
+
+// Alternative solution
+
+function sumTwoSmallestNumbers(numbers) {
+  var [a, b] = numbers.sort((a, b) => a - b);
+  return a + b;
+}
+
+// Alternative solution
+
+const sumTwoSmallestNumbers = (numbers) =>
+  numbers
+    .sort((x, y) => x - y)
+    .slice(0, 2)
+    .reduce((x, y) => x + y);
