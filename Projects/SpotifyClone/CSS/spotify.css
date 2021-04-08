@@ -755,3 +755,8 @@ input.sliderInput {
   font-size: 2vh;
   opacity: 0.6;
 }
+
+.spotify-toggle-controls {
+  float: left;
+  width: 25% !important;
+}
