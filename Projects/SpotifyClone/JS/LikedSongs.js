@@ -12,3 +12,8 @@ function myFunction() {
     homeHead.classList.remove("sticky");
   }
 }
+
+$(".likeButton").click(function () {
+  $(this).toggleClass("fa fa-heart-o");
+  $(this).toggleClass("fa fa-heart");
+});

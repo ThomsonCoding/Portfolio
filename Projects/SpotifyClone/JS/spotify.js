@@ -100,6 +100,11 @@ $("button.followButton").click(function () {
   }
 });
 
+$(".likeButton").click(function () {
+  $(this).toggleClass("fa fa-heart-o");
+  $(this).toggleClass("fa fa-heart");
+});
+
 //Button added to toggle between shuffling and not shuffling class.
 $(".spotify_controls--shuffle").click(function () {
   $(this).toggleClass("spotify_controls--shuffle");

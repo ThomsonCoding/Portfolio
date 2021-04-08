@@ -78,3 +78,8 @@ inputCity.onkeyup = function (e) {
     }
   }
 };
+
+$(".likeButton").click(function () {
+  $(this).toggleClass("fa fa-heart-o");
+  $(this).toggleClass("fa fa-heart");
+});

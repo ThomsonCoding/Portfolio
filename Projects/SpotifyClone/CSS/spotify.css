@@ -610,9 +610,11 @@ input.sliderInput {
 }
 
 .spotify {
-  position: fixed;
-  left: 30vw;
-  width: 40vw !important;
+  float: left;
+  margin: auto;
+  padding: 1vh;
+  width: 50%;
+  height: 100%;
 }
 
 .spotify__controls {
@@ -623,7 +625,7 @@ input.sliderInput {
 }
 
 .spotify__controls i {
-  margin: 3px 8px;
+  margin: 1px 8px;
   font-size: 11px;
   height: 30px;
   width: 30px;
@@ -658,14 +660,14 @@ input.sliderInput {
 
 .spotify__timer {
   color: white;
-  font-size: 10px;
+  font-size: 1.5vh;
 }
 
 .spotify__track-wrap {
-  height: 6px;
+  height: 5px;
   background: #333 !important;
   flex: 1;
-  margin: 10px 10px;
+  margin: 5px 10px;
   position: relative;
   border-radius: 5px;
   overflow: hidden;
@@ -716,4 +718,40 @@ input.sliderInput {
   100% {
     transform: translateX(100%);
   }
+}
+
+.spotify-song-info {
+  float: left;
+  width: 25% !important;
+}
+
+.spotify-current-song {
+  height: 100%;
+  float: left;
+}
+
+.spotify-current-songtext {
+  float: left;
+  height: 100%;
+  padding: 1.5vh 2vh;
+}
+
+.spotify-current-song img {
+  margin: 1vh;
+  height: 7vh;
+  width: 7vh;
+}
+
+.spotify-current-songtext h5 {
+  color: white;
+  font-size: 2.5vh;
+  opacity: 0.9;
+  margin: 2px;
+}
+
+.spotify-current-songtext p {
+  color: white;
+  margin: 0px;
+  font-size: 2vh;
+  opacity: 0.6;
 }
