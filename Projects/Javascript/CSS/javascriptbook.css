@@ -1,23 +1,23 @@
 * {
- font-size: 100%;
- font-family: Arial;
+  font-size: 100%;
+  font-family: Arial;
 }
 
 div.welcome {
-	width: 100%;
-	height: 100%;
-	background: black;
+  width: 100%;
+  height: 100%;
+  background: black;
 }
 
-#backgroundheader{
- position: fixed;
+#backgroundheader {
+  position: fixed;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   font-size: 30vh;
   z-index: -1;
-  opacity: 0.03;  
+  opacity: 0.03;
 }
 
 div.gallery {
@@ -55,27 +55,26 @@ div.desc {
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-a:visited{
-text-decoration: none;
-color: black;
-
+a:visited {
+  text-decoration: none;
+  color: black;
 }
 
-
-
-button:focus {outline:0;}
+button:focus {
+  outline: 0;
+}
 
 #myDIV {
-	display: none;
-	background: white;
+  display: none;
+  background: white;
 }
 
 #myDIV2 {
-	display: none;
-	background: white;
+  display: none;
+  background: white;
 }
 
 div.info {
@@ -88,7 +87,6 @@ div.info {
   text-align: left;
   background: none;
 }
-
 
 /* Style the tab */
 .tab {
@@ -133,31 +131,30 @@ div.info {
 
 #chapter1 {
   display: block;
-
 }
 
 li {
-    list-style-type: disc;
-    list-style-position: inside;
-    padding: 10px 0 10px 20px;
-    text-indent: -1.5em;
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 10px 0 10px 20px;
+  text-indent: -1.5em;
 }
 
 h4 {
-	margin: 1px;
+  margin: 1px;
 }
 
 embed {
-	width:100%; 
-	height:500px;
+  width: 100%;
+  height: 500px;
 }
 
 .hot {
-	color: red;
+  color: red;
 }
 
 .cold {
-	color: blue;
+  color: blue;
 }
 
 .complete {
@@ -166,19 +163,16 @@ embed {
 }
 
 .newList {
-		background-color: lightgrey;
-		border: 1px solid #fff;
-		color: #000;,
-		padding-left: 500;
+  background-color: lightgrey;
+  border: 1px solid #fff;
+  color: #000;
+  padding-left: 500;
 }
 
 #map {
-height: 500px;
-      }
-      
+  height: 500px;
+}
+
 .accordion-panel {
-	display: none;
-	}
-
-
-
+  display: none;
+}
