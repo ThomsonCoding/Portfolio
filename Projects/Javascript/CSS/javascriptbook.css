@@ -25,11 +25,12 @@ div.gallery {
   border: 1px solid #ccc;
   float: left;
   width: 180px;
+
   border-radius: 20px;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+  border: 1px solid lightblue;
 }
 
 div.gallery img {
