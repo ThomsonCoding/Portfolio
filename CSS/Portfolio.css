@@ -23,6 +23,11 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.topnav a:hover {
+  transform: scale(1.2);
 }
 
 a {
@@ -43,6 +48,12 @@ a:hover {
   padding-bottom: 5px;
   text-align: center;
   background-color: black;
+}
+.footer a {
+  transition: all 0.2s ease-in-out;
+}
+.footer a:hover {
+  transform: scale(1.2);
 }
 
 .topnav .icon {
