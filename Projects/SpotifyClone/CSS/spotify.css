@@ -765,9 +765,22 @@ input.sliderInput {
 }
 
 .spotify-toggle-controls i {
-  color: white;
-  margin: 8% 4px 0px 4px;
+  margin: 8% 1% 0% 1%;
   font-size: 15px;
   height: 30px;
   width: 30px;
+  color: #fff;
+  opacity: 0.6;
+}
+
+i .spotify-toggle-controls:hover {
+  opacity: 0.8;
+}
+
+#soundBar {
+  margin: 3% 3% 0% 1% !important;
+  width: 100px !important;
+  height: 5px;
+  background: #333 !important;
+  border-radius: 8px;
 }
