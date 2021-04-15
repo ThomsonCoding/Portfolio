@@ -247,13 +247,12 @@ button:active {
   white-space: nowrap;
   text-align: center;
   border-radius: 50px;
-  margin-top: 5px;
+  margin: 45px 0px 0px 20px;
   padding: 5px 0px;
   border-color: white;
   border-width: thin;
   max-width: 120px;
   opacity: 0.75;
-  margin-left: 20px;
 }
 
 #changeButton:hover {
@@ -269,14 +268,14 @@ button:active {
   float: left;
   width: auto;
   padding: 10px;
-  margin: 0;
+  margin: 40px 0 0 0;
   font-size: 2vw;
 }
 
 #searchCityInput {
   display: none;
   float: left;
-  margin-left: 20px;
+  margin: 40px 0px 0px 20px;
   padding: 10px;
   border-radius: 50px;
   border: none;
