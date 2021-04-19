@@ -1,4 +1,13 @@
-/* Useful for scaling images/videos.  */
+/* Useful for scaling the background image. */
+
+body {
+  background-image: url("#");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Useful for scaling images/videos. */
 
 .container {
   width: 50%;
