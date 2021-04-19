@@ -23,7 +23,7 @@ a {
 
 h1 {
   font-size: 4vh;
-}
+} 
 
 h2 {
   font-size: 2vh;
@@ -31,11 +31,19 @@ h2 {
 
 /* Central Glass Container */
 .glassContainer {
-  width: 40rem;
+  width: auto;
   height: auto;
+  padding: 40px 60px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   z-index: 1;
   background: inherit;
   overflow: hidden;
@@ -61,17 +69,24 @@ h2 {
 .topnav {
   overflow: hidden;
   background-color: transparent;
+  margin-top: 10px;
+  height: auto;
 }
 
 #logo {
-  float: left;
+  float: left !important;
   height: auto;
-  width: 10vw;
+  width: 160px;
+  border-right: none !important;
+}
+
+.topnav a:not(:nth-last-child(2)):not(:nth-last-child(6)) {
+  border-right: 2px solid rgba(171, 171, 171, 0.4);
 }
 
 .topnav a {
-  float: center;
-  display: inline-block;
+  float: center !important;
+  height: auto;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -93,7 +108,7 @@ h2 {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .topnav a:not(:first-child) {
     display: none;
   }
@@ -103,7 +118,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .topnav.responsive {
     position: relative;
   }
