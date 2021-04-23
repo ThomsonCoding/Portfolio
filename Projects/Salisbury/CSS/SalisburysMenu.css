@@ -25,11 +25,15 @@ footer a {
 }
 
 /*Responsive Gallary*/
+.PizzaMenu {
+  margin: 20px 0px;
+}
 
 div.gallery {
   border: 1px solid #ccc;
   background: blanchedalmond;
   border-radius: 20px;
+  margin: 5px 0px;
 }
 
 div.gallery:hover {
@@ -45,10 +49,6 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
-}
-
-.PizzaMenu {
-  margin: 20px 0px;
 }
 
 .responsive {
