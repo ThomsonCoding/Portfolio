@@ -4,6 +4,7 @@
 
 body {
   background-image: url("../img/TheSalisburyAleHouseMenuHeader.jpeg");
+  height: 95vh;
 }
 
 .topnav {
@@ -17,6 +18,7 @@ body {
 
 footer {
   background-color: blanchedalmond;
+  height: 5vh;
   padding-top: 5px;
 }
 
@@ -26,7 +28,7 @@ footer a {
 
 /*Responsive Gallary*/
 .PizzaMenu {
-  margin: 20px 0px;
+  margin: 16vh 0px 0px 0px;
 }
 
 div.gallery {

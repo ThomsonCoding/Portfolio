@@ -145,6 +145,7 @@ h2 {
   height: auto;
   width: 160px;
   margin: 10px 0px 0px 10px;
+  position: fixed;
 }
 
 .topnav a:not(:nth-last-child(2)):not(:nth-last-child(6)) {
