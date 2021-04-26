@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url("../img/TheSalisburyAleHouseMenuHeader.jpeg");
+  background-image: url("../img/TheSalisburyAleHouseAleHeader.jpeg");
   height: 95vh;
 }
 
@@ -51,7 +51,6 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
-  height: 200px;
 }
 
 .responsive {

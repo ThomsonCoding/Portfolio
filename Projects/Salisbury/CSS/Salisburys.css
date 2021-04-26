@@ -68,6 +68,11 @@ h2 {
   color: white;
 }
 
+#foodMenu {
+  width: 70vh;
+  height: auto;
+}
+
 /* Central Glass Container */
 .glassContainer {
   width: auto;
