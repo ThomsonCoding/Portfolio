@@ -111,17 +111,34 @@ h2 {
 
 /* Responsive Navbar */
 
+topnav #logo {
+  margin: 10px 0px 0px 10px;
+  position: fixed;
+}
+
+.topnav img {
+  float: left;
+  height: 10vh;
+  width: 15vw;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#LogoResponsive {
+  display: none;
+}
+
 .topnav {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.6);
   text-align: center;
-  margin: 1% 15%;
-  width: 70%;
+  margin: 0%;
+  width: 100%;
+  height: auto;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   position: absolute;
   z-index: 1;
   background: inherit;
-  border-radius: 5px;
 }
 
 .topnav:before {
@@ -146,19 +163,18 @@ h2 {
   }
 }
 
-#logo {
-  height: auto;
-  width: 160px;
-  margin: 10px 0px 0px 10px;
-  position: fixed;
-}
-
 .topnav a:not(:nth-last-child(2)):not(:nth-last-child(6)) {
   border-right: 2px solid white;
 }
 
-.topnav a:nth-child(4) {
+.topnav a:nth-child(5) {
   color: yellow;
+}
+
+.topnav a:first-child {
+  float: left;
+  padding: 0px;
+  text-decoration: none;
 }
 
 .topnav a {
@@ -166,7 +182,7 @@ h2 {
   width: auto;
   color: white;
   text-align: center;
-  padding: 14px 36px;
+  padding: 3vh 36px;
   text-decoration: none;
   font-size: 2em;
   display: inline-block;
@@ -209,7 +225,6 @@ footer a:hover {
     top: 0;
     right: 0;
     width: auto;
-    margin: 0px;
     background-color: transparent;
     border: none;
     box-shadow: none;
@@ -261,4 +276,38 @@ footer a:hover {
     padding: 10px;
     width: 90%;
   }
+
+  #Logo {
+    display: none;
+  }
+
+  #LogoResponsive {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 40px 0px 0px 15px;
+    height: 100px;
+    width: 150px;
+  }
+
+  #LogoResponsive img {
+    height: 150;
+    width: 150px;
+  }
+}
+
+#bookNow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+#bookNow iframe {
+  display: hidden;
+  height: 100vh;
+  width: 120vw;
 }
