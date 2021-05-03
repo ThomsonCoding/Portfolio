@@ -1,0 +1,39 @@
+.parent {
+  margin-top: 100px;
+}
+
+.divInfo {
+  float: left;
+  padding: 0px 10px;
+  background-color: blanchedalmond;
+  margin: 2.5vh 2.5%;
+  width: 45%;
+  height: 35vh;
+}
+
+h1 {
+  margin: 0;
+}
+
+#map {
+  border: none;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+#bookingForm {
+  height: auto;
+  width: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .divInfo {
+    width: 90%;
+    height: 35vh;
+  }
+
+  .parent {
+    margin-top: 15%;
+  }
+}
