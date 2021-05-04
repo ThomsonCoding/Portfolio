@@ -193,15 +193,24 @@ footer a:hover {
 }
 
 iframe {
-  height: 100%;
+  height: 470px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: auto;
 }
 
 #bookingInfo {
   display: none;
   text-align: center;
   width: 100%;
+  overflow: hidden;
 }
 
+p#bookingInfo {
+  color: grey;
+  padding: 10px;
+}
 #smallerLink {
   font-size: 15px;
 }
