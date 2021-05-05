@@ -2,7 +2,7 @@ function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
-    x.className += " w3-animate-right";
+    x.className += " animate-slide-right";
   } else {
     x.className = "topnav";
   }

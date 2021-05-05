@@ -155,7 +155,8 @@ h2 {
   width: auto;
   color: #55acee;
   text-align: center;
-  padding: 2vh 10px;
+  padding: 2vh 0px;
+  margin: 0px;
   text-decoration: none;
   font-size: 2em;
   display: inline-block;
@@ -193,23 +194,28 @@ footer a:hover {
 }
 
 iframe {
-  min-height: 470px;
+  min-height: 640px;
   width: 100%;
   padding: 0px;
   margin: 0px;
-  overflow: auto;
+  overflow: visible;
 }
 
 #bookingInfo {
   display: none;
   text-align: center;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
+}
+
+a#bookingInfo span {
+  display: block;
 }
 
 p#bookingInfo {
   color: grey;
   padding: 10px;
+  margin-top: 18%;
 }
 #smallerLink {
   font-size: 15px;
@@ -222,7 +228,7 @@ p#bookingInfo {
   width: 40px;
   height: 40px;
   padding: 10px;
-  margin: 20px 10px;
+  margin: 20px 10px 40px 10px;
 }
 
 @media (max-width: 280px) {
@@ -282,6 +288,7 @@ p#bookingInfo {
   max-width: 320px;
   height: 100%;
   z-index: 100;
+  padding-bottom: 70px;
   background-color: rgba(255, 255, 255, 1);
 }
 .topnav.responsive .icon {
@@ -317,4 +324,19 @@ p#bookingInfo {
 #LogoResponsive img {
   height: 150;
   width: 150px;
+}
+
+.animate-slide-right {
+  position: relative;
+  animation: animateright 0.4s;
+}
+@keyframes animateright {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
 }
