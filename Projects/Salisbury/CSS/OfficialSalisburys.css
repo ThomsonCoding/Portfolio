@@ -45,6 +45,15 @@ a:hover {
   color: grey;
 }
 
+mark.grey {
+  color: grey;
+  background: none;
+}
+
+mark.grey:hover {
+  color: #3b5998;
+}
+
 .standOutText:hover {
   color: #3b5998;
 }
@@ -163,10 +172,10 @@ h2 {
 }
 
 .topnav a:hover {
-  color: rgba(171, 171, 171, 1);
+  color: #125688;
 }
 
-.topnav a.active {
+.topnav a:hover .topnav a.active {
   background-color: transparent;
   color: white;
 }
@@ -214,7 +223,7 @@ a#bookingInfo span {
 
 p#bookingInfo {
   color: grey;
-  padding: 10px;
+  padding: 10px 20px;
   margin-top: 18%;
 }
 #smallerLink {
