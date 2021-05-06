@@ -2,8 +2,7 @@
 
 <html>
   <head>
-    <link rel="stylesheet" href="CSS/Salisburys.css" />
-    <link rel="stylesheet" href="CSS/SalisburysAles.css" />
+    <link rel="stylesheet" href="CSS/OfficialSalisburys.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,34 +10,63 @@
     />
     <title>The Salisbury Ale House</title>
   </head>
+
+  <a href="OfficalSalisburyWesbite.html" id="LogoResponsive"
+    ><img src="img/TheSalisburyLogo.png"
+  /></a>
+
   <body>
-    <a href="Salisburys.html"
-      ><img src="img/TheSalisburyLogo.png" id="LogoResponsive"
-    /></a>
-
-    <body>
-      <div class="topnav" id="myTopnav">
-        <a href="Salisburys.html" id="Logo"
-          ><img src="img/TheSalisburyLogo.png"
-        /></a>
-        <a href="SalisburysAboutUs.html">About Us</a>
-        <a href="SalisburysAles.html">Ales</a>
-        <a href="SalisburysMenu.html">Menu</a>
-        <a href="SalisburysContactUs.html">Contact Us</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-
-    <div id="bookNow">
+    <div class="topnav" id="myTopnav">
+      <a class="MainNav">Home</a>
+      <a class="MainNav" id="AboutUs" href="SalisburysAboutUs.html"
+        >About <mark class="grey" id="AboutUs">Us</mark></a
+      >
+      <a class="MainNav" href="SalisburysAles.html">Ales</a>
+      <a class="MainNav" href="SalisburysMenu.html">Menu</a>
+      <p class="BookingNav" id="bookingInfo">
+        <i>
+          "We are now taking bookings for The Salisbury Ale House.. book your
+          table now to try one of our amazing Pizza's and some delicious Craft
+          Ales!"
+        </i>
+      </p>
       <iframe
+        class="BookingNav"
+        id="bookingInfo"
         frameborder="0"
-        width="350px"
         src="https://app.tablein.com/widget?restaurant_id=6112404"
-        scrolling="no"
-        id="iframee4mh8"
       ></iframe>
+      <a class="ToggleButton BookingNav ReturnButton" id="bookingInfo"
+        ><span class="standOutText">Return</span></a
+      >
+      <a class="ToggleButton MainNav"
+        ><span class="standOutText">Book Now</span></a
+      >
+      <a id="smallerLink" class="SendEmail">bookings@thesalisbury.co.uk</a>
+      <a id="smallerLink" href="tel:01612365590">0161 236 5590</a>
+      <div id="socialMediaIcons" class="table">
+        <a
+          href="https://www.facebook.com/thesalisburymanchester"
+          class="fa fa-facebook"
+          target="”_blank”"
+        ></a>
+        <a
+          href="https://www.instagram.com/thesalisburymanchester/"
+          class="fa fa-instagram"
+          target="”_blank”"
+        ></a>
+        <a href="#" class="fa fa-twitter" target="”_blank”"></a>
+      </div>
+      <a
+        href="javascript:void(0);"
+        class="icon"
+        onclick="myFunction(); myFunctionIconChange();"
+      >
+        <i id="NavBarMainIcon" class="fa fa-bars"></i>
+      </a>
     </div>
+
+    <!-- This is a comment that the browser will not display. -->
 
     <footer>
       <a
@@ -49,6 +77,6 @@
       >
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="JS/Salisburys.js"></script>
+    <script src="JS/OfficalSalisburys.js"></script>
   </body>
 </html>

@@ -50,6 +50,10 @@ mark.grey {
   background: none;
 }
 
+#AboutUs:hover .grey {
+  color: #3b5998;
+}
+
 mark.grey:hover {
   color: #3b5998;
 }

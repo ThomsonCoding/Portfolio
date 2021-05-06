@@ -34,7 +34,6 @@ $(function () {
   $(".SendEmail").click(function (event) {
     var email = "bookings@thesalisbury.co.uk";
     var subject = "Customer Query";
-
     document.location = "mailto:" + email + "?subject=" + subject;
   });
 });
