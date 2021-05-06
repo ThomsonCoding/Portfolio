@@ -3,6 +3,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="CSS/OfficialSalisburys.css" />
+    <link rel="stylesheet" href="CSS/SalisburysAles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -66,8 +67,23 @@
       </a>
     </div>
 
-    <!-- This is a comment that the browser will not display. -->
+    <div id="mySidebar" class="sidebar">
+      <a
+        href="javascript:void(0)"
+        class="fa fa-chevron-left closebtn"
+        onclick="closeNav()"
+      ></a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
 
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">
+        ☰ FIND YOU FAVOURITE ALE!
+      </button>
+    </div>
     <footer>
       <a
         href="https://www.linkedin.com/in/djthomson1/"
@@ -77,6 +93,7 @@
       >
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="JS/SalisburysAles.js"></script>
     <script src="JS/OfficalSalisburys.js"></script>
   </body>
 </html>
