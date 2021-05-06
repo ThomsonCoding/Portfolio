@@ -39,7 +39,7 @@
 .openbtn {
   position: fixed;
   left: 0;
-  top: 65%;
+  top: 75%;
   transform-origin: 0 0;
   -webkit-transform: rotate(270deg); /* Safari and Chrome */
   -moz-transform: rotate(270deg); /* Firefox */
