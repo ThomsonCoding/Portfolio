@@ -18,7 +18,7 @@
 
   <body>
     <div class="topnav" id="myTopnav">
-      <a class="MainNav" href="SalisburysAboutUs.html">Home</a>
+      <a class="MainNav" href="OfficalSalisburyWesbite.html">Home</a>
       <a class="MainNav" id="AboutUs" href="SalisburysAboutUs.html"
         >About <mark class="grey" id="AboutUs">Us</mark></a
       >
@@ -73,17 +73,64 @@
         class="fa fa-chevron-left closebtn"
         onclick="closeNav()"
       ></a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')">
+          Show all
+        </button>
+        <h4>Ale by Taste</h4>
+        <button class="btn" onclick="filterSelection('PaleAles')">
+          Pale Ales
+        </button>
+        <button class="btn" onclick="filterSelection('DarkAles')">
+          Dark Ales
+        </button>
+        <button class="btn" onclick="filterSelection('FruityAles')">
+          Fruity Ales
+        </button>
+        <button class="btn" onclick="filterSelection('BitterAles')">
+          Bitter Ales
+        </button>
+        <h4>Ale by percentage</h4>
+
+          <button class="btn" onclick="filterSelection('3-4%')">3-4%</button>
+          <button class="btn" onclick="filterSelection('4-5%')">4-5%</button>
+          <button class="btn" onclick="filterSelection('5-6%')">5-6%</button>
+          <h4>Other Filters</h4>
+            <button class="btn" onclick="filterSelection('House')">
+              House
+            </button>
+            <button class="btn" onclick="filterSelection('Guest')">
+              Guest
+            </button>
+          </div>
+        </div>
+
+        <div id="main">
+          <button class="openbtn" id="aleBtn" onclick="openNav()">
+            ☰ FIND YOU FAVOURITE ALE!
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div id="main">
-      <button class="openbtn" onclick="openNav()">
-        ☰ FIND YOU FAVOURITE ALE!
-      </button>
+    <div class="container">
+      <div class="filterDiv PaleAles 4-5% House">
+        <h4>Trooper</h4>
+        <h4>Brewrey: Robinsons</h4>
+        <h4>A.B.V: 4.7%</h4>
+        <h4>Taste: Bitter, strong roasted malt</h4>
+      </div>
+      <div class="filterDiv DarkAles 5-6% House">Old Peculier</div>
+      <div class="filterDiv PaleAles 3-4% House">Old Golden Hen</div>
+      <div class="filterDiv PaleAles 4-5% House">Old Speckled Hen</div>
+      <div class="filterDiv BitterAles 3-4% House">Bitter Ale</div>
+      <div class="filterDiv PaleAles 3-4% Guest">The Lass</div>
+      <div class="filterDiv PaleAles 4-5% House">IPA</div>
+      <div class="filterDiv PaleAles BitterAles 3-4% House">Wainwright</div>
+      <div class="filterDiv PaleAles 4-5% Guest">Doom Bar</div>
+      <div class="filterDiv DarkAles 5-6% Guest">Chocolate Stout</div>
     </div>
+
     <footer>
       <a
         href="https://www.linkedin.com/in/djthomson1/"
