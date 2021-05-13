@@ -13,6 +13,7 @@ body {
   width: 50%;
   height: 70vh;
   background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .MainContent > Div img {
@@ -36,11 +37,11 @@ p {
 
 .textBoxLeftSide {
   float: right;
-  text-align: left;
+  text-align: right;
   border: 5px solid red;
   width: 100%;
-  height: 100%;
-  padding-left: 20px;
+  height: auto;
+  padding-right: 20px;
 }
 
 .textBoxRightSide {
@@ -48,7 +49,7 @@ p {
   text-align: left;
   border: 5px solid red;
   width: 100%;
-  height: 100%;
+  height: auto;
   padding-left: 20px;
 }
 
