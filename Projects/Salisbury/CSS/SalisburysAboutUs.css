@@ -1,0 +1,94 @@
+body {
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.MainContent {
+  margin-top: 6%;
+  width: 100vw;
+}
+
+.MainContent > Div {
+  float: left;
+  width: 50%;
+  height: 70vh;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.MainContent > Div img {
+  width: 100%;
+  height: 100%;
+}
+
+.MainContent h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: rgba(255, 255, 255, 9);
+}
+
+.MainContent h4 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.textBoxLeftSide {
+  float: right;
+  text-align: left;
+  border: 5px solid red;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+}
+
+.textBoxRightSide {
+  float: left;
+  text-align: left;
+  border: 5px solid red;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 320px) {
+}
+
+@media screen and (max-width: 481px) {
+  .MainContent {
+    margin-top: 30%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .MainContent {
+    margin-top: 25%;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .MainContent {
+    margin-top: 20%;
+  }
+
+  .MainContent > Div {
+    float: left;
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 1);
+  }
+}
+
+@media screen and (max-width: 1201px) {
+  .MainContent {
+    margin-top: 25%;
+  }
+  .textBoxLeftSide {
+    width: 100%;
+  }
+
+  .textBoxRightSide {
+    width: 100%;
+  }
+}
