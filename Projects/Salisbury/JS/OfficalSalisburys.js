@@ -37,3 +37,8 @@ $(function () {
     document.location = "mailto:" + email + "?subject=" + subject;
   });
 });
+
+$(".bookingButtonMainPage").click(function () {
+  $(".MainNav").hide();
+  $(".BookingNav").show();
+});
