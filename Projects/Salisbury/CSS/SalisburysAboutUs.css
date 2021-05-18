@@ -108,8 +108,8 @@ address {
     background: rgba(0, 0, 0, 1);
   }
 
-  .MainContent > Div:last-of-type {
-    margin-bottom: 50px;
+  .bookingButtonMainPage {
+    margin-bottom: 100px;
   }
 }
 
