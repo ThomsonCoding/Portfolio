@@ -1,0 +1,23 @@
+body {
+  background-image: none;
+  background-color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Menu_image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
+  line-height: 0;
+}
+
+@media screen and (max-width: 769px) {
+  .Menu_image {
+    margin-top: 20%;
+  }
+}
