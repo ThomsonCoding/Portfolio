@@ -353,3 +353,9 @@ p#bookingInfo {
     opacity: 1;
   }
 }
+
+@media screen and (min-width: 1300px) {
+  body {
+    font-size: 1.5em !important;
+  }
+}
