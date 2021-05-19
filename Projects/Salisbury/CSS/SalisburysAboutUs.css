@@ -68,11 +68,29 @@ address {
   background-color: #55acee;
 }
 
-.fa-beer {
-  font-size: 50px !important;
+.bookingCancelButtonMainPage {
+  margin: 5%;
+  padding: 15px 40px;
+  border-radius: 15px;
   color: white;
+  font-size: 20px;
+  background-color: #3b5998;
+  border: none;
+  display: none;
 }
 
+.bookingCancelButtonMainPage:hover {
+  background-color: #55acee;
+}
+
+.fa-beer,
+.fa-pizza-slice {
+  font-size: 50px !important;
+  color: white;
+  margin: 20px;
+}
+
+.fa-pizza-slice:hover,
 .fa-beer:hover {
   color: #55acee;
 }

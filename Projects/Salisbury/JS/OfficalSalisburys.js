@@ -17,6 +17,8 @@ function myFunctionIconChange() {
     x.className = "fa fa-bars";
     $(".MainNav").hide();
     $(".BookingNav").hide();
+    $(".bookingButtonMainPage").show();
+    $(".bookingCancelButtonMainPage").hide();
   }
 }
 
@@ -41,4 +43,6 @@ $(function () {
 $(".bookingButtonMainPage").click(function () {
   $(".MainNav").hide();
   $(".BookingNav").show();
+  $(".bookingButtonMainPage").hide();
+  $(".bookingCancelButtonMainPage").show();
 });
