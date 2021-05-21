@@ -23,6 +23,7 @@ body {
   height: 100vh;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
+  cursor: pointer;
 }
 
 h1,
@@ -108,7 +109,7 @@ h2 {
 }
 
 .fa-instagram {
-  background: #125688;
+  background: rgb(225, 48, 108);
   color: white;
 }
 
@@ -359,5 +360,17 @@ p#bookingInfo {
 @media screen and (min-width: 1300px) {
   body {
     font-size: 1.5em !important;
+  }
+}
+@media (max-width: 900px) and (orientation: landscape) {
+  .glassContainer {
+    max-width: 300px;
+    max-height: 250px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1000px) and (orientation: landscape) {
+  .glassContainer {
+    max-width: 700px;
   }
 }

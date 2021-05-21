@@ -131,7 +131,7 @@
   float: left;
   min-width: 250px;
   margin: 5px;
-  height: 300px;
+  height: 400px;
   perspective: 1000px;
   border-radius: 5px;
 }
@@ -174,7 +174,7 @@
 
 .flip-card-back {
   background-color: white;
-  color: #2980b9;
+  color: Black;
   transform: rotateY(180deg);
   padding: 10px;
 }
@@ -195,6 +195,46 @@
   border-radius: 50%;
   height: 30px;
   width: 30px;
+}
+
+a {
+  color: blue;
+}
+
+#Trooper {
+  background-color: #f28e1c;
+}
+
+#OldGoldenHen {
+  background-color: rgba(217, 114, 1, 1);
+}
+
+#OldSpeckledHen {
+  background-color: rgba(85, 26, 21, 1);
+}
+
+#BestBitter {
+  background-color: rgba(128, 39, 5, 1);
+}
+
+#WoodsTheLass {
+  background-color: rgba(166, 66, 8, 1);
+}
+
+#BrewDogIPA {
+  background-color: rgba(255, 170, 1, 1);
+}
+
+#Wainwright {
+  background-color: rgba(222, 155, 30, 1);
+}
+
+#Doombar {
+  background-color: rgba(187, 1, 1, 1);
+}
+
+#MPA {
+  background-color: rgba(254, 189, 33, 1);
 }
 
 @media screen and (max-width: 320px) {
@@ -219,4 +259,24 @@
 }
 
 @media screen and (min-width: 1201px) {
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .openbtn {
+    position: fixed;
+    left: 30vw;
+    top: 0;
+    -webkit-transform: rotate(0deg); /* Safari and Chrome */
+    -moz-transform: rotate(0deg); /* Firefox */
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -o-transform: rotate(0deg); /* Opera */
+    transform: rotate(0deg);
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #125688;
+    border-radius: 0px 0px 20px 20px;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
 }
