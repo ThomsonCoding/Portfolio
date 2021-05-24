@@ -13,6 +13,8 @@ function myFunctionIconChange() {
   if (x.className === "fa fa-bars") {
     x.className = "fa fa-chevron-right";
     $(".MainNav").show();
+    $(".bookingButtonMainPage").hide();
+    $(".bookingCancelButtonMainPage").show();
   } else {
     x.className = "fa fa-bars";
     $(".MainNav").hide();

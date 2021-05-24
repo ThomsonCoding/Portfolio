@@ -128,7 +128,7 @@
 
 .flip-card {
   background-color: transparent;
-  float: left;
+  float: right;
   min-width: 250px;
   margin: 5px;
   height: 400px;
@@ -278,5 +278,9 @@ a {
     color: white;
     padding: 10px 15px;
     border: none;
+  }
+
+  #myBtnContainer {
+    margin-top: 50px;
   }
 }

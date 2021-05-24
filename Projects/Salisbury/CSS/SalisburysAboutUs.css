@@ -131,7 +131,7 @@ address {
   }
 }
 
-@media screen and (max-width: 1201px) {
+@media screen and (max-width: 750px) {
   .MainContent {
     margin-top: 25%;
   }
@@ -141,5 +141,23 @@ address {
 
   .textBoxRightSide {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+  .MainContent {
+    margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1201px) {
+  .MainContent {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 1201px) and (orientation: landscape) {
+  .MainContent {
+    margin-top: 5%;
   }
 }
