@@ -177,7 +177,7 @@ h2 {
 }
 
 .topnav::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 
 .topnav a {
