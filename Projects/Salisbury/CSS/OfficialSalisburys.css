@@ -88,6 +88,10 @@ h2 {
   padding: 0px !important;
 }
 
+.fa-bars::-webkit-scrollbar {
+  display: none;
+}
+
 .fa-chevron-right {
   color: grey;
   margin: 10px !important;
