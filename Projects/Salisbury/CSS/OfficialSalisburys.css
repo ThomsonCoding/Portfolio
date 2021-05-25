@@ -80,6 +80,7 @@ h2 {
   color: grey;
   margin: 10px !important;
   padding: 0px !important;
+  overflow: auto;
 }
 
 .fa-chevron-right {
@@ -288,10 +289,6 @@ p#bookingInfo {
 
 .topnav a {
   display: none;
-}
-
-.fa-bars {
-  overflow: auto;
 }
 
 .topnav a:first-child {
