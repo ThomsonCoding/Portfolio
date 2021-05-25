@@ -3,7 +3,7 @@
 }
 
 html {
-  overflow: auto;
+  overflow: hidden;
   height: 100vh;
 }
 
@@ -167,6 +167,7 @@ h2 {
 }
 
 .topnav a {
+  overflow: auto;
   height: auto;
   width: auto;
   color: #55acee;
