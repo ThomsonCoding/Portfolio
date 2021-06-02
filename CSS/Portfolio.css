@@ -345,8 +345,8 @@ a:hover {
 .topics {
   width: 100%;
   height: 100%;
-  min-height: 400px;
-  max-height: 430px;
+  min-height: 410px;
+  max-height: 410px;
 }
 
 div.gallery:hover {
