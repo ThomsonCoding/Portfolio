@@ -45,3 +45,11 @@ if (animationPlayedOnce = undefined) {
   element.classList.add("post_animated");
 }
 */
+
+var Sainburys = "Sainsbury’s";
+
+console.log(Sainburys.length); // Answer is A (11)
+console.log(Sainburys.indexOf("a")); // Answer is B (1)
+// HTTPS is encrypted using TLS
+// Hashing is used to protect passwords
+//  A and B are true
