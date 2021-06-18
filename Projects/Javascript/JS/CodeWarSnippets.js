@@ -625,3 +625,148 @@ solution = (n) =>
     : Array.from({ length: n }, (_, i) =>
         i % 3 == 0 || i % 5 == 0 ? i : 0
       ).reduce((x, y) => x + y);
+
+/*Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+  My solution
+  */
+
+function removeExclamationMarks(s) {
+  var str = s.replace(/!/g, "");
+  return str;
+}
+
+/* Originaly had the issue that replace only does the first charachter, was met by replaceAll but that does not seem to be useful on code wars.
+To get around this the solution I found was to us / /g,
+
+What is G JavaScript?
+Definition and Usage. The g modifier is used to perform a global match (find all matches rather than stopping after the first match).
+ */
+
+// Alternative solution
+function removeExclamationMarks(s) {
+  return s.split("!").join("");
+}
+
+// Alternative solution
+let removeExclamationMarks = (s) => s.replace(/!/g, "");
+
+/* Write function bmi that calculates body mass index (bmi = weight / height2).
+
+if bmi <= 18.5 return "Underweight"
+
+if bmi <= 25.0 return "Normal"
+
+if bmi <= 30.0 return "Overweight"
+
+if bmi > 30 return "Obese"
+
+My solution
+*/
+
+function bmi(weight, height) {
+  var bmiCalc = weight / (height * height);
+  switch (true) {
+    case bmiCalc <= 18.5:
+      return "Underweight";
+      break;
+    case bmiCalc <= 25:
+      return "Normal";
+      break;
+    case bmiCalc <= 30:
+      return "Overweight";
+      break;
+    case bmiCalc > 30:
+      return "Obese";
+  }
+}
+
+/* I decided I would go for a switch statement, breaking the bmi catagories into different sections.
+  Then going through them til the first suitable one appears. 
+
+  */
+
+// Alternative solution (Similar to mine, but refractored a bit better)
+function bmi(weight, height) {
+  var bmi = weight / (height * height);
+
+  return bmi < 18.5
+    ? "Underweight"
+    : bmi <= 25
+    ? "Normal"
+    : bmi <= 30
+    ? "Overweight"
+    : "Obese";
+}
+
+/* Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+
+My solution */
+
+function squareSum(numbers) {
+  let sum = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i] * numbers[i];
+    console.log(sum);
+  }
+  return sum;
+}
+
+// Alternative solution
+
+function squareSum(numbers) {
+  return numbers.map(square).reduce(sum);
+}
+
+function square(number) {
+  return number * number;
+}
+
+function sum(firstNumber, secondNumber) {
+  return firstNumber + secondNumber;
+}
+
+// Alternative solution
+
+function squareSum(numbers) {
+  return numbers.reduce((sum, num) => sum + num * num, 0);
+}
+/* Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+Examples:
+a = "xyaabbbccccdefww"
+b = "xxxxyyyyabklmopq"
+longest(a, b) -> "abcdefklmopqwxy"
+
+a = "abcdefghijklmnopqrstuvwxyz"
+longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+My solution */
+
+function longest(s1, s2) {
+  let s3 = (s1 + s2).split("").sort(); //add array together and split charachters. Then sort the letters into order.
+  let uniqueChars = [...new Set(s3)]; // Remove any duplicates
+  return uniqueChars.join(""); //Join the array/list together to make one string.
+}
+
+// Alternative solution
+const longest = (s1, s2) => [...new Set(s1 + s2)].sort().join("");
+
+// Alternative solution
+function longest(s1, s2) {
+  return Array.from(new Set(s1 + s2))
+    .sort()
+    .join("");
+}
+
+/* Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+
+[Make sure you type the exact thing I wrote or the program may not execute properly]
+
+My solution */
+
+function greet(name) {
+  return `Hello, ${name} how are you doing today?`;
+}
