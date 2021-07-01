@@ -770,3 +770,267 @@ My solution */
 function greet(name) {
   return `Hello, ${name} how are you doing today?`;
 }
+
+/*
+Write a program that returns the numbers from N to M both inclusive. 
+But for multiples of three give "Fizz" instead of the number and for the multiples of five give "Buzz". 
+For numbers which are multiples of both three and five, give "FizzBuzz".
+
+My solution */
+
+function run(N, M) {
+  let sequence = [];
+
+  for (var i = N; i < M + 1; i++) {
+    if (i % 15 == 0) sequence.push("FizzBuzz");
+    else if (i % 3 == 0) sequence.push("Fizz");
+    else if (i % 5 == 0) sequence.push("Buzz");
+    else sequence.push(i);
+  }
+  return sequence.toString();
+}
+
+/* Amount of Sheep
+
+Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+For example,
+
+[true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]
+
+  */
+
+function countSheeps(arrayOfSheep) {
+  var amountOfSheep = 0;
+  for (var i = 0; i < arrayOfSheep.length; i++) {
+    if (arrayOfSheep[i] === true) amountOfSheep++;
+  }
+  return amountOfSheep;
+}
+
+//Alternative methods
+
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
+}
+
+// Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits.
+// My solution.
+
+function isDivisible(n, x, y) {
+  if (n % x == 0 && n % y == 0) return true;
+  else return false;
+}
+
+//Alternative methods
+
+function isDivisible(n, x, y) {
+  return n % x === 0 && n % y === 0;
+}
+
+//Alternative methods
+
+const isDivisible = (n, x, y) => n % x == 0 && n % y == 0;
+
+/*
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+The output should be two capital letters with a dot separating them.
+
+It should look like this:
+
+Sam Harris => S.H
+
+Patrick Feeney => P.F
+
+My solution.
+*/
+
+function abbrevName(name) {
+  var seperateNames = name.toUpperCase().split(" ");
+  return seperateNames[0].charAt(0) + "." + seperateNames[1].charAt(0);
+}
+
+//Alternative methods
+function abbrevName(name) {
+  return name
+    .split(" ")
+    .map((i) => i[0].toUpperCase())
+    .join(".");
+}
+
+//Alternative methods
+function abbrevName(name) {
+  var nameArray = name.split(" ");
+  return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+}
+
+/*Hackajob
+For a given sentence p, return the following:
+
+how many vowels and consonants p has, we do not count Y and W as vowels
+p with reversed words order and reversed cases (any upper-case letter will be lower-case and every lower-case letter will be upper-case)
+every word in p separated by a dash ('-')
+p with inserted string "pv" before any vowel in the sentence
+Take into consideration that p can have any kind of characters.
+
+You have to return a string containing the above queries, separated by double colon ("::")
+
+INPUT
+string p
+
+OUTPUT
+string combined_queries
+
+This is how combined_queries should look like:
+
+nr_vowels nr_consonants::reversed_p_with_reversed_cases::every-word-in-p::p_wpvith_inspvertpved_strpving_pv
+EXAMPLE
+Input
+"ThIs is p"
+
+Output
+2 5::P IS tHiS::ThIs-is-p::ThpvIs pvis p
+*/
+
+function run(p) {
+  let vowelCount = vowelCounter(p); // Used to initiate the VowelCounter function and store the amount of vowels within the stirng.
+  let consonantsCount = consonantsCounter(p); // Used to initiate the consonantsCounter function and store the amount of consonants within the stirng.
+  let reversedString = stringReveser(p); // Used to revese the string, both in the direction of the words and also change the cases of the words to the opposide (Lower to higher, higher to lower)
+  let stringWithDash = StringDasher(p); // Used to add a version of the string with - marks to seperate the words.
+  let stringWithPv = pvAdder(p); // Used to check if the letter is a vowel, and if it is, it will add pv before the letters within the string.
+
+  function vowelCounter(str) {
+    return str.replace(/[^aeiou]/gi, "").length; //Replaces anything that is not a vowel with nothing, then counts the length of what is remaining.
+  }
+
+  function consonantsCounter(str) {
+    return str.replace(/ /g, "").length - vowelCount; //Takes the full string, removes the spaces, then takes the length of that and deducts the vowel count to leave constants only.
+  }
+
+  function stringReveser(str) {
+    return str
+      .split("")
+      .map((l) => (l == l.toLowerCase() ? l.toUpperCase() : l.toLowerCase()))
+      .join("")
+      .split(" ")
+      .reverse()
+      .join(" ");
+  }
+
+  function StringDasher(str) {
+    return str.split(" ").join("-"); //Split the string into an array at the spaces, rejoin the array with - inbetween the words.
+  }
+
+  function pvAdder(str) {
+    let emptyString = [];
+    for (var i = 0; i < str.length; i++) {
+      //Iterates through the string, if the charachter is a vowel, it will add pv before it and add it to the new empty string. (With the previous letters checked before)
+      if (
+        str[i] === "a" ||
+        str[i] === "e" ||
+        str[i] === "i" ||
+        str[i] === "o" ||
+        str[i] === "u" ||
+        str[i] === "A" ||
+        str[i] === "E" ||
+        str[i] === "I" ||
+        str[i] === "O" ||
+        str[i] === "U"
+      )
+        emptyString += "pv" + str[i];
+      else emptyString += str[i]; //If it is not a vowel, it will simply add the charachters to the string.
+    }
+    return emptyString; //Returns the final result of the string with pv infront of every vowel.
+  }
+}
+
+/*
+A class of students have a project in pairs, to work on. Everyone found a partner except one student. Having a list of every student in the class represented by the number of their team, find the student with no partner. Note that the number of the team can represent only two students or the single student.
+Try finding the most efficient solution!
+
+INPUT
+int[] student_list
+^^ this contains students represented by their team number
+
+OUTPUT
+int single_student_number
+
+CONSTRAINTS
+2 <= student_list[i] <= 100000
+3 <= i <= 10000
+
+EXAMPLE
+Input
+[2,4,5,4,2]
+Output
+5
+
+*/
+
+function run(student_list) {
+  function findSingle(array, array_size) {
+    // Do XOR of all elements and return
+    let result = array[0]; // Result is the number in the array that we will be checking.
+    for (let i = 1; i < array_size; i++) result = result ^ array[i]; // Go through the array and check if each part of the array is equal to the result. i.e. The output is true if the inputs are not alike; otherwise, the output is false.
+
+    return result; //When true (no numbers match). That number will return.
+  }
+
+  single_student_number = findSingle(student_list, student_list.length);
+  return single_student_number;
+}
+
+/*
+
+Wouldn't it be neat if every year, your birthday would fall on a Friday, Saturday or Sunday? Given a certain date, return a string with the day of the week and the year it will fall in a weekend, starting with the year (2016). Do this for 50 years in the future.
+
+INPUT
+string date_of_birth ^ with this format: dd-mm
+
+OUTPUT
+string future_dates
+^ wday-yyyy wday-yyyy … (where wday can be any of this three values: Fry, Sat, Sun)
+Every date should be separated by one space
+
+EXAMPLE
+Input
+"23-10"
+
+Output
+"Sun-2016 Fri-2020 Sat-2021 Sun-2022 Fri-2026 Sat-2027 Sat-2032 Sun-2033 Fri-2037 Sat-2038 Sun-2039 Fri-2043 Sun-2044 Fri-2048 Sat-2049 Sun-2050 Fri-2054 Sat-2055 Sat-2060 Sun-2061 Fri-2065"
+
+
+*/
+
+function run(birthday_date) {
+  var birthday_date_split = birthday_date.split("-"); //Splits the string into Month and Day
+  var month = birthday_date_split[1]; //Assigns month value to month variable.
+  var day = birthday_date_split[0]; //Assigns Day value to day variable.
+  var year = 2016; //Set year to requested preset year.
+
+  let sequence = []; //Array to hold the results from looping through the years.
+
+  for (var i = year; i < 2066; i++) {
+    //Loops through the year till 2065 as requested.
+    let date = new Date(i, month - 1, day); //Sets date to it's format for checking.
+    if (date.getDay() == 0) sequence.push("Sun-" + i);
+    //If the day is a sunday, log Sun-year.
+    else if (date.getDay() == 6) sequence.push("Sat-" + i);
+    //Same as above with Sat
+    else if (date.getDay() == 5) sequence.push("Fri-" + i); //Same as above with sun, These will be pushed to the sequence array.
+  }
+
+  future_dates = sequence.toString().replace(/,/g, " "); //Turning the array to a string, and replacing , with " "
+  return future_dates;
+}
+
+for (var i = 0; i < str.length; i++) {
+  console.log(i);
+  return;
+}
