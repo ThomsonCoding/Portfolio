@@ -46,14 +46,3 @@ document.write(
     " in grams." +
     "</br>"
 );
-
-for (i=0; i<=100; i++) {
-  print i;
-  return;
-}
-
-
-for (var i = 0; i < str.length; i++) {
-  console.log(i);
-  return;
-}
