@@ -1,4 +1,179 @@
-/* Given an array of ones and zeros, convert the equivalent binary value to an interger.
+/* Snippets of useful information (For code war challenges please scroll down): 
+
+.forEach()
+
+For each is a method calls a function once for each element in an array, in order.
+
+Example: 
+*/
+const artists = ["Picasso", "Kahlo", "Matisse", "Utamaro"];
+
+artists.forEach((artist) => {
+  console.log(artist + " is one of my favorite artists.");
+});
+
+/* The above will log: 
+Picasso is one of my favorite artists.
+Kahlo is one of my favorite artists.
+Matisse is one of my favorite artists.
+Utamaro is one of my favorite artists.
+*/
+
+/*
+.map()
+
+Creates a new array with the results of calling a function for every array element.
+*/
+
+const numbers = [1, 2, 3, 4, 5];
+
+const squareNumbers = numbers.map((number) => {
+  return number * number;
+});
+
+console.log(squareNumbers);
+
+/* The above will log: 
+[ 1, 4, 9, 16, 25 ]
+*/
+
+/* other example:
+Write a function, squareNums(), that takes in an array of numbers and, using .map(), returns an array with the square of each of the elements of that array.
+
+You can test your function when you’re ready by passing in the numbers array or by making your own array!
+*/
+
+const numbers = [2, 7, 9, 171, 52, 33, 14];
+
+const toSquare = (num) => num * num;
+
+const squareNums = (arr) => arr.map(toSquare);
+
+console.log(squareNums(numbers)); // [ 4, 49, 81, 29241, 2704, 1089, 196 ]
+
+/* 
+.filter()
+
+The filter method creates an array filled with all array elements that pass a test (provided by a function).
+The belows example of the test provided by a function is that it requests it only returns numbers. 
+*/
+
+const things = ["desk", "chair", 5, "backpack", 3.14, 100];
+
+const onlyNumbers = things.filter((thing) => {
+  return typeof thing === "number";
+});
+
+console.log(onlyNumbers);
+
+/* The above will log: 
+[ 5, 3.14, 100 ]
+*/
+
+/*
+.findIndex()
+
+Find index is a method that returns the index of the first array element that passes a test (provided by a function).
+*/
+
+const jumbledNums = [123, 25, 78, 5, 9];
+
+const lessThanTen = jumbledNums.findIndex((num) => {
+  return num < 10;
+});
+
+console.log(lessThanTen);
+
+/* The above will log: 
+Output: 3 (As it is the the 4th number on the list (0,1,2,3))
+*/
+
+const animals = [
+  "hippo",
+  "tiger",
+  "lion",
+  "seal",
+  "cheetah",
+  "monkey",
+  "salamander",
+  "elephant",
+];
+
+const foundAnimal = animals.findIndex((animal) => {
+  return animal === "elephant";
+});
+
+console.log(foundAnimal); // Will return 7. As Elephant is at 7 on the array.
+
+const startsWithS = animals.findIndex((animal) => {
+  return animal.charAt(0) === "s"; //Will return 3. As Seal is at 3 on the array.
+});
+
+console.log(startsWithS);
+
+/*
+.reduce()
+
+The Array.reduce() method executes a reducer function for each value of an array.
+
+Array.reduce() returns a single value which is the function's accumulated result.
+
+Array.reduce() does not execute the function for empty array elements.
+
+Array.reduce() does not change the original array.
+*/
+
+const numbers = [1, 2, 4, 10];
+
+const summedNums = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+});
+
+console.log(summedNums); // Output: 17
+
+/*
+Example of using for each, to pass through every item in an array through the functions.
+*/
+
+const veggies = ["broccoli", "spinach", "cauliflower", "broccoflower"];
+
+const politelyDecline = (veg) => {
+  console.log("No " + veg + " please. I will have pizza with extra cheese.");
+};
+
+const declineEverything = (arr) => {
+  arr.forEach(politelyDecline);
+};
+
+console.log(politelyDecline(veggies));
+
+/* This will log.
+No broccoli,spinach,cauliflower,broccoflower please. I will have pizza with extra cheese.
+*/
+
+const politelyAccept = (veg) => {
+  console.log("Ok, I guess I will eat some " + veg + ".");
+};
+
+const acceptEverything = (arr) => {
+  arr.forEach(politelyAccept);
+};
+
+console.log(acceptEverything(veggies));
+
+/* This will log.
+Ok, I guess I will eat some broccoli.
+Ok, I guess I will eat some spinach.
+Ok, I guess I will eat some cauliflower.
+Ok, I guess I will eat some broccoflower.
+*/
+
+//////////////////// CODE WAR CHALLENGES ////////////////////
+
+/* 
+CodeWar Challenges are listed below, with the challenge, my solution and alternative solutions. 
+
+Given an array of ones and zeros, convert the equivalent binary value to an interger.
 Examples:
 
 Testing: [0, 0, 0, 1] ==> 1
@@ -1033,4 +1208,774 @@ function run(birthday_date) {
 for (var i = 0; i < str.length; i++) {
   console.log(i);
   return;
+}
+
+/*
+The marketing team is spending way too much time typing in hashtags.
+Let's help them with our own Hashtag Generator!
+
+Here's the deal:
+
+It must start with a hashtag (#).
+All words must have their first letter capitalized.
+If the final result is longer than 140 chars it must return false.
+If the input or the result is an empty string it must return false.
+Examples
+" Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
+"    Hello     World   "                  =>  "#HelloWorld"
+""                                        =>  false
+
+My example:
+*/
+
+function generateHashtag(str) {
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1); //Converts the first letters to capital letters (Function)
+  }
+  let splitStr = str.split(" ").map(capitalize).join(""); //Calls the function and joins the string together.
+  str = str.replace(/\s/g, ""); //Gets rid of any white space within the string.
+
+  if ((str.length === 0) | (str.length >= 140)) {
+    // Confirms the stirng is not empty and is long enough.
+    return false;
+  } else {
+    // If it is long enough add the hashtag to the front and return.
+    let hashtag = "#";
+    let res = hashtag.concat(splitStr);
+    return res;
+  }
+
+  //Alternative methods
+
+  function generateHashtag(str) {
+    return str.length > 140 || str === ""
+      ? false
+      : "#" + str.split(" ").map(capitalize).join("");
+  }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  //Alternative methods
+
+  const generateHashtag = (str) =>
+    (s =
+      "#" +
+      str
+        .trim()
+        .split(" ")
+        .filter((e) => e)
+        .map((e) => e[0].toUpperCase() + e.substring(1, e.length).toLowerCase())
+        .join("")).length > 1 && s.length <= 140
+      ? s
+      : false;
+}
+
+// Example of a nested loop
+const myArray = [6, 19, 20];
+const yourArray = [19, 81, 2];
+for (let i = 0; i < myArray.length; i++) {
+  for (let j = 0; j < yourArray.length; j++) {
+    if (myArray[i] === yourArray[j]) {
+      console.log("Both loops have the number: " + yourArray[j]);
+    }
+  }
+}
+
+// A second of a nested loop comparing two lists.
+bobsFollowers = ["Ron", "barry", "Ste", "Stu"];
+tinasFollowers = ["Ron", "Bobby", "Ste"];
+mutualFollowers = [];
+
+for (let i = 0; i < bobsFollowers.length; i++) {
+  for (let j = 0; j < tinasFollowers.length; j++) {
+    if (bobsFollowers[i] === tinasFollowers[j]) {
+      mutualFollowers.push(bobsFollowers[i]);
+    }
+  }
+}
+
+// Below is how to use a while loop to randomly loop through an array
+const cards = ["diamond", "spade", "heart", "club"];
+
+// Write your code below
+let currentCard;
+
+while (currentCard != "spade") {
+  currentCard = cards[Math.floor(Math.random() * 4)];
+  console.log(currentCard);
+}
+
+// Do...While Statements example
+let countString = "";
+let i = 0;
+
+do {
+  countString = countString + i;
+  i++;
+} while (i < 5);
+
+console.log(countString);
+
+// Example 2
+
+let cupsOfSugarNeeded = 8;
+let cupsAdded = 0;
+
+do {
+  cupsAdded++;
+} while (cupsAdded < cupsOfSugarNeeded);
+
+//Example of using break keyword to break the loop once you have found the value needed.
+
+const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
+
+for (let i = 0; i < rapperArray.length; i++) {
+  console.log(rapperArray[i]);
+  console.log("And if you don't know, now you know.");
+  if (rapperArray[i] === "Notorious B.I.G.") {
+    break;
+  }
+}
+
+/*
+Count the number of Duplicates
+Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+Example
+"abcde" -> 0 # no characters repeats more than once
+"aabbcde" -> 2 # 'a' and 'b'
+"aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+"indivisibility" -> 1 # 'i' occurs six times
+"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+"aA11" -> 2 # 'a' and '1'
+"ABBA" -> 2 # 'A' and 'B' each occur twice
+
+*/
+
+function duplicateCount(text) {
+  // Make the string lower case and split it into an array.
+  // Start with First Value,
+  // Check this value against every over value in the code
+  // If this value is a duplicate
+  // Counter inceases by 1 and all instances of this value get removed, including the one doing the check.
+
+  let LowerCaseText = text.toLowerCase().split("");
+  let counter = 0;
+  let duplciateChecker = [];
+
+  for (let i = 0; i < LowerCaseText.length; i++) {
+    //Loops through with the original value.
+    for (let j = 0; j < LowerCaseText.length; j++) {
+      //Loops through a second time, keeping i as the original value whilst it loops.
+      if (duplciateChecker.includes(LowerCaseText[i])) {
+        break;
+      } else if (LowerCaseText[i] === LowerCaseText[j] && i != j) {
+        // If the values are the same, and it is not in the same position as the original loop value.
+        counter++;
+        duplciateChecker.push(LowerCaseText[i]); // Add Array value to the duplicate checker array.
+      }
+    }
+  }
+  console.log(duplciateChecker);
+  return counter;
+}
+
+//Alternative methods
+
+function duplicateCount(text) {
+  return (
+    text
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("")
+      .match(/([^])\1+/g) || []
+  ).length;
+}
+
+//Alternative methods
+function duplicateCount(text) {
+  var lower = text.toLowerCase();
+  var count = 0;
+  var used = [];
+
+  lower.split("").forEach(function (letter) {
+    if (!used.includes(letter) && lower.split(letter).length - 1 > 1) {
+      count++;
+      used.push(letter);
+    }
+  });
+
+  return count;
+}
+
+/* 
+Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+
+For example:
+
+ persistence(39) === 3 // because 3*9 = 27, 2*7 = 14, 1*4=4
+                       // and 4 has only one digit
+                 
+ persistence(999) === 4 // because 9*9*9 = 729, 7*2*9 = 126,
+                        // 1*2*6 = 12, and finally 1*2 = 2
+                  
+ persistence(4) === 0 // because 4 is already a one-digit number
+
+My example:
+*/
+
+function persistence(num) {
+  let counter = 0; //This is to count the number of times the while loop runs.
+  while (num > 9) {
+    //Makes sure that num is still above single digits.
+    var digitsString = num.toString().split(""); //Splits the numbers into single digits but as an array of strings.
+    var realDigits = digitsString.map(Number); //Turns all these digits into numbers rather than strings.
+    num = realDigits.reduce((accumulator, current) => accumulator * current, 1); //Loops through the array of numbers multiplying them together. Updating num in the process.
+    counter++; //Increases the counter by 1 to update the amount of times the while loop has run.
+  }
+  return counter; // Return the number of times the counter has counted the steps to single digits.
+}
+
+//Alternative methods
+const persistence = (num) => {
+  return `${num}`.length > 1
+    ? 1 + persistence(`${num}`.split("").reduce((a, b) => a * +b))
+    : 0;
+};
+
+//Alternative methods
+function persistence(num) {
+  for (var i = 0; num > 9; i++) {
+    num = num
+      .toString()
+      .split("")
+      .reduce((t, c) => c * t);
+  }
+  return i;
+}
+
+/*
+The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+Examples
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" 
+Notes
+
+Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
+
+*/
+
+function duplicateEncode(word) {
+  word = word.toLowerCase();
+  let finalResult = [];
+  let letterOccurance = 0;
+  for (let i = 0; i < word.length; i++) {
+    for (let j = 0; j < word.length; j++) {
+      if (word[i] === word[j] && i != j) {
+        letterOccurance++;
+      }
+    }
+
+    if (letterOccurance > 0) {
+      finalResult += ")";
+      letterOccurance = 0;
+    } else {
+      finalResult += "(";
+      letterOccurance = 0;
+    }
+  }
+  return finalResult;
+}
+
+//Alternative methods
+function duplicateEncode(word) {
+  return word
+    .toLowerCase()
+    .split("")
+    .map(function (a, i, w) {
+      return w.indexOf(a) == w.lastIndexOf(a) ? "(" : ")";
+    })
+    .join("");
+}
+
+//Alternative methods
+function duplicateEncode(word) {
+  var unique = "";
+  word = word.toLowerCase();
+  for (var i = 0; i < word.length; i++) {
+    if (word.lastIndexOf(word[i]) == word.indexOf(word[i])) {
+      unique += "(";
+    } else {
+      unique += ")";
+    }
+  }
+  return unique;
+}
+
+/*
+You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+Implement a function likes :: [String] -> String, which must take in input array, containing the names of people who like an item. It must return the display text as shown in the examples:
+
+likes [] -- must be "no one likes this"
+likes ["Peter"] -- must be "Peter likes this"
+likes ["Jacob", "Alex"] -- must be "Jacob and Alex like this"
+likes ["Max", "John", "Mark"] -- must be "Max, John and Mark like this"
+likes ["Alex", "Jacob", "Mark", "Max"] -- must be "Alex, Jacob and 2 others like this"
+
+My example:
+*/
+
+function likes(names) {
+  let others = names.length - 2;
+
+  switch (names.length) {
+    case 0:
+      return "no one likes this";
+      break;
+    case 1:
+      return names + " likes this";
+      break;
+    case 2:
+      return names[0] + " and " + names[1] + " like this";
+      break;
+    case 3:
+      return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+      break;
+    default:
+      return (
+        names[0] + ", " + names[1] + " and " + others + " others like this"
+      );
+  }
+}
+
+//Alternative methods
+function likes(names) {
+  names = names || [];
+  switch (names.length) {
+    case 0:
+      return "no one likes this";
+      break;
+    case 1:
+      return names[0] + " likes this";
+      break;
+    case 2:
+      return names[0] + " and " + names[1] + " like this";
+      break;
+    case 3:
+      return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+      break;
+    default:
+      return (
+        names[0] +
+        ", " +
+        names[1] +
+        " and " +
+        (names.length - 2) +
+        " others like this"
+      );
+  }
+}
+
+//Alternative methods
+function likes(names) {
+  return {
+    0: "no one likes this",
+    1: `${names[0]} likes this`,
+    2: `${names[0]} and ${names[1]} like this`,
+    3: `${names[0]}, ${names[1]} and ${names[2]} like this`,
+    4: `${names[0]}, ${names[1]} and ${names.length - 2} others like this`,
+  }[Math.min(4, names.length)];
+}
+
+/*
+Digital root is the recursive sum of all the digits in a number.
+
+Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+
+Examples
+    16  -->  1 + 6 = 7
+   942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+
+My solution.
+*/
+
+function digital_root(n) {
+  do {
+    arrayOfDigits = n.toString().split("").map(Number);
+    n = arrayOfDigits.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    });
+  } while (n > 9);
+  return n;
+}
+
+//Alternative methods
+function digital_root(n) {
+  return ((n - 1) % 9) + 1;
+}
+
+//Alternative methods
+function digital_root(n) {
+  n = eval(n.toString().split("").join("+"));
+
+  if (n > 9) {
+    return digital_root(n);
+  }
+
+  return n;
+}
+
+/*
+Write a function, reverseArray(), that takes in an array as an argument and returns a new array with the elements in the reverse order.
+
+There’s a built-in method that does a lot of this work for you, but here you’re not allowed to use it. Don’t worry you’ll have plenty of opportunities to use built-in methods later on!
+
+const sentence = ['sense.','make', 'all', 'will', 'This'];
+ 
+reverseArray(sentence); 
+// Should return ['This', 'will', 'all', 'make', 'sense.'];
+
+My solution:
+*/
+
+const reverseArray = (arr) => {
+  let reversed = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversed.push(arr[i]);
+  }
+  return reversed;
+};
+
+/*
+
+Write a function, greetAliens(), that takes in an array of strings and uses a for loop to print a greeting with each string in the array.
+
+The greeting should take the following format:
+“Oh powerful [stringElement], we humans offer our unconditional surrender!”
+
+const aliens = ["Blorgous", "Glamyx", "Wegord", "SpaceKing"];
+ 
+greetAliens(aliens);
+// Should print:
+// Oh powerful Blorgous, we humans offer our unconditional surrender! 
+// Oh powerful Glamyx, we humans offer our unconditional surrender! 
+// Oh powerful Wegord, we humans offer our unconditional surrender! 
+// Oh powerful SpaceKing, we humans offer our unconditional surrender! 
+Note: You may have noticed how convenient it would be to use .forEach(), but you’re not allowed to use it here. Don’t worry you’ll have plenty of opportunities to use built-in methods later on!
+
+My solution:
+*/
+
+const greetAliens = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(
+      "Oh powerful " + arr[i] + ", we humans offer our unconditional surrender!"
+    );
+  }
+};
+
+const aliens = ["Blorgous", "Glamyx", "Wegord", "SpaceKing"];
+
+greetAliens(aliens);
+
+/*
+Write a function, convertToBaby(), that takes in an array as an argument and, using a loop, returns a new array with each string in the array prepended with 'baby '.
+
+const animals = ['panda', 'turtle', 'giraffe', 'hippo', 'sloth', 'human'];
+ 
+convertToBaby(animals); 
+// Should return ['baby panda', 'baby turtle', 'baby giraffe', 'baby hippo', 'baby sloth', 'baby human'];
+Note: You may have noticed how convenient it would be to use map, but you’re not allowed to use it here. Don’t worry you’ll have plenty of opportunities to use built-in methods later on!
+
+My solution:
+*/
+
+const convertToBaby = (arr) => {
+  let babyArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    babyArray.push("baby " + arr[i]);
+  }
+  return babyArray;
+};
+
+const animals = ["panda", "turtle", "giraffe", "hippo", "sloth", "human"];
+
+console.log(convertToBaby(animals));
+
+/*
+Write a function to filter two arrays against each other returning on the values in both arrays. 
+*/
+
+const justCoolStuff = (arr, arr1) => {
+  return arr.filter((val) => arr1.includes(val));
+};
+
+const coolStuff = [
+  "gameboys",
+  "skateboards",
+  "backwards hats",
+  "fruit-by-the-foot",
+  "pogs",
+  "my room",
+  "temporary tattoos",
+];
+
+const myStuff = [
+  "rules",
+  "fruit-by-the-foot",
+  "wedgies",
+  "sweaters",
+  "skateboards",
+  "family-night",
+  "my room",
+  "braces",
+  "the information superhighway",
+];
+
+console.log(justCoolStuff(myStuff, coolStuff));
+// Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ]
+
+/*
+Function checks that the whole array is source plantbased. It does this by looking at every food.source, and return true or false if they are all equal to plant or not (True if so, false if not)
+*/
+
+const isTheDinnerVegan = (arr) => arr.every((food) => food.source === "plant");
+
+const dinner = [
+  { name: "hamburger", source: "meat" },
+  { name: "cheese", source: "dairy" },
+  { name: "ketchup", source: "plant" },
+  { name: "bun", source: "plant" },
+  { name: "dessert twinkies", source: "unknown" },
+];
+
+console.log(isTheDinnerVegan(dinner));
+// Should print false
+
+/*
+Write a function sortSpeciesByTeeth() that takes in an array of species objects in the format:
+
+{speciesName: 'shark', numTeeth: 50 }
+and sorts the array in ascending order based on the average number of teeth that species possesses (numTeeth) .
+
+You’ll need to access each object’s .numTeeth property. Feel free to either write a named comparison function, or use an anonymous function for your argument to .sort().
+
+You can test your function when you’re ready by passing in the speciesArray array or by making your own!
+
+*/
+
+const speciesArray = [
+  { speciesName: "shark", numTeeth: 50 },
+  { speciesName: "dog", numTeeth: 42 },
+  { speciesName: "alligator", numTeeth: 80 },
+  { speciesName: "human", numTeeth: 32 },
+];
+
+const sortSpeciesByTeeth = (arr) =>
+  arr.sort(
+    (speciesObj1, speciesObj2) => speciesObj1.numTeeth > speciesObj2.numTeeth
+  );
+
+console.log(sortSpeciesByTeeth(speciesArray));
+
+// Should print:
+// [ { speciesName: 'human', numTeeth: 32 },
+//   { speciesName: 'dog', numTeeth: 42 },
+//   { speciesName: 'shark', numTeeth: 50 },
+//   { speciesName: 'alligator', numTeeth: 80 } ]
+
+/*
+1.
+Write a function, dogFactory(). It should:
+
+have 3 parameters: name, breed, and weight (in that order)
+expect name and breed to be strings
+expect weight to be a number
+return an object
+have each of those parameters as keys on the returned object returned with the values of the arguments that were passed in
+
+2.
+Add getters and setters for each of the three properties and change the property names to have an underscore prepended.
+
+3.
+Add two methods to your object: .bark() which returns ‘ruff! ruff!’ and .eatTooManyTreats() which should increment the weight property by 1.
+*/
+
+const dogFactory = (name, breed, weight) => {
+  return {
+    _name: name,
+    _breed: breed,
+    _weight: weight,
+    get name() {
+      return this._name;
+    },
+    set name(newName) {
+      this._name = newName;
+    },
+    get breed() {
+      return this._breed;
+    },
+    set breed(newBreed) {
+      this._breed = newBreed;
+    },
+    get weight() {
+      return this._weight;
+    },
+    set weight(newWeight) {
+      this._weight = newWeight;
+    },
+    bark() {
+      return "ruff! ruff!";
+    },
+    eatTooManyTreats() {
+      this._weight++;
+    },
+  };
+};
+
+/*
+Welcome.
+
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+If anything in the text isn't a letter, ignore it and don't return it.
+
+"a" = 1, "b" = 2, etc.
+
+Example
+alphabetPosition("The sunset sets at twelve o' clock.")
+Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" (as a string)
+
+My Example:
+*/
+
+function alphabetPosition(text) {
+  let alphabetPositions = []; //Empty array for the answers.
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split(""); //Alphabet to compare the string to, allowing us to get the position of the letter in the alphabet.
+
+  text = text
+    .toLowerCase()
+    .replace(/[^a-z]/gi, "")
+    .replace(/\s/g, "")
+    .split(""); //Make the string lower case, only letters and nummbers in the string. split it into an array.
+  console.log(text);
+  for (let i = 0; i < text.length; i++) {
+    //Itterate through the array, find the first instance of it in the alphabet and then add 1 (As arrays start from 0)
+    if (typeof text[i] === "number") {
+      //If the array contains a number add 0, if it is a letter conintue and check position.
+      alphabetPositions.push(0);
+    } else {
+      alphabetPositions.push(alphabet.indexOf(text[i]) + 1); //Return the above to the array and move onto the next letter.
+    }
+  }
+
+  return alphabetPositions.join(" "); //convert the array to a string.
+}
+
+//Alternative methods
+
+function alphabetPosition(text) {
+  return text
+    .toUpperCase()
+    .match(/[a-z]/gi)
+    .map((c) => c.charCodeAt() - 64)
+    .join(" ");
+}
+
+//Alternative methods
+
+function alphabetPosition(text) {
+  var result = "";
+  for (var i = 0; i < text.length; i++) {
+    var code = text.toUpperCase().charCodeAt(i);
+    if (code > 64 && code < 91) result += code - 64 + " ";
+  }
+
+  return result.slice(0, result.length - 1);
+}
+
+//Alternative methods
+let alphabetPosition = (text) =>
+  text
+    .toUpperCase()
+    .replace(/[^A-Z]/g, "")
+    .split("")
+    .map((ch) => ch.charCodeAt(0) - 64)
+    .join(" ");
+
+/*
+You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, 
+so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones
+everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). 
+You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, 
+so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) 
+and will, of course, return you to your starting point. Return false otherwise.
+
+Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). 
+It will never give you an empty array (that's not a walk, that's standing still!).
+
+My solution:
+*/
+
+function isValidWalk(walk) {
+  function getOccurrence(array, value) {
+    //This function is to automate checking the amount of times the value appears within the array.
+    return array.filter((v) => v === value).length;
+  }
+
+  if (
+    walk.length === 10 && //If the arrays length is 10 (a minute per a direction)
+    getOccurrence(walk, "n") === getOccurrence(walk, "s") && // And the north and south directions are equal.
+    getOccurrence(walk, "e") === getOccurrence(walk, "w") // And the east and west directions are equal.
+  ) {
+    return true; //return that it is 10 minutes and you will end up at the start point again.
+  }
+  return false; //Returns that it does not meet the expected requirements.
+}
+
+//Alternative methods
+function isValidWalk(walk) {
+  function count(val) {
+    return walk.filter(function (a) {
+      return a == val;
+    }).length;
+  }
+  return (
+    walk.length == 10 && count("n") == count("s") && count("w") == count("e")
+  );
+}
+
+//Alternative methods
+function isValidWalk(walk) {
+  var dx = 0;
+  var dy = 0;
+  var dt = walk.length;
+
+  for (var i = 0; i < walk.length; i++) {
+    switch (walk[i]) {
+      case "n":
+        dy--;
+        break;
+      case "s":
+        dy++;
+        break;
+      case "w":
+        dx--;
+        break;
+      case "e":
+        dx++;
+        break;
+    }
+  }
+
+  return dt === 10 && dx === 0 && dy === 0;
 }
