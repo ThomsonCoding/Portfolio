@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="CSS/WeatherApp.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <title>Weather Application</title>
+  </head>
+  <body onload="getDay()">
+    <div id="WeatherBox">
+      <h1>The Weather App</h1>
+      <p>
+        <i>
+          Please enter your desired city and press the go button to find out the
+          latest weather report.
+        </i>
+      </p>
+      <input
+        id="searchBox"
+        type="text"
+        placeholder="London, Manchester, Paris..."
+        name="search"
+      />
+      <button id="searchButton" type="submit">GO</button>
+
+      <div class="weather-grid-container">
+        <div class="grid-item1" id="LocationBox"><h3>Manchester</h3></div>
+        <div class="grid-item2" id="TodayBox"><h3>Today</h3></div>
+        <div class="grid-item3" id="TomorrowBox"><h3>Tomorrow</h3></div>
+        <div class="grid-item4" id="DayAfterTomorrowBox"></div>
+      </div>
+    </div>
+
+    <footer>
+      <a
+        href="https://www.linkedin.com/in/djthomson1/"
+        id="linkedinLink"
+        target="”_blank”"
+        >© Product by Daniel Thomson</a
+      >
+    </footer>
+  </body>
+
+  <script src="JS/fetch.js"></script>
+  <script src="JS/fetchTomorrow.js"></script>
+  <script src="JS/ui.js"></script>
+  <script src="JS/WeatherApp.js"></script>
+</html>

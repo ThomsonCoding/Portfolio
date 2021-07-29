@@ -1979,3 +1979,103 @@ function isValidWalk(walk) {
 
   return dt === 10 && dx === 0 && dy === 0;
 }
+
+/*
+Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+Examples
+"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+""  -->  ""
+
+My solution:
+*/
+
+function order(words) {
+  let answer = [];
+  words = words.split(" ");
+  numberFinder = 1;
+
+  for (var x = 0; x < words.length; x++) {
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].includes(numberFinder.toString()) === true) {
+        answer.push(words[i]);
+        parseInt(numberFinder, 10);
+        numberFinder++;
+      }
+    }
+  }
+  return answer.join(" ");
+}
+
+//Alternative methods
+function order(words) {
+  return words
+    .split(" ")
+    .sort(function (a, b) {
+      return a.match(/\d/) - b.match(/\d/);
+    })
+    .join(" ");
+}
+
+//Alternative methods
+function order(words) {
+  var array = words.split(" ");
+  var sortedArray = [];
+  for (i = 0; i <= array.length; i++) {
+    for (j = 0; j < array.length; j++) {
+      if (array[j].indexOf(i) >= 0) {
+        sortedArray.push(array[j]);
+      }
+    }
+  }
+  return sortedArray.join(" ");
+}
+
+for (i = 1; i <= str.length; i++) {
+  console.log(str[i].charAt(0).toUpperCase());
+  str[i].charAt(0).toUpperCase();
+}
+return strUpdated;
+
+/*
+
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+Examples
+"the-stealth-warrior" gets converted to "theStealthWarrior"
+"The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+
+My solution:
+*/
+
+function toCamelCase(str) {
+  if (str.length !== 0) {
+    //If array is not empty.
+    str = str.replace(/[^0-9a-z]/gi, " ").split(" "); // Replace all the non alphabetic characters and split every word up.
+
+    for (var i = 1; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); //Ignoring the first word, select the first character and change it to upper case. Then add the rest of the word minus the first letter.
+    }
+    return str.join(""); //Join the array back up.
+  }
+  return str;
+}
+
+//Alternative methods
+
+function toCamelCase(str) {
+  var regExp = /[-_]\w/gi;
+  return str.replace(regExp, function (match) {
+    return match.charAt(1).toUpperCase();
+  });
+}
+
+//Alternative methods
+function toCamelCase(str) {
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+}

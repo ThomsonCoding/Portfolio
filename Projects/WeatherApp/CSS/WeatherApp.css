@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0b0c10;
+  font-family: Arial, sans-serif;
+  overflow: scroll;
+}
+
+#WeatherBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #1f2833;
+  width: auto;
+  height: auto;
+  min-width: 80vw;
+  min-height: 50vh;
+  text-align: center;
+  border-radius: 35px;
+  padding: 5vh 5vw;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+#searchBox {
+  border-radius: 25px;
+  border: none;
+  min-width: 400px;
+  min-height: 30px;
+  margin: 10px 5px;
+  padding: 5px 20px;
+}
+
+#searchButton {
+  display: block;
+  margin: 20px auto;
+}
+
+#searchButton {
+  width: 20%;
+  height: 30px;
+  border-radius: 25px;
+  background-color: transparent;
+  border-color: #66fcf1;
+  color: #c5c6c7;
+  border-style: thin;
+}
+
+#searchButton:hover {
+  border-color: #45a29e;
+}
+
+h1,
+h2,
+h3 {
+  color: #66fcf1;
+  margin: 0px;
+}
+
+h4 {
+  color: #c5c6c7;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0px;
+}
+
+p {
+  font-size: 1rem;
+  color: #c5c6c7;
+  margin: 15px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#linkedinLink {
+  color: #c5c6c7;
+  text-decoration: none;
+}
+
+#linkedinLink:hover {
+  color: #66fcf1;
+}
+
+.weather-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "location location location"
+    "today tomorrow dayAfterTomorrow";
+  grid-gap: 10px;
+}
+
+.weather-grid-container > div:not(:first-child) {
+  border: 1px solid #c5c6c7;
+  border-radius: 25px;
+  padding: 20px 20px;
+}
+
+.grid-item {
+  border: 1px solid #45a29e;
+}
+
+.grid-item1 {
+  grid-area: location;
+  font-size: 30px;
+}
+.grid-item2 {
+  grid-area: today;
+}
+.grid-item3 {
+  grid-area: tomorrow;
+}
+.grid-item4 {
+  grid-area: dayAfterTomorrow;
+}
+
+.Icon {
+  margin-top: 20px;
+  color: #45a29e;
+  font-size: 80px;
+}
+
+@media screen and (max-width: 1025px) {
+  #WeatherBox {
+    width: 95%;
+    margin: 0px;
+  }
+
+  .weather-grid-container {
+    grid-template-areas:
+      "location location location"
+      "today today today"
+      "tomorrow tomorrow tomorrow"
+      "dayAfterTomorrow dayAfterTomorrow dayAfterTomorrow";
+    grid-gap: 5px;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
