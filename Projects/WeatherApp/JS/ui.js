@@ -13,7 +13,7 @@ class UI {
   populateUI(data, dataTomorrow) {
     //de-structure vars
     //add them to inner HTML
-    console.log(data);
+    //console.log(data);
     console.log(dataTomorrow);
     //dataTomorrow.daily[0].temp.day
     let TodaysIcon = getIcon(data.weather[0].main);
@@ -85,10 +85,16 @@ class UI {
 function getIcon(MainDecider) {
   switch (true) {
     case MainDecider == "Rain":
-      return "fas fa-cloud-rain";
+      return "fas fa-cloud-showers-heavy";
     case MainDecider == "Clouds":
       return "fa fa-cloud";
     case MainDecider == "Clear":
       return "fas fa-sun";
+    case MainDecider == "Thunderstorm":
+      return "fa fa-bolt";
+    case MainDecider == "Drizzle":
+      return "fas fa-cloud-rain";
+    case MainDecider == "Snow":
+      return "fas fa-snowflake";
   }
 }
