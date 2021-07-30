@@ -13,3 +13,9 @@ class Fetch {
     return data;
   }
 }
+
+/*
+Above is the fetch class. This is used to fetch the data whenever the user searches another place (Which will be passed through as input). 
+It does this by making a request to the API for certain information using the await fetch function. 
+It will save this information as "Data", and then return the data. 
+*/
