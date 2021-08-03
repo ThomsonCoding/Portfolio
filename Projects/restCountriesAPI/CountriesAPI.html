@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="CSS/CountriesAPI.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Countries</title>
+  </head>
+  <body id="body">
+    <div class="MainContainer">
+      <h1>Country Top Trumps</h1>
+      <p>Please search your desire country to findout facts and info...</p>
+      <div id="searchOptions">
+        <input
+          id="searchBox"
+          type="text"
+          placeholder="Great Britain, China, USA..."
+          name="search"
+        />
+        <button id="searchButton" type="submit">Search</button>
+      </div>
+      <div class="countries-grid-container">
+        <div class="grid-item1" id="countryOptions"></div>
+        <div class="grid-item2" id="countryInfo"></div>
+      </div>
+    </div>
+  </body>
+  <script src="JS/CountiresUI.js"></script>
+  <script src="JS/fetchCountriesAPI.js"></script>
+  <script src="JS/CountriesAPI.js"></script>
+</html>
