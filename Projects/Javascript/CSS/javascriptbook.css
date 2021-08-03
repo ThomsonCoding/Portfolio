@@ -21,11 +21,11 @@ div.welcome {
 }
 
 div.gallery {
-  margin: 5px;
+  margin: 25px;
   border: 1px solid #ccc;
   float: left;
-  width: 180px;
-
+  width: 580px;
+  height: 580px;
   border-radius: 20px;
 }
 
@@ -52,6 +52,8 @@ div.gallery button {
 div.desc {
   padding: 15px;
   text-align: center;
+  font-size: 2vh;
+  margin-bottom: 25px;
 }
 
 a {
@@ -175,4 +177,9 @@ embed {
 
 .accordion-panel {
   display: none;
+}
+
+#buttons {
+  max-height: 50px !important;
+  max-width: 200px !important;
 }
