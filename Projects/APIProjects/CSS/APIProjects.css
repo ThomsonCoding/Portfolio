@@ -1,0 +1,225 @@
+:root {
+  --darkerGrey: #222629;
+  --mediumGrey: #474b4f;
+  --lighterGrey: #6b6e70;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Palatino, serif;
+  margin: 0;
+  padding: 0;
+}
+
+.introAPI {
+  display: block;
+  text-align: center;
+  align-content: center;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+h1,
+h2,
+p {
+  margin: 10px;
+}
+
+h1 {
+  color: var(--darkerGrey);
+}
+
+h2,
+p {
+  color: var(--lighterGrey);
+}
+
+h1 {
+  font-size: 8vh;
+}
+
+h2 {
+  font-size: 6vh;
+}
+
+h3 {
+  margin: 10px;
+}
+
+p {
+  line-height: 1.5;
+  text-shadow: 0 0 1px transparent;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+#introText {
+  font-size: 4vh;
+}
+
+.API-Project-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: left;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-areas:
+    "weather"
+    "country"
+    "API1"
+    "API2";
+  margin: 10px 20px;
+  grid-gap: 15px;
+}
+
+.API-Project-container > div {
+  min-height: 250px;
+  height: auto;
+  width: 80vw;
+  max-width: 280px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+}
+
+.APIIconHolder {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.APIIcons {
+  font-size: 40px;
+  float: right;
+  margin: 0px 10px;
+}
+
+.grid-item1 {
+  border-top: 3px solid red;
+  grid-area: weather;
+}
+
+.grid-item1:hover {
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.IconRed:hover {
+  color: rgba(255, 0, 0, 0.6);
+}
+
+.grid-item2 {
+  border-top: 3px solid turquoise;
+  grid-area: country;
+}
+
+.grid-item2:hover {
+  box-shadow: 0 4px 8px 0 rgba(64, 224, 208, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.IconTurquoise:hover {
+  color: rgba(64, 224, 208, 0.6);
+}
+
+.grid-item3 {
+  border-top: 3px solid blue;
+  grid-area: API1;
+}
+
+.grid-item3:hover {
+  box-shadow: 0 4px 8px 0 rgba(44, 130, 201, 0.4),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.IconBlue:hover {
+  color: rgba(44, 130, 201, 0.8);
+}
+
+.grid-item4 {
+  border-top: 3px solid yellow;
+  grid-area: API2;
+}
+
+.grid-item4:hover {
+  box-shadow: 0 4px 8px 0 rgba(240, 240, 214, 0.8),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.IconYellow:hover {
+  color: rgba(228, 230, 113, 0.8);
+}
+
+.grid-item5 {
+  grid-area: APIHub;
+  box-shadow: none;
+  text-align: center;
+  vertical-align: middle;
+  padding: 40px 0px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 5px 0px;
+  width: 100%;
+  color: black;
+  background-color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 1025px) {
+  .introAPI {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 4vh;
+  }
+
+  h2 {
+    font-size: 3vh;
+  }
+
+  #introText {
+    font-size: 2vh;
+  }
+
+  .grid-item5 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+  .API-Project-container {
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-areas:
+      "weather country"
+      "API1 API2";
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .API-Project-container {
+    grid-template-columns: repeat(auto-fit, 3fr);
+    grid-template-areas:
+      ". weather . "
+      "country APIHub API1"
+      ". API2 .";
+  }
+
+  .API-Project-container > div {
+    max-width: 340px;
+  }
+}
