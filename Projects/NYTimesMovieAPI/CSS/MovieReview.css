@@ -28,7 +28,7 @@ header {
 }
 
 .movieReview-grid-container > div {
-  width: 100%;
+  width: auto;
   height: auto;
   border: 5px solid red;
   padding: 5%;
