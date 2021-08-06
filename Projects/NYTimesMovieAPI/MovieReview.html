@@ -7,11 +7,13 @@
       href="/Projects/NYTimesMovieAPI/CSS/MovieReview.css"
     />
     <title>Movie Reviews</title>
+</head>
+    <header>
     <h1>The New York Times - Movie Reviews</h1>
-    <p>
+    <p id="introText"><i>
       This is an application connected to the NY Times movie reviews API, please
       search the film you would like information on below.
-    </p>
+    </i></p>
     <input
       id="searchBox"
       type="text"
@@ -19,9 +21,8 @@
       name="search"
     />
     <button id="searchButton" type="submit">Search</button>
-  </head>
-  <body>
-    <!-- This is a comment that the browser will not display. -->
+</header>
+        <div class="movieReview-grid-container" id="MovieContainer"></div>
   </body>
   <script src="JS/MovieReviewUI.js"></script>
   <script src="JS/FetchNYTimesAPI.js"></script>
