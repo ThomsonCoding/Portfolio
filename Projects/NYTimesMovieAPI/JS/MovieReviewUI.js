@@ -7,7 +7,14 @@ class UI {
     this.uiMovieContainer.innerHTML = "";
     for (i; i < data.results.length; i++) {
       let filmName = data.results[i].display_title;
-      let imageSrc = data.results[i].multimedia.src;
+      let imageSrc;
+      console.log(data.results[i].multimedia.src);
+      if (data.results[i].multimedia.src === null) {
+        imageSrc =
+          "https://static01.nyt.com/images/2015/12/16/arts/STARWARSWEB1/STARWARSWEB1-mediumThreeByTwo210.jpg";
+      } else {
+        imageSrc = data.results[i].multimedia.src;
+      }
       let filmSummary = data.results[i].summary_short;
       let filmPublicationDate = data.results[i].publication_date;
       let filmMPAA = data.results[i].mpaa_rating;
