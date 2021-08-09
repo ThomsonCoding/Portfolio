@@ -10,7 +10,7 @@ class UI {
       let imageSrc;
       console.log(data.results[i]);
       if (data.results[i].multimedia === null) {
-        imageSrc = "/Photos/NewYorkTimesMovieReplacement.jpeg";
+        imageSrc = "Photos/NewYorkTimesMovieReplacement.jpeg";
       } else {
         imageSrc = data.results[i].multimedia.src;
       }
