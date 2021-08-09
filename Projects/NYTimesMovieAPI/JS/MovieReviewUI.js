@@ -3,15 +3,14 @@ class UI {
     this.uiMovieContainer = document.getElementById("MovieContainer");
   }
 
-  populateUI(data, i = 0, imageSrc = "/Photos/NewYorkTimes.jpeg") {
+  populateUI(data, i = 0) {
     this.uiMovieContainer.innerHTML = "";
     for (i; i < data.results.length; i++) {
       let filmName = data.results[i].display_title;
       let imageSrc;
-      console.log(data.results[i].multimedia.src);
-      if (data.results[i].multimedia.src === null) {
-        imageSrc =
-          "https://static01.nyt.com/images/2015/12/16/arts/STARWARSWEB1/STARWARSWEB1-mediumThreeByTwo210.jpg";
+      console.log(data.results[i]);
+      if (data.results[i].multimedia === null) {
+        imageSrc = "/Photos/NewYorkTimesMovieReplacement.jpeg";
       } else {
         imageSrc = data.results[i].multimedia.src;
       }
