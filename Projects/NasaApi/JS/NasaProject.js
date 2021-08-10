@@ -45,5 +45,5 @@ const setTheme = (theme) => {
 var isDarkMode = window.localStorage.getItem("lightOrDark");
 
 if (isDarkMode == 1) {
-  setTheme(light);
+  setTheme("light");
 }
