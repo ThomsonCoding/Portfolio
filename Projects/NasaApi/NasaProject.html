@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project NASA</title>
   </head>
-  <body onload="NasaAPIOnloadData()">
+  <body onload="NasaAPIOnloadData(); localStorageChecker();">
     <header>
         <div class="toggle-container">
       <i id="darkMode" onclick="setTheme('light')" title="Light mode" class="switch show fas fa-moon"></i>

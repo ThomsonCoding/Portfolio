@@ -44,6 +44,8 @@ const setTheme = (theme) => {
 // Is local storage light or dark more variable.
 var isDarkMode = window.localStorage.getItem("lightOrDark");
 
-if (isDarkMode == 1) {
-  setTheme("light");
+function localStorageChecker() {
+  if (isDarkMode == 1) {
+    setTheme("light");
+  }
 }
