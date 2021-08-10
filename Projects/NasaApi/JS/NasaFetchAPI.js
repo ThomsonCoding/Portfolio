@@ -1,10 +1,9 @@
 class Fetch {
   async getCurrent() {
-    const myKey = "";
-    //make request to url
+    const myKey = "xHy1hBmuAOImDnjW3AHbmxDAHR8xuiAfXCcBMfgT";
 
     const response = await fetch(
-      `https://gateway.marvel.com:443/v1/public/characters?apikey=${myKey}hash=${hash}`
+      `https://api.nasa.gov/planetary/apod?api_key=${myKey}`
     );
 
     const data = await response.json();

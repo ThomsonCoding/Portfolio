@@ -1,0 +1,37 @@
+:root {
+  --darkerGrey: #222629;
+  --mediumGrey: #474b4f;
+  --lighterGrey: #6b6e70;
+  --white: #f8f5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+  font-family: Arial, sans-serif;
+  overflow: scroll;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+header {
+  text-align: center;
+}
+
+#NasaLogo {
+  width: 100%;
+  height: auto;
+}
+
+#NasaHeader {
+  width: 100%;
+  height: auto;
+  font-size: 6vw;
+}
