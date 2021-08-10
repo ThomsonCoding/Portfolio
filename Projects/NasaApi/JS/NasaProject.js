@@ -47,6 +47,6 @@ var isDarkMode = window.localStorage.getItem("lightOrDark");
 function localStorageChecker() {
   console.log(isDarkMode);
   if (isDarkMode == 1) {
-    setTheme("light");
+    setTheme("dark");
   }
 }
