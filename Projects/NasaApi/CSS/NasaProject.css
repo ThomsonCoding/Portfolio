@@ -33,5 +33,28 @@ header {
 #NasaHeader {
   width: 100%;
   height: auto;
-  font-size: 6vw;
+  font-size: 4vw;
+}
+
+#NasaIcon {
+  height: 150px;
+  width: auto;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+}
+
+.NasaIcon-right {
+  animation: animatebottom 1s;
+}
+
+@keyframes NasaIcon-AnimateBottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 10px;
+    opacity: 1;
+  }
 }
