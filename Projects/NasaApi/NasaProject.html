@@ -3,13 +3,21 @@
 <html>
   <head>
     <link rel="stylesheet" href="CSS/NasaProject.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous"
+  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project NASA</title>
   </head>
   <body onload="NasaAPIOnloadData()">
     <header>
-      <a class="fa fa-moon-o"></a>
+        <div class="toggle-container">
+      <i id="darkMode" onclick="setTheme('light')" title="Light mode" class="switch show fas fa-moon"></i>
+      <i id="lightMode" onclick="setTheme('dark')" title="Dark mode" class="switch hide fas fa-sun"></i>
+      </div>
       <img id="NasaLogo" src="Photos/NASALogo.png" />
       <h1 id="NasaHeader">PROJECT NASA API</h1>
       <p>as</p>
@@ -26,6 +34,7 @@
       <p>as</p>
       <img id="NasaIcon" class="NasaIcon-right" src="Photos/Rocket.png "></img>
     </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="JS/NasaFetchAPI.js"></script>
     <script src="JS/NasaProject.js"></script>
   </body>

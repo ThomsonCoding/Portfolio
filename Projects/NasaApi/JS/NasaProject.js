@@ -1,24 +1,13 @@
+// Below is used to fetch the data and call the updates to the UI. //
+
 const ft = new Fetch();
 
 function NasaAPIOnloadData() {
   console.log(ft.getCurrent());
 }
 
+// Below is used to add the scroll functionality to the space rocket //
 document.getElementById("NasaIcon");
-/*
-function scrollWin() {
-  setInterval(
-    window.scrollBy({
-      top: -200,
-      right: 0,
-      behavior: "smooth",
-    }),
-    0
-  );
-} */
-
-// Below is used to add the scroll functionality to the space rocket.
-
 var timer = null; // Variable to hold a reference to the timer
 
 // Set up an event handler for mousedown
@@ -43,3 +32,18 @@ function mouseDone(evt) {
 // Bind the handlers:
 NasaIcon.addEventListener("mouseup", mouseDone);
 NasaIcon.addEventListener("mouseleave", mouseDone);
+
+// Below is the implementation of night mode. //
+const setTheme = (theme) => {
+  document.documentElement.className = theme;
+  isDarkMode ^= true;
+  localStorage.lightOrDark = isDarkMode;
+  console.log(localStorage.lightOrDark);
+};
+
+// Is local storage light or dark more variable.
+var isDarkMode = window.localStorage.getItem("lightOrDark");
+
+if (isDarkMode == 1) {
+  setTheme(light);
+}
