@@ -1,9 +1,12 @@
 // Below is used to fetch the data and call the updates to the UI. //
 
 const ft = new Fetch();
+const ui = new UI();
 
 function NasaAPIOnloadData() {
-  console.log(ft.getCurrent());
+  ft.getCurrent().then((data) => {
+    ui.populatePicOfDayUI(data);
+  });
 }
 
 // Below is used to add the scroll functionality to the space rocket //
