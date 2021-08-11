@@ -38,6 +38,7 @@ const setTheme = (theme) => {
   document.documentElement.className = theme;
   isDarkMode ^= true;
   localStorage.lightOrDark = isDarkMode;
+  $("darkMode").toggle();
   console.log(localStorage.lightOrDark);
 };
 
@@ -48,5 +49,14 @@ function localStorageChecker() {
   if (isDarkMode === 1) {
     console.log(isDarkMode);
     document.documentElement.className = "dark";
+    $("#darkMode").toggle();
+    $("#lightMode").toggle();
   }
 }
+
+$(document).ready(function () {
+  $(".switch").click(function () {
+    $("#darkMode").toggle();
+    $("#lightMode").toggle();
+  });
+});

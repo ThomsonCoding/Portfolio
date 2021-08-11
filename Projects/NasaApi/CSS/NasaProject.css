@@ -64,12 +64,20 @@ header {
 }
 
 .fas {
-  font-size: 24px;
+  font-size: 34px;
   color: var(--darkerGrey);
 }
 
 .NasaIcon-right {
   animation: animatebottom 1s;
+}
+
+#lightMode {
+  display: none;
+}
+
+#darkMode {
+  display: block;
 }
 
 @keyframes NasaIcon-AnimateBottom {
