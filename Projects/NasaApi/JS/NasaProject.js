@@ -7,6 +7,11 @@ function NasaAPIOnloadData() {
   ft.getCurrent().then((data) => {
     ui.populatePicOfDayUI(data);
   });
+
+  ft.getEpic().then((EpicData) => {
+    //ui.DailyEPICPictureUI(EpicData, EpicDataImage);
+    console.log(EpicData);
+  });
 }
 
 // Below is used to add the scroll functionality to the space rocket //
