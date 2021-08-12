@@ -24,10 +24,16 @@ class UI {
 
   DailyEPICPictureUI(EpicData, EpicDataImage) {
     let EPICImage = EpicDataImage;
+    let EPICCaption = EpicData[0].caption;
+    let EPICImageDate = EpicData[0].date;
     this.uiMovieContainer.innerHTML += `
     
     <div>
+    <h2>EPIC</h3>
+    <h3>Earth Polychromatic Imaging Camera</h3>
     <img src=${EPICImage} alt="image">
+    <p>${EPICImageDate} </p>
+    <p>${EPICCaption}</p>
     </div>
     
     `;

@@ -19,16 +19,21 @@ class Fetch {
     );
 
     const EpicData = await response.json();
-    /*
+
+    return EpicData;
+  }
+
+  async getEpicImage(EpicData) {
+    const myKey = "xHy1hBmuAOImDnjW3AHbmxDAHR8xuiAfXCcBMfgT";
+
     let date = EpicData[0].date.split(" ")[0].replace(/-/g, "/");
 
     const responseImage = await fetch(
       `https://api.nasa.gov/EPIC/archive/natural/${date}/png/${EpicData[0].image}.png?api_key=${myKey}`
     );
 
-    console.log(responseImage);
-    const EpicDataImage = await responseImage.json();
-*/
-    return EpicData; //, EpicDataImage;
+    const EpicDataImage = await responseImage.url;
+
+    return EpicDataImage;
   }
 }

@@ -9,8 +9,10 @@ function NasaAPIOnloadData() {
   });
 
   ft.getEpic().then((EpicData) => {
-    //ui.DailyEPICPictureUI(EpicData, EpicDataImage);
-    console.log(EpicData);
+    ft.getEpicImage(EpicData).then((EpicDataImage) => {
+      console.log(EpicData);
+      ui.DailyEPICPictureUI(EpicData, EpicDataImage);
+    });
   });
 }
 
