@@ -133,31 +133,31 @@ a:active {
 }
 
 .grid-item3 {
-  border-top: 3px solid blue;
+  border-top: 3px solid yellow;
   grid-area: API1;
 }
 
 .grid-item3:hover {
-  box-shadow: 0 4px 8px 0 rgba(44, 130, 201, 0.4),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.IconBlue:hover {
-  color: rgba(44, 130, 201, 0.8);
-}
-
-.grid-item4 {
-  border-top: 3px solid yellow;
-  grid-area: API2;
-}
-
-.grid-item4:hover {
   box-shadow: 0 4px 8px 0 rgba(240, 240, 214, 0.8),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .IconYellow:hover {
   color: rgba(228, 230, 113, 0.8);
+}
+
+.grid-item4 {
+  border-top: 3px solid blue;
+  grid-area: API2;
+}
+
+.grid-item4:hover {
+  box-shadow: 0 4px 8px 0 rgba(44, 130, 201, 0.4),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.IconBlue:hover {
+  color: rgba(44, 130, 201, 0.8);
 }
 
 .grid-item5 {
