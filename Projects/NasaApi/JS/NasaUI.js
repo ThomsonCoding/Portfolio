@@ -40,4 +40,11 @@ class UI {
    
     `;
   }
+
+  populateRoverImages(RoverImages) {
+    console.log(RoverImages);
+
+    `
+    `;
+  }
 }

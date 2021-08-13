@@ -10,8 +10,11 @@ function NasaAPIOnloadData() {
 
   ft.getEpic().then((EpicData) => {
     ft.getEpicImage(EpicData).then((EpicDataImage) => {
-      console.log(EpicData);
       ui.DailyEPICPictureUI(EpicData, EpicDataImage);
+    });
+
+    ft.getMarsRoverImage(EpicData).then((RoverImages) => {
+      ui.populateRoverImages(RoverImages);
     });
   });
 }

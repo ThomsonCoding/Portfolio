@@ -36,4 +36,22 @@ class Fetch {
 
     return EpicDataImage;
   }
+
+  async getMarsRoverImage(EpicData) {
+    const myKey = "xHy1hBmuAOImDnjW3AHbmxDAHR8xuiAfXCcBMfgT";
+
+    let date = EpicData[0].date.split(" ")[0];
+
+    const ResponseRoverImages = await fetch(
+      `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${myKey}`
+    );
+
+    console.log(
+      `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${myKey}`
+    );
+
+    const RoverImages = await ResponseRoverImages.json();
+
+    return RoverImages;
+  }
 }
