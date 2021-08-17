@@ -28,7 +28,7 @@ NasaIcon.addEventListener("mousedown", function (evt) {
   // Start a timer that fires a function at 50 millisecond intervals
   timer = setInterval(function () {
     window.scrollBy({
-      top: -600,
+      top: -500,
       right: 0,
       behavior: "smooth",
     });
