@@ -28,7 +28,7 @@ NasaIcon.addEventListener("mousedown", function (evt) {
   // Start a timer that fires a function at 50 millisecond intervals
   timer = setInterval(function () {
     window.scrollBy({
-      top: -400,
+      top: -600,
       right: 0,
       behavior: "smooth",
     });
@@ -45,6 +45,23 @@ function mouseDone(evt) {
 // Bind the handlers:
 NasaIcon.addEventListener("mouseup", mouseDone);
 NasaIcon.addEventListener("mouseleave", mouseDone);
+
+//Using jQuery, this checks if the device is a mobile device and adds scroll functionality to the button. Rather than going up slightly this will go all the way to the top of the page.
+$("#NasaIcon").click(function () {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      600
+    );
+    return false;
+  }
+});
 
 // Below is the implementation of night mode. //
 const setTheme = (theme) => {
