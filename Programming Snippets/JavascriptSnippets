@@ -1,9 +1,0 @@
-
-
-if (isCorrect) {
-  console.log('Correct!');
-} else {
-  console.log('Incorrect!');
-}
-
-isCorrect ? onsole.log('Correct!') : console.log('Incorrect!');
