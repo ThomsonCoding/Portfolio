@@ -55,3 +55,5 @@ class Fetch {
     return RoverImages;
   }
 }
+
+console.log("GitHub update");
