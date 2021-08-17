@@ -1,5 +1,6 @@
 :root,
 :root.light {
+  --NasaRed: #fc3d21;
   --NasaBlue: #0b3d91;
   --darkerGrey: #222629;
   --mediumGrey: #474b4f;
@@ -33,10 +34,20 @@ select:focus {
 }
 
 h1,
-h2,
-h3,
+h4,
 p {
   color: var(--darkerGrey);
+  padding: 0px 20px;
+}
+
+h2,
+h3 {
+  color: var(--white);
+  padding: 0px 20px;
+}
+
+b {
+  color: var(--NasaRed);
 }
 
 p {
@@ -65,6 +76,14 @@ header {
   position: fixed;
   right: 0;
   bottom: 10px;
+}
+
+#introBlock {
+  margin: auto;
+  width: 95%;
+  max-width: 800px;
+  text-align: left;
+  padding-bottom: 20px;
 }
 
 .toggle-container {
@@ -101,22 +120,30 @@ header {
   display: block;
 }
 
-.NasaAPI-grid-container {
+.NasaAPI-grid-container,
+.RoverImages-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 3fr));
   grid-gap: 20px;
   max-width: 100%;
   margin-bottom: 20px;
 }
 
-.NasaAPI-grid-container > div {
+.NasaAPI-grid-container > div,
+.RoverImages-grid-container > div {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 100%;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, var(--NasaBlue) 25%, var(--white) 10%);
   box-shadow: 0 4px 8px 0 rgba(240, 240, 214, 0.8),
     0 6px 20px 0 var(--lighterGrey);
-  padding: 5%;
+}
+.NasaAPI-grid-container > div:hover,
+.RoverImages-grid-container > div:hover {
+  box-shadow: 0 4px 8px 0 rgba(44, 130, 201, 0.4),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .NasaAPI-grid-container > div > h2,
@@ -124,7 +151,13 @@ h3 {
   text-align: center;
 }
 
-.NasaAPI-grid-container > div > img {
+.RoverImages-grid-container > div > h2,
+h3 {
+  text-align: center;
+}
+
+.NasaAPI-grid-container > div > img,
+.RoverImages-grid-container > div > img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -141,6 +174,7 @@ h3 {
 #marsWeather iframe {
   width: 100%;
   height: 100%;
+  border-radius: 25px;
   position: absolute;
 }
 

@@ -1,6 +1,7 @@
 class UI {
   constructor() {
-    this.uiMovieContainer = document.getElementById("NasaGrid");
+    this.uiNasaContainer = document.getElementById("NasaGrid");
+    this.uiRoverContainer = document.getElementById("RoverGrid");
   }
 
   populatePicOfDayUI(data) {
@@ -9,11 +10,11 @@ class UI {
     let imageCopyright = data.copyright;
     let imageDate = data.date;
     let imageExplanation = data.explanation;
-    this.uiMovieContainer.innerHTML += `
+    this.uiNasaContainer.innerHTML += `
     
     <div>
-    <h2>Photo of the day</h3>
-    <h3>${imageTitle}</h3>
+    <h2>POTD</h3>
+    <h3>Photo of the day: ${imageTitle}</h3>
     <img src=${imageOfTheDay} alt="${imageCopyright} image">
     <p>&copy; ${imageCopyright} - ${imageDate} </p>
     <p>${imageExplanation}</p>
@@ -26,7 +27,7 @@ class UI {
     let EPICImage = EpicDataImage;
     let EPICCaption = EpicData[0].caption;
     let EPICImageDate = EpicData[0].date;
-    this.uiMovieContainer.innerHTML += `
+    this.uiNasaContainer.innerHTML += `
     
     <div>
     <h2>EPIC</h3>
@@ -43,8 +44,27 @@ class UI {
 
   populateRoverImages(RoverImages) {
     console.log(RoverImages);
+    for (var i = 0; i < 8; i += 1) {
+      let RoverImage1 = RoverImages.photos[i].img_src;
+      let EarthDate = RoverImages.photos[i].earth_date;
+      let RoverID = RoverImages.photos[i].rover.id;
+      let RoverName = RoverImages.photos[i].rover.name;
+      let LandingDate = RoverImages.photos[i].rover.landing_date;
+      let LaunchDate = RoverImages.photos[i].rover.launch_date;
 
-    `
+      this.uiRoverContainer.innerHTML += `
+    <div>
+    <h2>Rover</h3>
+    <h3>Mars ${RoverName} Rover Photo</h3>
+    <img src=${RoverImage1} alt="image">
+    <h4>Mars Rover Details</h4>
+    <p><b>Name:</b> ${RoverName}</P>
+    <p><b>ID:</b> ${RoverID} </p>
+    <p><b>Landing date:</b> ${LandingDate}</p>
+    <p><b>Launch date:</b> ${LaunchDate}</p>
+    <p><b>Earths date:</b> ${EarthDate} </p>
+    </div>
     `;
+    }
   }
 }

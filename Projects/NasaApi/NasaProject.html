@@ -10,7 +10,7 @@
     crossorigin="anonymous"
   />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project NASA</title>
+    <title>NASA API PORTAL</title>
   </head>
   <body onload="NasaAPIOnloadData(); localStorageChecker()">
     <header>
@@ -19,12 +19,20 @@
       <i id="lightMode" onclick="setTheme('light')" title="light mode" class="switch hide fas fa-sun"></i>
       </div>
       <img id="NasaLogo" src="Photos/NASALogo.png" />
-      <h1 id="NasaHeader">PROJECT NASA API</h1>
-      <p></p>
+      <h1 id="NasaHeader">NASA API PORTAL</h1>
+      <div id=introBlock>
+      <p id="introPara">
+      Welcome to the NASA Portal. The objective of this site is to connect you to NASA data, via their API. Below is a little background information on NASA.    
+      <br><br> NASA stands for National Aeronautics and Space Administration. NASA is a U.S. government agency that is responsible for science and technology related to air and space. The Space Age started in 1957 with the launch of the Soviet satellite Sputnik.
+      <br><br>NASA opened for business on Oct. 1, 1958. The agency was created to oversee U.S. space exploration and aeronautics research.
+      <br><br>The administrator is in charge of NASA. The NASA administrator is nominated by the president and confirmed by a vote in the Senate.
+    </p>
+    </div>
     </header>
 
       <div class="NasaAPI-grid-container" id="NasaGrid">
       </div>
+      <div class="RoverImages-grid-container" id="RoverGrid"></div>
       <div id="marsWeather">
         <iframe id="marsWeatherIframe" src='https://mars.nasa.gov/layout/embed/image/insightweather/' frameborder="0" allowfullscreen></iframe>
       </div>
