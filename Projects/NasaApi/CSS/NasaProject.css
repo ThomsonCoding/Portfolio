@@ -6,14 +6,17 @@
   --mediumGrey: #474b4f;
   --lighterGrey: #6b6e70;
   --white: #f8f5fa;
+  --hoverBlue: rgba(44, 130, 201, 0.4);
 }
 
 :root.dark {
-  --NasaBlue: #f8f5fa;
-  --darkerGrey: #f8f5fa;
-  --mediumGrey: #6b6e70;
-  --lighterGrey: #474b4f;
-  --white: #222629;
+  --NasaRed: #45a29e;
+  --NasaBlue: #66fcf1;
+  --darkerGrey: #c5c6c7;
+  --mediumGrey: #66fcf1;
+  --lighterGrey: #1f2833;
+  --white: #0b0c10;
+  --hoverBlue: #66fcf1;
 }
 
 * {
@@ -149,8 +152,7 @@ header {
 }
 .NasaAPI-grid-container > div:hover,
 .RoverImages-grid-container > div:hover {
-  box-shadow: 0 4px 8px 0 rgba(44, 130, 201, 0.4),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 var(--hoverBlue), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .NasaAPI-grid-container > div > h2,

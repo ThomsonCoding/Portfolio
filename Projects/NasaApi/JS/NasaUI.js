@@ -54,8 +54,8 @@ class UI {
 
       this.uiRoverContainer.innerHTML += `
     <div>
-    <h2>Rover</h3>
-    <h3>Mars ${RoverName} Rover Photo</h3>
+    <h2>Mars Rover</h3>
+    <h3>${RoverName} Rover Photo - ${i + 1}</h3>
     <img src=${RoverImage1} alt="image">
     <h4>Mars Rover Details</h4>
     <p><b>Name:</b> ${RoverName}</P>
