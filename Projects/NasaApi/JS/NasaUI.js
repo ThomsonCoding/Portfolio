@@ -1,9 +1,13 @@
+/*
+Class UI has been created to be called upon to update the UI with the information gathered from the NASA API.
+*/
 class UI {
   constructor() {
-    this.uiNasaContainer = document.getElementById("NasaGrid");
-    this.uiRoverContainer = document.getElementById("RoverGrid");
+    this.uiNasaContainer = document.getElementById("NasaGrid"); // Gets reference to the NASAGrid which will be used to update info with the POTD and EPIC Picture.
+    this.uiRoverContainer = document.getElementById("RoverGrid"); // Gets reference to the rover grid which will hold the images gathered from the rover images API.
   }
 
+  // Below gathers the image title, date, creator, explanation, etc. And then formats it within a DIV which can be found in the NASAGrid. 
   populatePicOfDayUI(data) {
     let imageTitle = data.title;
     let imageOfTheDay = data.hdurl;
@@ -23,6 +27,7 @@ class UI {
     `;
   }
 
+  // Below gathers the EPIC image, as well as the caption and the date and then formats it within a DIV which can be found in the NASAGrid. 
   DailyEPICPictureUI(EpicData, EpicDataImage) {
     let EPICImage = EpicDataImage;
     let EPICCaption = EpicData[0].caption;
@@ -42,6 +47,7 @@ class UI {
     `;
   }
 
+  // This loops through the Rover API taking 8 images, as well as the information of the ROVER that had taken them. It will then create 8 divs with that information within. The information will be added to the div with the RoverGrid ID.
   populateRoverImages(RoverImages) {
     console.log(RoverImages);
     for (var i = 0; i < 8; i += 1) {
