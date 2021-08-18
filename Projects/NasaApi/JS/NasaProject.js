@@ -2,7 +2,8 @@
 
 const ft = new Fetch();
 const ui = new UI();
-//Tester
+
+// Connecting to the UI class and calling functions which connect to the API and display the data for the user. 
 
 function NasaAPIOnloadData() {
   ft.getCurrent().then((data) => {
@@ -19,6 +20,7 @@ function NasaAPIOnloadData() {
     });
   });
 }
+
 
 // Below is used to add the scroll functionality to the space rocket //
 document.getElementById("NasaIcon");
