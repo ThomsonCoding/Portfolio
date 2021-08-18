@@ -4,7 +4,7 @@ I picked Spotify as it is an application, I have on my laptop all the time, list
 
 I originally intended to do just the main front page, although one thing led to another and I had created various playlists, etc.
 
-If I was to complete this again, I would focus on reusability of the code and also use colour variables more often within my CSS. Although I do feel my Spotify application is visually appealing and takes away many of the features found on the site.
+If I was to complete this again, I would focus on reusability of the code and use colour variables more often within my CSS. Although I do feel my Spotify application is visually appealing and takes away many of the features found on the site.
 
 I learnt a lot and it has helped me focus on various features you can use within CSS.
 
