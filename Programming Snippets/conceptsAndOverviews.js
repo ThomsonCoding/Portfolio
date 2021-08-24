@@ -427,3 +427,151 @@ ReactDOM.render(
   <Contact />, 
   document.getElementById('app')
 );
+
+
+
+// Render methods can also return another kind of JSX: component instances
+class OMG extends React.Component {
+    render() {
+      return <h1>Whooaa!</h1>;
+    }
+  }
+   
+  class Crazy extends React.Component {
+    render() {
+      return <OMG />;
+    }
+  }
+  
+  import { NavBar } from './NavBar'; 
+  /* 
+  This code can be used to import code from other JS files.
+  
+   You also need an export statement, written in the other file, exporting the variable that you hope to grab.
+  */
+  
+  export class NavBar extends React.Component { }; //By adding the word export at the start, you can now pull this to files that contain import within. 
+
+
+  // Access a Component's props (A component’s props is an object. It holds information about that component.)
+
+  import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hi there, {this.props.firstName}!</h1>;
+  }
+}
+
+ReactDOM.render(
+  <Greeting firstName='Daniel' />, 
+  document.getElementById('app')
+);
+
+//Render Different UI Based on props
+
+import React from 'react';
+
+export class Welcome extends React.Component {
+  render() {
+    if (this.props.name === 'Wolfgang Amadeus Mozart') {
+      return (
+      	<h2>
+      	  hello sir it is truly great to meet you here on the web
+      	</h2>
+      );
+    } else {
+      return (
+      	<h2>
+      	  WELCOME "2" MY WEB SITE BABYYY!!!!!
+      	</h2>
+      );
+    }
+  }
+}
+
+// Example of random color generator
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from './Button';
+
+class Random extends React.Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+      color: [92, 132, 153]
+    };
+      this.handleClick = this.handleClick.bind(this);
+  }
+
+handleClick() {
+  this.setState({
+    color: this.chooseColor()
+  });
+}
+
+  componentDidMount() {
+    this.applyColor();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.applyColor();
+  }
+
+  formatColor(ary) {
+    return 'rgb(' + ary.join(', ') + ')';
+  }
+
+  isLight() {
+    const rgb = this.state.color;
+    return rgb.reduce((a,b) => a+b) < 127 * 3;
+  }
+
+  applyColor() {
+    const color = this.formatColor(this.state.color);
+    document.body.style.background = color;
+  }
+
+  chooseColor() {
+    const random = [];
+    for (let i = 0; i < 3; i++) {
+      random.push(Math.floor(Math.random()*256));
+    }
+    return random;
+  }
+
+  render() {
+    return (
+      <div>
+        <h1 className={this.isLight() ? 'white' : 'black'}>
+           Your color is {this.formatColor(this.state.color)}.
+        </h1>
+        <button light={this.isLight()} onClick={this.handleClick} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Random />, 
+  document.getElementById('app')
+);
+
+/*
+import React from 'react';
+
+export class Button extends React.Component {
+	render() {
+		return (
+			<button 
+				className={ this.props.light ? 'light-button' : 'dark-button' }>
+				Refresh
+			</button>
+		);
+	}
+}
+
+The above would be held in button.js
+*/
