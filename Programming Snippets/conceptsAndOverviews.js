@@ -575,3 +575,119 @@ export class Button extends React.Component {
 
 The above would be held in button.js
 */
+
+// Example of a stateful component Class
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+
+class Parent extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { name: 'Frarthur' };
+  }
+
+  render() {
+    return <Child name={this.state.name} />;
+  }
+}
+
+ReactDOM.render(<Parent />, document.getElementById('app'));
+
+// Example of a stateless Component Class
+
+import React from 'react';
+
+export class Child extends React.Component {
+  render(props) {
+  return <h1>Hey, my name is {this.props.name}!</h1>;
+  }
+}
+
+//Binding together to update name changes example: 
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+
+class Parent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { name: 'Frarthur' };
+
+    this.changeName = this.changeName.bind(this);
+  }
+
+  changeName(newName) {
+  this.setState({
+    name: newName
+  });
+}
+
+  render() {
+    return <Child name={this.state.name} onChange={this.changeName} />
+  }
+}
+
+ReactDOM.render(
+	<Parent />,
+	document.getElementById('app')
+);
+
+// Child
+
+import React from 'react';
+
+export class Child extends React.Component {
+
+handleChange(e) {
+  const name = e.target.value;
+  this.props.onChange(name);
+}
+
+constructor(props) {
+  super(props);
+  this.handleChange = this.handleChange.bind(this);
+}
+
+  render() {
+    return (
+      <div>
+        <h1>
+          Hey my name is {this.props.name}!
+        </h1>
+        <select id="great-names" onChange={this.handleChange}>
+          <option value="Frarthur">
+            Frarthur
+          </option>
+
+          <option value="Gromulus">
+            Gromulus
+          </option>
+
+          <option value="Thinkpiece">
+            Thinkpiece
+          </option>
+        </select>
+      </div>
+    );
+  }
+}
+
+/*
+Mounting, when the component is being initialized and put into the DOM for the first time. 
+We saw that the constructor, render(), and componentDidMount() are called during this phase.
+
+In order:
+-constructor
+-render()
+-componentDidMount()
+
+Updating, when the component updates as a result of changed state or changed props. 
+We saw that render() and componentDidUpdate() are called during this phase.
+
+Unmounting, when the component is being removed from the DOM. 
+We saw that componentWillUnmount() was called here, which was a good time to clean things up.
+*/
