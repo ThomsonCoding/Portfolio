@@ -1,6 +1,5 @@
-const clientId = '8c6a907c549644e79e612e3c7f08c368';
-const redirectUri = 'http://localhost:3000';
-// const redirectUri = 'http://gidgod-jammming.surge.sh';
+const clientId = '3e125d99cb2b4f4ba0da4006ba604778';
+const redirectUri = 'http://localhost:3002';
 
 let accessToken;
 
