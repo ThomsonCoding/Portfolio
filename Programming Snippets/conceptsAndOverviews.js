@@ -1,3 +1,6 @@
+////            REACT          //// 
+
+
 /*
 DOM Vs Virtual DOM
 
@@ -690,4 +693,40 @@ We saw that render() and componentDidUpdate() are called during this phase.
 
 Unmounting, when the component is being removed from the DOM. 
 We saw that componentWillUnmount() was called here, which was a good time to clean things up.
+*/
+
+
+
+
+
+////            REACT YOUTUBE TUTORIALS          //// 
+
+/*
+/// RENDERING:
+Rendering - Used to place the JSX elements (Similar to HTML) onto the application. 
+
+/// STATE:
+State (Can create it in a constructor method), must use Super(); 
+State will automatically re-render if state changes. (VDOM will update)
+USE STATE WHEN SOMETHING VISUAL WILL CHANGE (OTHERWISE USE PROPS)
+
+Example of state: 
+    constructor(props){
+        super(props);
+        
+        this.state = {
+          longUrl : ''
+        }
+
+
+/// PROPS:
+
+
+
+
+
+
+
+
+
 */

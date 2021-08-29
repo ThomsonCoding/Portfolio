@@ -1,0 +1,43 @@
+body,
+html,
+#root {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  padding: 0.77rem 0;
+  background-color: #2b7a78;
+  text-align: center;
+  font-size: 1.88rem;
+  color: #feffff;
+  text-shadow: #17252a 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.55rem;
+}
+
+p {
+  color: #17252a;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+.App {
+  height: 100%;
+  padding: 0 17% 10% 17%;
+  /* background-image: url("./background_photo_desktop.jpg"); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  color: #fff;
+}

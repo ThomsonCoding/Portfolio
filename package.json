@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ThomsonCoding/Portfolio/issues"
   },
-  "homepage": "https://github.com/ThomsonCoding/Portfolio#readme"
+  "homepage": "https://github.com/ThomsonCoding/Portfolio#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }
