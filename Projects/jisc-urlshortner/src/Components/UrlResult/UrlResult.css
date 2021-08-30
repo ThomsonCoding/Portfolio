@@ -1,0 +1,44 @@
+.UrlResults {
+  display: grid;
+  grid-template-areas:
+    "LongURL"
+    "URLAnswer"
+    "copyButton";
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  grid-row-gap: 20px;
+}
+
+.LongURL {
+  padding: 0.77rem 0;
+  border: 1px solid #feffff;
+  border-radius: 3px;
+  color: #17252a;
+  text-align: center;
+  font-size: 1rem;
+  grid-area: LongURL;
+}
+
+.ShortURL {
+  padding: 0.77rem 0;
+  border: 1px solid #feffff;
+  border-radius: 3px;
+  color: #17252a;
+  text-align: center;
+  font-size: 1rem;
+  grid-area: URLAnswer;
+}
+
+.copyButton {
+  cursor: pointer;
+  padding: 0.77rem 0;
+  background-color: #feffff;
+  text-align: center;
+  font-size: 1rem;
+  /* transition: background-color 0.25s; */
+  border: 0px;
+  color: #17252a;
+  font-weight: 500;
+  grid-area: copyButton;
+}
