@@ -719,6 +719,28 @@ Example of state:
         }
 
 
+
+*/
+
+class Example extends React.Component {
+  constructor(props) {
+    super(props); // Is a reference to the parents constructor function. 
+    this.state = { mood: 'decent' }; // this.state is equal to an object, this object will represent the initial "state" of any component instance. 
+    this.changeMood = this.changeMood.bind(this); //This is necessary because changeMoods body contains the word "this"
+  }
+
+ changeMood() {
+    this.setState({ // this.setState() is used to update a state, it takes two arguements, the object and the update example: this.setState({ mood: 'Amazing' });
+      mood: 'Amazing'
+    });
+}
+}
+
+// Any time that you call this.setState(), this.setState() AUTOMATICALLY calls .render() as soon as the state has changed.
+
+
+
+/*
 /// PROPS:
 
 

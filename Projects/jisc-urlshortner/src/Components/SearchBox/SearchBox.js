@@ -37,7 +37,7 @@ class SearchBox extends React.Component {
             await shrtcode
               .get(`shorten?url=${this.state.longUrl}`)
               .then((response) => {
-                this.state.shortUrl = response.data.result.short_link2;
+                this.setState({shortUrl: response.data.result.short_link2});
                 ReactDOM.render(<UrlResults longURL={this.state.longUrl} shortURL={this.state.shortUrl}/>, document.getElementById('resultsDiv'));
                 console.log(this.state.shortUrl);
               })
