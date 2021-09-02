@@ -26,7 +26,7 @@ class UrlResults extends React.Component {
         return (
             <div className="UrlResults">
                 <div className="LongURL">{this.props.longURL}</div>
-                <div className="ShortURL"> <textarea ref={(textarea) => this.textArea = textarea} defaultValue={this.props.shortURL}></textarea></div>
+                <div className="ShortURL"> <textarea ref={(textarea) => this.textArea = textarea} value={this.props.shortURL}></textarea></div>
                 <button className="copyButton" onClick={() => this.copyCodeToClipboard()}>COPY</button>
             </div>
         )

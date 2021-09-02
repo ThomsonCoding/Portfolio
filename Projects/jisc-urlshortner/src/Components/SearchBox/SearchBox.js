@@ -27,7 +27,7 @@ class SearchBox extends React.Component {
         
         updateInput(event){
         this.setState({longUrl : event.target.value}) // This sets the longUrl state to the inputted value. 
-        }
+      }
         
         
         handleSubmit(){

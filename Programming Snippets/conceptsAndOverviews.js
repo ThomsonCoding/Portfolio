@@ -752,3 +752,128 @@ class Example extends React.Component {
 
 
 */
+
+
+
+/*
+
+// Example of state and props in use. 
+//////////// Random.js ////////////
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from './Button';
+
+class Random extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { 
+      color: [5, 10, 15] 
+      };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.applyColor();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.applyColor();
+  }
+
+  formatColor(ary) {
+    return 'rgb(' + ary.join(', ') + ')';
+  }
+
+  isLight() {
+    const rgb = this.state.color;
+    return rgb.reduce((a,b) => a+b) < 127 * 3;
+  }
+
+  applyColor() {
+    const color = this.formatColor(this.state.color);
+    document.body.style.background = color;
+  }
+
+  handleClick() {
+   this.setState({
+     color: this.chooseColor()
+     });
+  }
+
+  chooseColor() {
+    const random = [];
+    for (let i = 0; i < 3; i++) {
+      random.push(Math.floor(Math.random()*256));
+    }
+    return random;
+  }
+
+  render() {
+    return (
+      <div>
+        <h1 className={this.isLight() ? 'white' : 'black'}>
+          Your color is {this.formatColor(this.state.color)}.
+        </h1>
+        <Button onClick={this.handleClick}/>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Random />, 
+  document.getElementById('app')
+
+//////////// Button.js ////////////
+import React from 'react';
+
+export class Button extends React.Component {
+	render() {
+		return (
+			<button onClick={this.props.onClick}
+				className={ this.props.light ? 'light-button' : 'dark-button' }>
+				Refresh
+			</button>
+		);
+	}
+}
+
+*/
+
+/* Stateful Vs Stateless 
+Stateful - describes any component that has a state property; 
+stateless - describes any component that does not.
+
+Stateful example:
+*/
+
+import react from 'react';
+import ReactDom from 'react-dom';
+import {Child} from './Child'
+class Parent extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      name: 'Frarthur'
+    };
+
+  }
+  
+  render() {
+    return <Child name={this.state.name} />;
+  }
+}
+
+ReactDOM.render(<Parent />, document.getElementById('app'));
+
+//Stateless example. (This is ready to be used in the Parent class above)
+import react from 'react';
+export class Child extends React.Component {
+  render() {
+    return <h1>Hey, my name is {this.props.name}!</h1>;
+  } 
+}
