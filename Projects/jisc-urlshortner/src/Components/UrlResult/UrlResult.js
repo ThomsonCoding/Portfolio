@@ -2,7 +2,7 @@ import React from 'react';
 
 import './UrlResult.css';
 
-console.log("updated");
+console.log("updated1");
 
 class UrlResults extends React.Component {
     
