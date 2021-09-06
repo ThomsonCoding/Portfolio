@@ -42,7 +42,7 @@ class SearchBox extends React.Component {
                 console.log(this.state.shortUrl);
               })
               .catch((error) => {
-                ReactDOM.render(<LoadingMessage message="Please enter valid URL..." />, document.getElementById('resultsDiv'));
+                ReactDOM.render(<LoadingMessage message="Please enter a valid URL..." />, document.getElementById('resultsDiv'));
               });
           };
           return getLink();
