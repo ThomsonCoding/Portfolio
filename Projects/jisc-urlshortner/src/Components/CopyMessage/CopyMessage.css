@@ -1,0 +1,9 @@
+.CopiedMessage {
+  width: auto;
+  height: 30px;
+  background-color: #2b7a78;
+  font-size: 25px;
+}
+.CopiedMessage p {
+  color: white;
+}

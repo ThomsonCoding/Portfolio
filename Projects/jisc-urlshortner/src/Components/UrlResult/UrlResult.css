@@ -5,7 +5,7 @@
     "URLAnswer"
     "copyButton";
   align-items: center;
-  max-width: 1000px;
+  max-width: 700px;
   margin: auto;
   grid-row-gap: 20px;
 }
@@ -21,6 +21,10 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .ShortURL {
@@ -44,4 +48,12 @@
   color: #17252a;
   font-weight: 500;
   grid-area: copyButton;
+}
+
+#copiedMessage {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0;
 }

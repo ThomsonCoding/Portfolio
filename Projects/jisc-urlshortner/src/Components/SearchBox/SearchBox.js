@@ -7,7 +7,7 @@ import UrlResults from '../UrlResult/UrlResult';
 
 import shrtcode from '../../api/shrtcode';
 
-
+import LoadingMessage from '../LoadingMessage/LoadingMessage';
 class SearchBox extends React.Component {
     
     
@@ -32,7 +32,7 @@ class SearchBox extends React.Component {
         
         handleSubmit(){
         console.log(this.state.longUrl); //To confirm connection, I log longUrl after the button is clicked. 
-        console.log("Loading...");
+        ReactDOM.render(<LoadingMessage />, document.getElementById('resultsDiv'));
         const getLink = async () => {
             await shrtcode
               .get(`shorten?url=${this.state.longUrl}`)
