@@ -39,7 +39,7 @@ class UrlResults extends React.Component {
     render() {        
         return (
             <div className="UrlResults">
-                <div id="copiedMessage"></div>
+                <div id="Message"></div>
                 <div className="LongURL">{this.props.longURL}</div>
                 <div className="ShortURL"> <textarea ref={(textarea) => this.textArea = textarea} value={this.props.shortURL}></textarea></div>
                 <button className="copyButton" onClick={() => this.copyCodeToClipboard()}>COPY</button>
