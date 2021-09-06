@@ -32,7 +32,7 @@ class SearchBox extends React.Component {
         
         handleSubmit(){
         console.log(this.state.longUrl); //To confirm connection, I log longUrl after the button is clicked. 
-        ReactDOM.render(<LoadingMessage />, document.getElementById('resultsDiv'));
+        ReactDOM.render(<LoadingMessage message="loading..." />, document.getElementById('resultsDiv'));
         const getLink = async () => {
             await shrtcode
               .get(`shorten?url=${this.state.longUrl}`)
@@ -42,7 +42,7 @@ class SearchBox extends React.Component {
                 console.log(this.state.shortUrl);
               })
               .catch((error) => {
-                console.error(error);
+                ReactDOM.render(<LoadingMessage message="Please enter valid URL..." />, document.getElementById('resultsDiv'));
               });
           };
           return getLink();

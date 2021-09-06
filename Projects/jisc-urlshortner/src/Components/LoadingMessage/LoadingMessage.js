@@ -8,7 +8,7 @@ class LoadingMessage extends React.Component {
     render() {
         return (
         <div className="LoadingMessage">
-            <p>Loading...</p>
+            <p>{this.props.message}</p>
         </div> 
         )
     }
