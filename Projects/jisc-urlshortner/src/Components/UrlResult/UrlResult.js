@@ -30,9 +30,13 @@ class UrlResults extends React.Component {
     
     emailLink = () => {
         ReactDOM.render(
-            <Message message="EMAILED"/>, 
+            <Message message="EMAILING..."/>, 
             document.getElementById('Message')
           );
+          const el = this.textArea.value;
+          var email = " ";
+          var body = "Your short and reliable link is " + el;
+          document.location = "mailto:" + email + "?body=" + body;
       }
     
     
