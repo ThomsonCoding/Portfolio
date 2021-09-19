@@ -29,6 +29,11 @@ a {
   text-decoration: none;
 }
 
+b {
+  color: black;
+  font-weight: 900;
+}
+
 h2 {
   margin: 0;
 }
@@ -54,7 +59,7 @@ header {
 header img {
   height: 10vw;
   width: 10vw;
-  margin-top: 0;
+  padding-top: 10px;
   line-height: 1;
 }
 
@@ -197,10 +202,10 @@ h3 {
 }
 
 #Subscribe button {
-  background-color: red;
+  background-color: rgb(254, 57, 60);
   color: white;
   padding: 30px 50px;
-  border-radius: 15px;
+  border-radius: 30px;
   font-size: 30px;
   display: block;
   max-width: 300px;
@@ -235,6 +240,11 @@ h3 {
 }
 
 /*      Modal Newsletter     */
+
+#Modal {
+  display: none;
+  overflow: scroll;
+}
 
 .Modal {
   display: none;
@@ -285,7 +295,7 @@ form label {
 
 form input {
   margin-bottom: 10vw;
-  border: solid 3px rgb(215, 215, 215);
+  border: solid 2px rgb(215, 215, 215);
   border-radius: 5px;
   height: 10vw;
 }
@@ -335,12 +345,59 @@ form label {
   margin: auto;
 }
 
-/* Media Query for low resolution  Tablets, Ipads */
-@media (min-width: 481px) and (max-width: 767px) {
-}
-
 /* Media Query for Tablets Ipads portrait mode */
-@media (min-width: 768px) {
+@media only screen and (min-device-width: 768px) {
+  header {
+    height: 40%;
+    max-height: 420px;
+  }
+
+  header img {
+    height: 5vw;
+    width: 5vw;
+  }
+  #HeaderText h2 {
+    font-size: 3vw;
+  }
+  #HeaderText p {
+    font-size: 1.5vw;
+    margin: 5px;
+  }
+  #HeaderText h3 {
+    font-size: 2vw;
+  }
+  #HeaderText button {
+    font-size: 2vw;
+    padding: 5px 30px;
+    max-width: 300px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  /* Order Section Laptop */
+
+  #OrderHeader h2 {
+    font-weight: 900;
+    font-size: 3vw;
+  }
+
+  .ordered-container P {
+    font-size: 1.75vw;
+  }
+
+  .ProductImage {
+    height: 140px;
+    width: 140px;
+  }
+  #Subscribe h3 {
+    font-size: 1.5vw;
+  }
+
+  #Subscribe button {
+    padding: 20px 50px;
+    border-radius: 2px;
+    font-size: 2vw;
+  }
 }
 
 /* Media Query for Laptops and Desktops */
@@ -348,7 +405,7 @@ form label {
   header {
     background-image: url("BackgroundPhotos/banner-bg.jpg");
     height: 40%;
-    max-height: 220px;
+    max-height: 240px;
   }
 
   header img {
@@ -361,25 +418,26 @@ form label {
   #HeaderText {
     position: relative;
     float: left;
-    top: 4%;
+    top: 8%;
     left: 50%;
-    transform: translate(-50%, -4%);
+    transform: translate(-50%, -8%);
     color: white;
   }
 
   #HeaderText p {
-    font-size: 1vw;
+    font-size: 0.75vw;
     margin: 5px;
   }
 
   #HeaderText h2 {
     margin: 0px;
     padding: 0px;
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   #HeaderText h3 {
-    margin: 5px;
+    margin: 15px;
+    font-size: 1vw;
   }
 
   #HeaderText button {
@@ -399,10 +457,12 @@ form label {
     height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 15% 70% 15%;
+    grid-template-rows: 15% 55% 15%;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     align-content: space-between;
+    margin: 0;
+    padding: 0;
   }
 
   .ordered-container P {
@@ -422,12 +482,11 @@ form label {
     grid-area: 2 / 2 / 3 / 3;
   }
   #Subscribe {
-    grid-area: 3 / 1 / 4 / 3;
+    grid-area: 3 / 1 / 4 / 3 !important;
     justify-content: center;
   }
 
   #OrderHeader h2 {
-    color: black;
     font-weight: 900;
     margin: 5px;
     font-size: 2vw;
@@ -461,9 +520,9 @@ form label {
   }
 
   #Mastercard img {
-    padding: 5px 5px;
-    height: 4vw;
-    width: 4vw;
+    padding: 2px 2px;
+    height: 3vw;
+    width: 3vw;
   }
 
   .row {
@@ -501,25 +560,26 @@ form label {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    height: 100%;
+    height: auto;
     width: 100%;
-    max-height: 700px;
-    max-width: 700px;
+    max-height: 500px;
+    max-width: 650px;
   }
 
   .ModalHeader h2 {
-    font-size: 2vw;
+    font-size: 1.5vw;
+    padding: 1vw;
   }
 
   form input {
-    margin-bottom: 3vw;
-    height: 3vw;
+    margin-bottom: 1vw;
+    height: 2.25vw;
   }
 
   form label {
     color: black;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 0.7vw;
   }
 
   .ModalCloseButton {
@@ -530,27 +590,51 @@ form label {
     border-radius: 50%;
     border: none;
     color: black;
-    height: 2vw;
-    width: 2vw;
-    font-size: 1vw;
+    height: 1.5vw;
+    width: 1.5vw;
+    font-size: 0.75vw;
     margin: 0px 10px;
   }
 
   .ModalCloseButton p {
     color: rgb(245, 245, 245);
     margin-right: 10px;
-    font-size: 1vw;
+    font-size: 0.7vw;
   }
 
   .ModalSignUp {
-    padding: 1vw 5vw;
-    font-size: 1vw;
+    padding: 0.7vw 4vw;
+    font-size: 0.8vw;
   }
 }
 
 /* Media Query for Large screens */
 @media (min-width: 1281px) {
   header {
-    max-height: 330px;
+    max-height: 500px;
+  }
+
+  #HeaderText {
+    position: relative;
+    float: left;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    color: white;
+  }
+
+  #HeaderText button {
+    font-size: 1vw;
+    padding: 5px 30px;
+    max-width: 350px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  .ordered-container P {
+    font-size: 0.75vw;
+    margin-right: 40px;
+  }
+  .row p {
+    margin: 0 0 5px 0;
   }
 }

@@ -4,7 +4,7 @@
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,150;0,500;1,100&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="CSS/orderConfirmation.css" />
     <link rel="icon" href="Photos/Fisheye.svg">
     <title>Attention To Retail</title>
@@ -27,7 +27,7 @@
                 <img class="ProductImage" src="Photos/prod-TN-1.jpg">
              <div class="ProductInfo">  
                 <p>17ft x 12ft Jumpking Deluxe Rectangular Trampoline with Enclosure</p>
-                <p><i class="OldPrice">£1069.00</i>  £949.00</p>
+                <p><i class="OldPrice">£1069.00</i> <b>£949.00</b></p>
             </div>
                 <p class="Quantity"><b>QTY1</b></p>
             </div>
@@ -55,14 +55,14 @@
         </div>
             <div id="Subscribe">
                     <h3>Subscribe For The Latest Offers</h3>
-                    <button class="ModalButton">Subscribe</button>
+                    <button class="ModalButton" onclick="showDiv('Modal'), showDiv('ModalBackground')">Subscribe</button>
             </div>
     </div>
-<div class="ModalBackground">
-    <div class="Modal">
+<div id="ModalBackground" class="ModalBackground">
+    <div id="Modal" class="Modal">
         <div class="ModalCloseButton">
-        <button class="ModalButton">X</button>    
-        <p>Close</p>
+        <button class="ModalButton" onclick="hideDiv('Modal'), hideDiv('ModalBackground')">X</button>    
+        <p class="ModalButton" onclick="hideDiv('Modal'), hideDiv('ModalBackground')">Close</p>
         </div>
         
         <div class="ModalHeader">
@@ -87,7 +87,7 @@
         </form>
     </div>
 </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/JS/orderConfirmation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="JS/orderConfirmation.js"></script>
   </body>
 </html>
