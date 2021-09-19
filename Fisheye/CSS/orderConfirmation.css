@@ -42,7 +42,7 @@ ol {
 /* Styles for the header section */
 
 header {
-  background-image: url("Photos/banner-bg-MOB.jpg");
+  background-image: url("BackgroundPhotos/banner-bg-MOB.jpg");
   height: 800px;
   width: 100vw;
   background-size: contain;
@@ -346,7 +346,7 @@ form label {
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) {
   header {
-    background-image: url("Photos/banner-bg.jpg");
+    background-image: url("BackgroundPhotos/banner-bg.jpg");
     height: 40%;
     max-height: 220px;
   }
