@@ -3,29 +3,41 @@ class UI {
         this.uiQuestionContainer = document.getElementById("QuestionHolder");
     }
 
-    populateQuestion(data, x) {
+    populateQuestion(data, x, score) {
 
+        let TotalScore =+ score;
+        let passMark = data.passmark;
+        let questionCounter =+ x;
         let questionAmount = data.questions.length;
 
-        if (x === questionAmount) {
+        console.log(questionCounter + " " + questionAmount);
+        if (questionCounter === questionAmount) {
+            if (TotalScore >= passMark) {
             this.uiQuestionContainer.innerHTML = `
             <div class="QuestionInfo">
-                <h2 class="Question">Congradulations, your score was...</h2>
+                <h2 class="Question">Well done! Your score was ${TotalScore} which is a pass!</h2>
             </div>`;
+            } else {
+            this.uiQuestionContainer.innerHTML = `
+            <div class="QuestionInfo">
+                <h2 class="Question">Unlucky! Your score was ${TotalScore}, and you needed ${passMark} or above.</h2>
+             </div>`;
+            }
             return;
         }
 
         let pointsPerQuestions = 100 / questionAmount;
         let questionNumber = x + 1;
         let progressBar = pointsPerQuestions * questionNumber;
-        console.log(pointsPerQuestions);
         let question = data.questions[x].question;
         let answers = data.questions[x].options[0];
         let answersLength = data.questions[x].options.length;
         let answerOptions = [];
-
+        
         for (var i = 0; i < answersLength; i += 1) { 
-            answerOptions += `<div class="answer" onclick="${data.questions[i].options[0].isCorrect}Answer()"><p>${data.questions[x].options[i].label}</p></div>`;
+            answerOptions += `
+            <div class="answer" onclick="move(${progressBar}, ${pointsPerQuestions}), ${data.questions[x].options[i].isCorrect}Answer(${pointsPerQuestions}, ${questionAmount})"><p>${data.questions[x].options[i].label}</p></div>
+            `;
         }
 
 
@@ -37,13 +49,15 @@ class UI {
         </div>
             
         <div class="progress-bar-outline">
-            <div class="progress-bar-filled" style="width:${progressBar}%"></div>
+            <div id="progress-bar" class="progress-bar-filled" style="width:${progressBar}%"></div>
         </div>
-            <h2 class="Question">${question}</h2>
+        <div id="questionWrapper" class="wrapper">
+            <h2 id="TheQuestion" class="Question">${question}</h2>
+        </div>
             <p id="topic">History of art</p>
         </div>
-        <div>
-            <div class="QuestionAnswers">${answerOptions}</div>
+        <div class="QuestionAnswers">
+            <div id="answerWrapper" class="answerWrapper">${answerOptions}</div>
         </div>
         `;
     }
