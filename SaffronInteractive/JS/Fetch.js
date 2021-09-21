@@ -1,5 +1,5 @@
 class Fetch {
-    async getCurrent() { // Connects to the NASA API to pull the picture of the day. 
+    async getCurrent() { 
   
       const response = await fetch(
         `./JS/Saffron.json`

@@ -15,8 +15,14 @@ class UI {
             if (TotalScore >= passMark) {
             this.uiQuestionContainer.innerHTML = `
             <div class="QuestionInfo">
-                <h2 class="Question">Well done! Your score was ${TotalScore} which is a pass!</h2>
-            </div>`;
+                <h2 class="Question">Well done! Your score was ${TotalScore} which is a pass! <br><br> Want to see if a friend can beat you? Use the QR code below!</h2>
+            </div>
+            
+            <div class="QuestionAnswers">
+                <img src="Photos/qrcode_thomsoncoding.github.io.png">
+            </div>
+
+            `;
             } else {
             this.uiQuestionContainer.innerHTML = `
             <div class="QuestionInfo">
@@ -33,10 +39,11 @@ class UI {
         let answers = data.questions[x].options[0];
         let answersLength = data.questions[x].options.length;
         let answerOptions = [];
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz';
         
         for (var i = 0; i < answersLength; i += 1) { 
             answerOptions += `
-            <div class="answer" onclick="move(${progressBar}, ${pointsPerQuestions}), ${data.questions[x].options[i].isCorrect}Answer(${pointsPerQuestions}, ${questionAmount})"><p>${data.questions[x].options[i].label}</p></div>
+            <div class="answer" onclick="move(${progressBar}, ${pointsPerQuestions}), ${data.questions[x].options[i].isCorrect}Answer(${pointsPerQuestions}, ${questionAmount})"><p><span class="questionLetter">${alphabet.charAt(i)}</span>&nbsp;&nbsp; ${data.questions[x].options[i].label}</p></div>
             `;
         }
 
@@ -44,7 +51,7 @@ class UI {
         this.uiQuestionContainer.innerHTML = `
         <div class="QuestionInfo">
         <div class="QuestionNumber">
-            <i style="font-size:60px" class="fa left">&#xf104;</i>
+            <i style="font-size:100px" class="fa left">&#xf104;</i>
             <p class="QuestionNumber"><strong>0${questionNumber}</strong> <span id="totalQuestions">/ 0${questionAmount}</span></p>
         </div>
             
