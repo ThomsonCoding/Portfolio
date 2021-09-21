@@ -1,3 +1,5 @@
+//This is used to fetch the data from the json file. Then return the data that will be used for the quiz. 
+
 class Fetch {
     async getCurrent() { 
   
