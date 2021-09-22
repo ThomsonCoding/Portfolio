@@ -204,7 +204,7 @@ p {
   float: left;
 }
 
-@media (min-width: 641px) {
+@media only screen and (min-width: 641px) {
   .QuestionInfo {
     padding: 5% 10%;
     height: 720px;
