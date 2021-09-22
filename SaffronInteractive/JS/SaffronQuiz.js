@@ -81,3 +81,11 @@ function move(progressBar, pointsPerQuestions) {
       }
     }
   }
+
+
+// Function created for the play again button. Resetting both the X number (Used to iterate through the Q's) and score. 
+function playAgain() {
+    x = 0; 
+    score = 0;
+    loadJson(0, 0);
+}

@@ -7,6 +7,8 @@ class UI {
 
     populateQuestion(data, x, score) {
 
+        console.log(x + " " + score);
+        //let questionCounter = 5;
         let TotalScore =+ score; // This variable is to keep the score up to date. (Updating with each correct answer)
         let passMark = data.passmark; // This allows the passmark to vary with the json data. Updating depending on what is set. 
         let questionCounter =+ x; //This counts the questions, and will be compared to the length of the data (amount of questions), so when know when the last one is called. 
@@ -16,7 +18,8 @@ class UI {
             if (TotalScore >= passMark) {
             this.uiQuestionContainer.innerHTML = `
             <div class="QuestionInfo">
-                <h2 class="Question">Well done! Your score was ${TotalScore} which is a pass! <br><br> Want to see if a friend can beat you? Use the QR code below and see what they get!</h2>
+                <h2 class="Question">Well done! Your score was <span class="blueText">${TotalScore}</span> which is a pass! <br><br> Want to see if a friend can beat you? Use the <span class="blueText">QR code</span> below and see what they get!</h2>
+                <button id="PlayAgain" onClick="playAgain()">Play Again</button>
             </div>
             
             <div class="QuestionAnswers">
@@ -27,7 +30,8 @@ class UI {
             } else { //If a fail occurs, the container will be filled with the information below.
             this.uiQuestionContainer.innerHTML = `
             <div class="QuestionInfo">
-                <h2 class="Question">Unlucky! Your score was ${TotalScore}, and you needed ${passMark} or above. Bet your friends still couldn't beat you though! <br><br> Use the QR code below to invite them! </h2>
+                <h2 class="Question">Unlucky! Your score was <span class="blueText">${TotalScore}</span>, and you needed ${passMark} or above. Bet your friends still couldn't beat you though! <br><br> Use the <span class="blueText">QR code</span> below to invite them! </h2>
+                <button id="PlayAgain" onClick="playAgain()">Play Again</button>
              </div>
             
             <div class="QuestionAnswers">
