@@ -203,3 +203,34 @@ p {
 .left {
   float: left;
 }
+
+@media (min-width: 641px) {
+  .QuestionInfo {
+    padding: 5% 10%;
+    height: 720px;
+  }
+
+  .QuestionNumber {
+    margin: 40px;
+  }
+
+  .QuestionNumber strong {
+    font-size: 5vw;
+  }
+
+  #totalQuestions {
+    font-size: 5vw;
+    font-weight: 300;
+  }
+
+  .Question {
+    margin-top: 10%;
+    font-size: 50px;
+  }
+
+  .QuestionAnswers {
+    min-height: 770px;
+    background-color: rgb(0, 81, 255);
+    padding: 3% 15%;
+  }
+}
