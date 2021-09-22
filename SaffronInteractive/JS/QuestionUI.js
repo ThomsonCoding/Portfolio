@@ -7,8 +7,7 @@ class UI {
 
     populateQuestion(data, x, score) {
 
-        console.log(x + " " + score);
-        //let questionCounter = 5;
+        // let questionCounter = 5;
         let TotalScore =+ score; // This variable is to keep the score up to date. (Updating with each correct answer)
         let passMark = data.passmark; // This allows the passmark to vary with the json data. Updating depending on what is set. 
         let questionCounter =+ x; //This counts the questions, and will be compared to the length of the data (amount of questions), so when know when the last one is called. 
@@ -19,11 +18,12 @@ class UI {
             this.uiQuestionContainer.innerHTML = `
             <div class="QuestionInfo">
                 <h2 class="Question">Well done! Your score was <span class="blueText">${TotalScore}</span> which is a pass! <br><br> Want to see if a friend can beat you? Use the <span class="blueText">QR code</span> below and see what they get!</h2>
-                <button id="PlayAgain" onClick="playAgain()">Play Again</button>
+                <button id="playAgain" onClick="playAgain(${TotalScore})">Play Again</button>
             </div>
             
             <div class="QuestionAnswers">
                 <img src="Photos/qrcode_thomsoncoding.github.io.png">
+                <button id="emailFriend" onClick="sendEmail(${TotalScore})">Email Friend</button>
             </div>
 
             `;
@@ -31,11 +31,12 @@ class UI {
             this.uiQuestionContainer.innerHTML = `
             <div class="QuestionInfo">
                 <h2 class="Question">Unlucky! Your score was <span class="blueText">${TotalScore}</span>, and you needed ${passMark} or above. Bet your friends still couldn't beat you though! <br><br> Use the <span class="blueText">QR code</span> below to invite them! </h2>
-                <button id="PlayAgain" onClick="playAgain()">Play Again</button>
+                <button id="playAgain" onClick="playAgain()">Play Again</button>
              </div>
             
             <div class="QuestionAnswers">
                 <img src="Photos/qrcode_thomsoncoding.github.io.png">
+                <button id="emailFriend" onClick="sendEmail(${TotalScore})">Email Friend</button>
             </div>
 
              `;

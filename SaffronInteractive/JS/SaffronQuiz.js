@@ -89,3 +89,12 @@ function playAgain() {
     score = 0;
     loadJson(0, 0);
 }
+
+//Adding functionality to the send an email button. Providing a url link and adding their score to the email.
+function sendEmail(TotalScore) {
+      var email = "Please enter your friends email...";
+      var subject = "I found this game, Try beat me!";
+      var link = "9qr.de/EA9xNW";
+      var content = "Hi, I just got " + TotalScore + "/100 Think you can beat me!? Use this link to try..." + link + ". " 
+      document.location = "mailto:" + email + "?subject=" + subject + "&body=" + content;
+}

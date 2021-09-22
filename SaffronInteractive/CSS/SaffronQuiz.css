@@ -49,14 +49,26 @@ p {
   font-size: larger;
 }
 
-#PlayAgain {
+#playAgain {
   height: 100px;
   width: 100%;
   font-size: 60px;
   background-color: rgb(0, 81, 255);
   color: rgba(255, 255, 255, 0.89);
   border: 5px thin rgb(0, 81, 255);
-  margin-top: 10px;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+
+#emailFriend {
+  height: 100px;
+  width: 100%;
+  font-size: 60px;
+  color: rgb(0, 81, 255);
+  background-color: rgba(255, 255, 255, 0.89);
+  border: 5px thin rgb(0, 81, 255);
+  margin-top: 40px;
+  border-radius: 15px;
 }
 
 .QuestionNumber {
