@@ -6,7 +6,7 @@ class UI {
     }
 
     populateQuestion(data, x, score) {
-
+        let lastQuestionsPoints = score;
         // let questionCounter = 5;
         let TotalScore =+ score; // This variable is to keep the score up to date. (Updating with each correct answer)
         let passMark = data.passmark; // This allows the passmark to vary with the json data. Updating depending on what is set. 
@@ -66,7 +66,7 @@ class UI {
         this.uiQuestionContainer.innerHTML = `
         <div class="QuestionInfo">
         <div class="QuestionNumber">
-            <i style="font-size:100px" class="fa left">&#xf104;</i>
+            <i style="font-size:100px" class="fa left" onClick="backButton(${lastQuestionsPoints})">&#xf104;</i>
             <p class="QuestionNumber"><strong>0${questionNumber}</strong> <span id="totalQuestions">/ 0${questionAmount}</span></p>
         </div>
             

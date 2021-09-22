@@ -19,10 +19,9 @@ let score = 0; // The starting score that will be updated each time.
 /*
 If the answer is correction, the function below will update both the score and the x variable. (This will then load the next Q's and Answers)
 */
-function trueAnswer(pointsPerQuestions, questionAmount) {
+function trueAnswer(pointsPerQuestions, questionAmount) { 
     score += pointsPerQuestions; //Used to add the new points to the old score. 
-    x += 1;
-
+    x += 1; 
 // If it is not the last question, carry out the animations to remove the previous questions and then load the next set of questions using the loadJson function.
 
     if (questionAmount > x) {
@@ -43,7 +42,6 @@ function trueAnswer(pointsPerQuestions, questionAmount) {
 
 function falseAnswer(pointsPerQuestions, questionAmount) {
     x += 1;
-
     if (questionAmount > x) {
         removeText(); 
     
@@ -97,4 +95,12 @@ function sendEmail(TotalScore) {
       var link = "9qr.de/EA9xNW";
       var content = "Hi, I just got " + TotalScore + "/100 Think you can beat me!? Use this link to try..." + link + ". " 
       document.location = "mailto:" + email + "?subject=" + subject + "&body=" + content;
+}
+
+
+//Added a backButton, allowing the user to go back one question. This will also update the score remove correct points if they had got it right. 
+function backButton(lastQuestionsPoints) {
+    score = score - lastQuestionsPoints;
+    x = x - 1;
+    loadJson(x, score);
 }
