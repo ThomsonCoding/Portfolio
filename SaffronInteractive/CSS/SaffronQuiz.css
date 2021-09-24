@@ -6,6 +6,9 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -26,22 +29,151 @@ a {
   text-decoration: none;
 }
 
-#QuestionHolder {
-  height: auto;
-  width: 80vw;
-  margin: 5vh 10vw;
+#QuizHolder {
+  height: 100%;
+  padding: 5%;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.QuestionArea {
+  grid-area: 1 / 1 / 2 / 2;
   background-color: white;
-  overflow: scroll;
+  padding: 10%;
+  position: relative;
+}
+.AnswerSection {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: rgb(21, 70, 235);
+  padding: 3% 10%;
+  position: relative;
+  text-align: center;
   align-content: center;
 }
 
-.QuestionInfo {
-  padding: 15%;
-  height: 1000px;
+.NumberSection {
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  height: auto;
 }
 
-p {
-  font-size: 100px;
+.NumberSection i {
+  float: left;
+  font-size: 10vw !important;
+}
+
+#totalQuestions {
+  font-size: 5vw;
+  font-weight: 500;
+  color: rgba(216, 216, 216, 0.6);
+}
+
+.NumberSection strong {
+  font-size: 8vw;
+  font-weight: 900;
+}
+
+.progress-bar-outline,
+.progress-bar-outline:hover {
+  border-bottom: 1px solid blue;
+  margin: 10% 0% 15% 0%;
+}
+
+.progress-bar-filled,
+.progress-bar-filled:hover {
+  background-color: rgb(21, 70, 235);
+  height: 12px;
+}
+
+#TheQuestion {
+  font-size: 8vw;
+  line-height: 1.5;
+  text-align: left;
+  font-weight: 500;
+  width: 90%;
+  overflow: hidden;
+  color: rgba(48, 48, 48, 0.7);
+}
+
+#topic {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  font-size: 4vw;
+  font-weight: 300;
+  color: grey;
+}
+
+.questionLetter {
+  color: rgba(216, 216, 216, 0.6);
+}
+
+.answerStylying {
+  text-align: left;
+  border-left: 5px solid white;
+  color: white;
+  font-size: 5vw;
+  height: auto;
+  padding: 1% 5%;
+  font-weight: 400;
+  background: linear-gradient(to right, white 50%, rgb(33, 87, 253) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.25s ease-out;
+}
+
+.answerStylying p {
+  margin: 0;
+  padding: 5%;
+}
+
+.answerStylying:active {
+  background-position: left bottom;
+}
+
+.answerStylying:active {
+  color: rgb(33, 87, 253);
+}
+
+.answerWrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 25%);
+  grid-column-gap: 0px;
+  grid-row-gap: 10px;
+  padding: 1%;
+  animation: slide-left 0.75s;
+  height: 100%;
+  align-content: center;
+}
+
+.answer1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.answer2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.answer3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.answer4 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+/* Results/Invite a friend section */
+
+.Results {
+  font-size: 6vw;
+  line-height: 1.5;
+  text-align: left;
+  font-weight: 500;
+  overflow: hidden;
+  color: rgba(48, 48, 48, 0.7);
 }
 
 .blueText {
@@ -49,60 +181,42 @@ p {
   font-size: larger;
 }
 
+.AnswerSection img {
+  width: auto;
+  height: 75%;
+  margin: auto;
+}
+
 #playAgain {
-  height: 100px;
-  width: 100%;
-  font-size: 60px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 40px;
+  height: 10%;
+  width: 80%;
+  font-size: 5vw;
   background-color: rgb(0, 81, 255);
   color: rgba(255, 255, 255, 0.89);
-  border: 5px thin rgb(0, 81, 255);
-  margin-top: 40px;
   border-radius: 15px;
 }
 
 #emailFriend {
-  height: 100px;
-  width: 100%;
-  font-size: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  margin-bottom: 40px;
+  height: 15%;
+  width: 80%;
+  font-size: 5vw;
   color: rgb(0, 81, 255);
   background-color: rgba(255, 255, 255, 0.89);
-  border: 5px thin rgb(0, 81, 255);
-  margin-top: 40px;
   border-radius: 15px;
 }
 
-.QuestionNumber {
-  text-align: center;
-  align-content: center;
-  font-weight: 500;
-}
+/*  Animation Section */
 
-.QuestionNumber strong {
-  font-size: 70px;
-}
-
-.questionLetter {
-  color: rgba(216, 216, 216, 0.6);
-}
-
-.Question {
-  margin-top: 20%;
-  text-align: left;
-  font-size: 50px;
-  line-height: 1.3;
-  font-weight: 500;
-  width: 100%;
-  overflow: hidden;
-}
-
-.wrapper {
+#questionWrapper {
   animation: slide-left 0.74s;
-  height: 300px;
-}
-
-.answerWrapper {
-  animation: slide-left 0.75s;
-  height: 300px;
+  height: 500px;
 }
 
 @keyframes slide-left {
@@ -119,7 +233,7 @@ p {
 
 .slideOutWrapper {
   animation: slide-out 0.75s;
-  height: 300px;
+  height: 100%;
 }
 
 @keyframes slide-out {
@@ -134,103 +248,302 @@ p {
   }
 }
 
-#totalQuestions {
-  font-size: 45px;
-  font-weight: 300;
-  color: grey;
-}
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
 
-#topic {
-  font-size: 30px;
-  font-weight: 300;
-  color: grey;
-}
-
-.QuestionAnswers {
-  bottom: 0;
-  width: auto;
-  height: auto;
-  min-height: 950px;
-  background-color: rgb(0, 81, 255);
-  padding: 15%;
-}
-
-.QuestionAnswers img {
-  width: 100%;
-  height: 100%;
-}
-
-.answer {
-  border-left: 5px solid white;
-  color: white;
-  font-size: 8px;
-  width: 100%;
-  height: auto;
-  padding: 5px 30px;
-  margin: 40px 0px;
-  align-content: center;
-  font-weight: 400;
-  display: block;
-  background: linear-gradient(to right, white 50%, rgb(33, 87, 253) 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all 0.25s ease-out;
-}
-
-.answer:active {
-  background-position: left bottom;
-}
-
-.answer:active {
-  color: rgb(33, 87, 253);
-}
-
-.answer p {
-  font-size: 40px;
-}
-
-.progress-bar-outline,
-.progress-bar-outline:hover {
-  border-bottom: 1px solid blue;
-}
-
-.progress-bar-filled,
-.progress-bar-filled:hover {
-  background-color: rgb(21, 70, 235);
-  height: 12px;
-}
-
-.left {
-  float: left;
-}
-
-@media only screen and (min-width: 641px) {
-  .QuestionInfo {
-    padding: 5% 10%;
-    height: 780px;
+@media (min-width: 1281px) {
+  #QuizHolder {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
   }
 
-  .QuestionNumber {
-    margin: 40px;
+  .QuestionArea {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 10%;
+  }
+  .AnswerSection {
+    grid-area: 1 / 2 / 2 / 3;
+    padding: 10%;
   }
 
-  .QuestionNumber strong {
-    font-size: 5vw;
+  .progress-bar-outline,
+  .progress-bar-outline:hover {
+    border-bottom: 1px solid blue;
+    margin: 5% 0% 5% 0%;
+  }
+
+  .NumberSection strong {
+    font-size: 4vw;
+    font-weight: 900;
   }
 
   #totalQuestions {
-    font-size: 5vw;
-    font-weight: 300;
+    font-size: 3vw;
   }
 
-  .Question {
-    margin-top: 10%;
-    font-size: 50px;
+  #questionWrapper h2 {
+    font-size: 3vw;
+    line-height: 1.5;
   }
 
-  .QuestionAnswers {
-    min-height: 770px;
-    background-color: rgb(0, 81, 255);
-    padding: 3% 15%;
+  #topic {
+    font-size: 2vw;
   }
+
+  .NumberSection i {
+    font-size: 5vw !important;
+  }
+
+  .answerWrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+    padding: 1%;
+    animation: slide-left 0.75s;
+    height: 100%;
+    align-content: center;
+  }
+
+  .answerStylying {
+    text-align: left;
+    font-size: 2vw;
+    height: auto;
+    padding: 1% 5%;
+  }
+
+  /* Results/Invite a friend section */
+
+  .Results {
+    font-size: 2vw;
+  }
+
+  #playAgain {
+    font-size: 2vw;
+  }
+
+  #emailFriend {
+    left: 10%;
+    margin-bottom: 40px;
+    height: 10%;
+    width: 80%;
+    font-size: 2vw;
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #QuizHolder {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .QuestionArea {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 10%;
+  }
+  .AnswerSection {
+    grid-area: 1 / 2 / 2 / 3;
+    padding: 10%;
+  }
+
+  .progress-bar-outline,
+  .progress-bar-outline:hover {
+    border-bottom: 1px solid blue;
+    margin: 5% 0% 5% 0%;
+  }
+
+  .NumberSection strong {
+    font-size: 4vw;
+    font-weight: 900;
+  }
+
+  #totalQuestions {
+    font-size: 3vw;
+  }
+
+  #questionWrapper h2 {
+    font-size: 3vw;
+    line-height: 1.5;
+  }
+
+  #topic {
+    font-size: 2vw;
+  }
+
+  .NumberSection i {
+    font-size: 5vw !important;
+  }
+
+  .answerWrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    grid-column-gap: 15px;
+    grid-row-gap: 5px;
+    padding: 1%;
+    animation: slide-left 0.75s;
+    height: 100%;
+    align-content: center;
+  }
+
+  .answerStylying {
+    text-align: left;
+    font-size: 2vw;
+    height: auto;
+    padding: 1% 5%;
+  }
+
+  /* Results/Invite a friend section */
+
+  .Results {
+    font-size: 2vw;
+  }
+
+  #playAgain {
+    font-size: 2vw;
+  }
+
+  #emailFriend {
+    left: 10%;
+    margin-bottom: 40px;
+    height: 10%;
+    width: 80%;
+    font-size: 2vw;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .progress-bar-outline,
+  .progress-bar-outline:hover {
+    border-bottom: 1px solid blue;
+    margin: 5% 0% 10% 0%;
+  }
+
+  #questionWrapper h2 {
+    font-size: 6vw;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  #QuizHolder {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .QuestionArea {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 10%;
+  }
+  .AnswerSection {
+    grid-area: 1 / 2 / 2 / 3;
+    padding: 15% 5%;
+  }
+
+  #questionWrapper h2 {
+    font-size: 3vw;
+    line-height: 1.5;
+  }
+
+  .NumberSection i {
+    float: left;
+    font-size: 4vw !important;
+  }
+
+  #totalQuestions {
+    font-size: 3vw;
+    font-weight: 500;
+    color: rgba(216, 216, 216, 0.6);
+  }
+
+  .NumberSection strong {
+    font-size: 4vw;
+  }
+
+  #topic {
+    font-size: 3vw;
+  }
+
+  .answerWrapper {
+    grid-template-rows: repeat(4, auto);
+  }
+
+  /* Results/Invite a friend section */
+
+  .Results {
+    font-size: 3vw;
+  }
+
+  .AnswerSection img {
+    margin: 20% auto;
+    width: auto;
+    height: 50%;
+  }
+
+  #playAgain {
+    height: 10%;
+    width: 60%;
+    font-size: 3vw;
+  }
+
+  #emailFriend {
+    left: 10%;
+    margin-bottom: 40px;
+    height: 10%;
+    width: 80%;
+    font-size: 3vw;
+  }
+
+  .answerStylying {
+    font-size: 3vw;
+  }
+
+  .answerStylying p {
+    margin: 0;
+    padding: 2%;
+  }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS */
 }

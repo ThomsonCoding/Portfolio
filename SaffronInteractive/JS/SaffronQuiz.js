@@ -59,7 +59,7 @@ function falseAnswer(pointsPerQuestions, questionAmount) {
 // The removeText function is called in both of the trueAnswer and falseAnswer functions. This gets both the Wrappers holding the questions and answers and animates them off the screen.
 
 function removeText() {
-    var elementQuestion = document.getElementById("questionWrapper");
+    var elementQuestion = document.getElementById("TheQuestion");
     var elementAnswers = document.getElementById("answerWrapper");
     elementQuestion.className += " slideOutWrapper";
     elementAnswers.className += " slideOutWrapper";

@@ -2,7 +2,7 @@
 
 class UI {
     constructor() {
-        this.uiQuestionContainer = document.getElementById("QuestionHolder");
+        this.uiQuestionContainer = document.getElementById("QuizHolder");
     }
 
     populateQuestion(data, x, score) {
@@ -16,12 +16,12 @@ class UI {
         if (questionCounter === questionAmount) { //When it is the last question. Update the page with either a pass or fail message. And the option to invite friends. 
             if (TotalScore >= passMark) {
             this.uiQuestionContainer.innerHTML = `
-            <div class="QuestionInfo">
-                <h2 class="Question">Well done! Your score was <span class="blueText">${TotalScore}</span> which is a pass! <br><br> Want to see if a friend can beat you? Use the <span class="blueText">QR code</span> below and see what they get!</h2>
+            <div class="QuestionArea">
+                <h2 class="Results">Well done! Your score was <span class="blueText">${TotalScore}</span> which is a pass! <br><br> Want to see if a friend can beat you? Use the <span class="blueText">QR code</span> below and see what they get!</h2>
                 <button id="playAgain" onClick="playAgain(${TotalScore})">Play Again</button>
             </div>
             
-            <div class="QuestionAnswers">
+            <div class="AnswerSection">
                 <img src="Photos/qrcode_thomsoncoding.github.io.png">
                 <button id="emailFriend" onClick="sendEmail(${TotalScore})">Email Friend</button>
             </div>
@@ -29,12 +29,12 @@ class UI {
             `;
             } else { //If a fail occurs, the container will be filled with the information below.
             this.uiQuestionContainer.innerHTML = `
-            <div class="QuestionInfo">
-                <h2 class="Question">Unlucky! Your score was <span class="blueText">${TotalScore}</span>, and you needed ${passMark} or above. Bet your friends still couldn't beat you though! <br><br> Use the <span class="blueText">QR code</span> below to invite them! </h2>
+            <div class="QuestionArea">
+                <h2 class="Results">Unlucky! Your score was <span class="blueText">${TotalScore}</span>, and you needed ${passMark} or above. Bet your friends still couldn't beat you though! <br><br> Use the <span class="blueText">QR code</span> below to invite them! </h2>
                 <button id="playAgain" onClick="playAgain()">Play Again</button>
              </div>
             
-            <div class="QuestionAnswers">
+            <div class="AnswerSection">
                 <img src="Photos/qrcode_thomsoncoding.github.io.png">
                 <button id="emailFriend" onClick="sendEmail(${TotalScore})">Email Friend</button>
             </div>
@@ -55,7 +55,7 @@ class UI {
         
         for (var i = 0; i < answersLength; i += 1) { //Loops through and gets the question answers.
             answerOptions += `
-            <div class="answer" onclick="move(${progressBar}, ${pointsPerQuestions}), ${data.questions[x].options[i].isCorrect}Answer(${pointsPerQuestions}, ${questionAmount})"><p><span class="questionLetter">${alphabet.charAt(i)}</span>&nbsp;&nbsp; ${data.questions[x].options[i].label}</p></div>
+            <div class="answer${i} answerStylying" onclick="move(${progressBar}, ${pointsPerQuestions}), ${data.questions[x].options[i].isCorrect}Answer(${pointsPerQuestions}, ${questionAmount})"><p><span class="questionLetter">${alphabet.charAt(i)}</span>&nbsp;&nbsp; ${data.questions[x].options[i].label}</p></div>
             `;
         }
 
@@ -64,10 +64,10 @@ class UI {
         //The below us run to generate the whole application, using the variables from above. 
         //The amount of questions will update based on the information the json file provides.
         this.uiQuestionContainer.innerHTML = `
-        <div class="QuestionInfo">
-        <div class="QuestionNumber">
+        <div class="QuestionArea">
+        <div class="NumberSection">
             <i style="font-size:100px" class="fa left" onClick="backButton(${lastQuestionsPoints})">&#xf104;</i>
-            <p class="QuestionNumber"><strong>0${questionNumber}</strong> <span id="totalQuestions">/ 0${questionAmount}</span></p>
+            <p><strong>0${questionNumber}</strong> <span id="totalQuestions">/ 0${questionAmount}</span></p>
         </div>
             
         <div class="progress-bar-outline">
@@ -78,7 +78,7 @@ class UI {
         </div>
             <p id="topic">History of art</p>
         </div>
-        <div class="QuestionAnswers">
+        <div class="AnswerSection">
             <div id="answerWrapper" class="answerWrapper">${answerOptions}</div>
         </div>
         `;
