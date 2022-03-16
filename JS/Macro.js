@@ -3,7 +3,7 @@ var bmr;
 var pal;
 var maintanance;
 
-weight = 74;
+weight = 78;
 pal = 1.5;
 
 //24 for male, 22 for female.

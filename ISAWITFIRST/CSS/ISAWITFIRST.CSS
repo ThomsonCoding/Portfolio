@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+  font: 600 1rem Poppins;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.top-bar {
+  padding: 0 35px;
+  background: #000;
+}
+
+.top-bar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.top-bar__gender-list {
+  display: flex;
+}
+
+.top-bar__gender-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 25px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.top-bar__links-list {
+  display: flex;
+}
+
+.top-bar__links-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-left: 15px;
+  padding-left: 15px;
+  background-position: center right;
+  background-repeat: no-repeat;
+  font-size: 0.8125rem;
+  color: #fff;
+}
+
+.top-bar__links-link:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.top-bar__links-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 60%;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+.top-bar__links-link svg {
+  margin-left: 10px;
+}
+
+svg {
+  height: auto;
+  max-width: 100%;
+}
+
+.head-bar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 10px 8px 8px;
+}
+
+.head-bar__col {
+  width: 33%;
+}
+
+/* 
+    ##Device = Desktops
+    ##Screen = 1281px to higher resolution desktops
+  */
+
+@media (min-width: 1281px) {
+  /* CSS */
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  /* CSS */
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS */
+}
