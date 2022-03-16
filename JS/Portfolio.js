@@ -1,4 +1,5 @@
 //Navbar Burger Function.
+console.log("Updated With google");
 
 function myFunction() {
   var x = document.getElementById("myTopnav");
